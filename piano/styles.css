@@ -1,0 +1,144 @@
+:root {
+  --bg: #0f1115;
+  --fg: #e8e8ea;
+  --muted: #9aa0a6;
+  --accent: #5ac8fa;
+  --accent-2: #ffd166;
+  --danger: #ef476f;
+  --ok: #06d6a0;
+  --panel: #161922;
+  --border: #262a35;
+  --white-key: #fafafa;
+  --white-key-active: #cfeaff;
+  --black-key: #1c1f27;
+  --black-key-active: #2a6fb0;
+  --highlight: #ffd166;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  min-height: 100vh;
+  padding: 24px;
+}
+header h1 { margin: 0 0 4px; font-size: 28px; }
+header .sub { margin: 0 0 16px; color: var(--muted); }
+
+.tabs { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+.tab {
+  background: transparent;
+  border: 1px solid transparent;
+  border-bottom: none;
+  color: var(--muted);
+  padding: 8px 14px;
+  cursor: pointer;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-size: 14px;
+}
+.tab:hover { color: var(--fg); }
+.tab.active {
+  color: var(--fg);
+  background: var(--panel);
+  border-color: var(--border);
+}
+
+.panel { display: none; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+.panel.active { display: block; }
+.panel h2 { margin-top: 0; }
+.row { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; }
+.row label { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--muted); }
+.row select, .row input[type="range"] {
+  background: #0c0e13; color: var(--fg); border: 1px solid var(--border); border-radius: 6px; padding: 4px 6px;
+}
+button {
+  background: #21263180;
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+button:hover { background: #2a3140; }
+button.primary { background: var(--accent); color: #001018; border-color: var(--accent); }
+button.primary:hover { filter: brightness(1.1); }
+.hint { color: var(--muted); font-size: 13px; margin: 8px 0 0; }
+kbd {
+  background: #0c0e13; border: 1px solid var(--border); border-bottom-width: 2px;
+  border-radius: 4px; padding: 1px 6px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px;
+}
+.prompt { font-size: 18px; font-weight: 600; color: var(--accent-2); }
+.score { margin-left: auto; color: var(--muted); }
+.notes { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--accent-2); margin: 12px 0 0; }
+
+/* Piano */
+.piano {
+  position: relative;
+  margin: 24px auto 0;
+  height: 220px;
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  user-select: none;
+}
+.key {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 8px;
+  font-size: 11px;
+  transition: background-color 60ms ease;
+}
+.key.white {
+  flex: 1 1 0;
+  background: var(--white-key);
+  color: #333;
+  border: 1px solid #b8b8b8;
+  border-radius: 0 0 6px 6px;
+  margin-right: 2px;
+  height: 100%;
+}
+.key.white:last-child { margin-right: 0; }
+.key.white.active { background: var(--white-key-active); }
+.key.white.highlight { background: #fff3b0; }
+.key.black {
+  position: absolute;
+  top: 0;
+  width: 4%;
+  height: 62%;
+  background: var(--black-key);
+  color: #eaeaea;
+  border: 1px solid #000;
+  border-radius: 0 0 5px 5px;
+  z-index: 2;
+  align-items: flex-end;
+  padding-bottom: 6px;
+  font-size: 10px;
+  box-shadow: inset 0 -4px 0 #000;
+}
+.key.black.active { background: var(--black-key-active); }
+.key.black.highlight { background: #b97a00; }
+.key .label { pointer-events: none; }
+.key .kb {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: #888;
+  pointer-events: none;
+}
+.key.black .kb { color: #aaa; }
+
+@media (max-width: 600px) {
+  body { padding: 12px; }
+  .piano { height: 160px; }
+  .key .label { display: none; }
+  .key .kb { display: none; }
+}
