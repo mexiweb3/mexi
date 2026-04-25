@@ -12,6 +12,7 @@ import { starsForResult } from "@/lib/lessons/schema";
 import { getNextLessonId } from "@/lib/lessons/registry";
 import { awardBadge, saveLessonProgress } from "@/lib/persistence/progress";
 import type { Stars } from "@/lib/persistence/progress";
+import { trackEvent } from "@/lib/analytics/plausible";
 import { useChildProfile } from "@/store/childProfile";
 import { useLessonRun } from "@/store/lesson";
 
@@ -66,7 +67,11 @@ export default function LessonRunner({ lesson }: Props) {
       wrongAttemptsTotal: 0,
       perStepStars: [],
     });
-  }, [lesson.id, setRun]);
+    trackEvent("lesson_started", {
+      lessonId: lesson.id,
+      module: lesson.module,
+    });
+  }, [lesson.id, lesson.module, setRun]);
 
   // Reset on unmount so a new visit starts fresh.
   useEffect(() => {
@@ -229,6 +234,10 @@ function CelebrationGate({
   useEffect(() => {
     if (savedRef.current) return;
     savedRef.current = true;
+    trackEvent("lesson_completed", {
+      lessonId,
+      stars,
+    });
     if (!childId) return;
     const durationSec =
       startedAt != null

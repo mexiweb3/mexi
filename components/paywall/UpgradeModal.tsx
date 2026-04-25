@@ -11,6 +11,7 @@ import {
 import { useRouter } from "next/navigation";
 
 import { cn } from "@/lib/cn";
+import { trackEvent } from "@/lib/analytics/plausible";
 
 type UpgradeReason = "lesson" | "profiles" | "songs";
 
@@ -74,6 +75,12 @@ export function UpgradeModal({ open, onClose, reason = "lesson" }: Props) {
     };
   }, [open]);
 
+  // Fire paywall_seen exactly when the modal opens.
+  useEffect(() => {
+    if (!open) return;
+    trackEvent("paywall_seen", { reason: reason ?? "unknown" });
+  }, [open, reason]);
+
   // Save / restore focus and trap focus inside the dialog.
   useEffect(() => {
     if (!open) return;
@@ -125,6 +132,7 @@ export function UpgradeModal({ open, onClose, reason = "lesson" }: Props) {
 
   const startCheckout = useCallback(async () => {
     if (!STRIPE_AVAILABLE) return;
+    trackEvent("checkout_started", { plan: "monthly" });
     setLoading(true);
     setError(null);
     try {

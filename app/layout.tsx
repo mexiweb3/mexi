@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
+import { AudioMidiBridges } from "@/components/analytics/AudioMidiBridges";
 import { PlausibleScript } from "@/components/analytics/PlausibleScript";
 import { PwaRegister } from "@/components/PwaRegister";
 import { FeedbackWidget } from "@/components/feedback/FeedbackWidget";
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans antialiased">
         {children}
         <PwaRegister />
+        <AudioMidiBridges />
         <FeedbackWidget />
         <PlausibleScript />
       </body>

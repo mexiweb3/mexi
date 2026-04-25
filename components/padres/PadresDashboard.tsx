@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 
 import { cn } from "@/lib/cn";
 import { Avatar } from "@/components/onboarding/Avatar";
+import { UpgradeBadge } from "@/components/analytics/UpgradeBadge";
 import { getSupabaseBrowser } from "@/lib/supabase/client";
 import { supabaseEnv } from "@/lib/supabase/env";
 import {
@@ -137,6 +138,7 @@ export function PadresDashboard({
       </header>
 
       <div className="mx-auto w-full max-w-md px-4 py-6 sm:max-w-2xl sm:py-10">
+        <UpgradeBadge />
         <section
           aria-label="Resumen de cuenta"
           className="rounded-3xl border-4 border-brand-200 bg-white p-5 shadow-[0_6px_0_0_#ffd87a]"

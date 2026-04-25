@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Cable, Power, Music2 } from "lucide-react";
 
 import { cn } from "@/lib/cn";
+import { trackEvent } from "@/lib/analytics/plausible";
 import { useOnboardingStore } from "@/store/onboarding";
 import { useChildProfile } from "@/store/childProfile";
 import { createChildProfile } from "@/lib/persistence/childProfile";
@@ -67,6 +68,9 @@ export function Step5Midi() {
         age: profile.age,
         avatar: profile.avatar,
         keyboardBrand: profile.keyboardBrand,
+      });
+      trackEvent("child_profile_created", {
+        keyboardBrand: (profile.keyboardBrand ?? "ninguno").toString().toLowerCase(),
       });
       if (target.startsWith("/teclado")) {
         setStore({ midiAttempted: true });

@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
 import { cn } from "@/lib/cn";
+import { trackEvent } from "@/lib/analytics/plausible";
 import { getSupabaseBrowser } from "@/lib/supabase/client";
 import { getAppUrl, supabaseEnv } from "@/lib/supabase/env";
 
@@ -73,6 +74,8 @@ export function SignUpForm() {
             })
           );
         }
+        trackEvent("signup_completed");
+        trackEvent("consent_signed");
         router.push("/onboarding/1");
         return;
       }
@@ -89,6 +92,9 @@ export function SignUpForm() {
         setServerError(translateAuthError(error.message));
         return;
       }
+
+      trackEvent("signup_completed");
+      trackEvent("consent_signed");
 
       // Best-effort consent record. Does not block flow.
       try {

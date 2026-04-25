@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import { trackEvent } from "@/lib/analytics/plausible";
+
 type Props = {
   childName: string;
   stars: number;
@@ -66,6 +68,7 @@ export function ShareProgressButton({
           text: `${childName} esta tocando piano!`,
           url: shareUrl,
         });
+        trackEvent("share_progress");
         return;
       } catch {
         // User dismissed or share failed; fall through to clipboard fallback.
@@ -80,6 +83,7 @@ export function ShareProgressButton({
       ) {
         await navigator.clipboard.writeText(shareUrl);
         setFeedback("copied");
+        trackEvent("share_progress");
       } else {
         setFeedback("error");
       }
