@@ -176,6 +176,12 @@ export default function NinoInicioPage() {
             Listo para tu siguiente aventura?
           </p>
         </div>
+        <Link
+          href="/nino/logros"
+          className="ml-auto rounded-2xl border-2 border-brand-300 bg-white px-3 py-2 text-sm font-bold text-brand-700 hover:bg-brand-50"
+        >
+          Mis medallas
+        </Link>
       </div>
 
       <ol
