@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 import { cn } from "@/lib/cn";
 import { Avatar } from "@/components/onboarding/Avatar";
 import { UpgradeBadge } from "@/components/analytics/UpgradeBadge";
+import { UpgradeSuccessBanner } from "@/components/padres/UpgradeSuccessBanner";
+import { AccountSettingsLink } from "@/components/padres/AccountSettingsLink";
 import { getSupabaseBrowser } from "@/lib/supabase/client";
 import { supabaseEnv } from "@/lib/supabase/env";
 import {
@@ -139,6 +141,7 @@ export function PadresDashboard({
 
       <div className="mx-auto w-full max-w-md px-4 py-6 sm:max-w-2xl sm:py-10">
         <UpgradeBadge />
+        <UpgradeSuccessBanner childName={children[0]?.name} />
         <section
           aria-label="Resumen de cuenta"
           className="rounded-3xl border-4 border-brand-200 bg-white p-5 shadow-[0_6px_0_0_#ffd87a]"
@@ -255,7 +258,8 @@ export function PadresDashboard({
           </Link>
         </section>
 
-        <div className="mt-8 flex justify-center">
+        <div className="mt-8 flex flex-col items-center gap-3">
+          <AccountSettingsLink />
           <button
             type="button"
             onClick={signOut}

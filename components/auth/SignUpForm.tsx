@@ -107,6 +107,13 @@ export function SignUpForm() {
         // Ignore: user may not yet have a session if confirmation is required.
       }
 
+      // Best-effort welcome email. Does not block flow.
+      void fetch("/api/auth/post-signup", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ email: values.email }),
+      }).catch(() => {});
+
       router.push(`/verificar?email=${encodeURIComponent(values.email)}`);
     } catch (error) {
       setServerError(

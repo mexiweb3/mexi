@@ -216,5 +216,10 @@ export async function POST(request: NextRequest): Promise<Response> {
     );
   }
 
+  // Final breadcrumb. Plausible is browser-only and the events table for
+  // this parent has just been cascaded away; a console log is the last safe
+  // signal we can emit from here.
+  console.log("[event] account_deleted", parentId);
+
   return NextResponse.json({ ok: true });
 }

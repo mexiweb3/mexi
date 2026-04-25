@@ -16,6 +16,7 @@ import { trackEvent } from "@/lib/analytics/plausible";
 import { useChildProfile } from "@/store/childProfile";
 import { useLessonRun } from "@/store/lesson";
 
+import { CompletionUpgradeNudge } from "./CompletionUpgradeNudge";
 import ExerciseHost from "./ExerciseHost";
 import StepCelebration from "./StepCelebration";
 import StepDemo from "./StepDemo";
@@ -252,14 +253,24 @@ function CelebrationGate({
     if (badgeId) {
       void awardBadge({ childId, badgeId });
     }
+    if (childId && lessonId === "m1l5") {
+      void fetch("/api/auth/upgrade-nudge", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ childId }),
+      }).catch(() => {});
+    }
   }, [childId, lessonId, startedAt, stars, badgeId]);
 
   return (
-    <StepCelebration
-      message={message}
-      stars={stars}
-      badgeId={badgeId}
-      nextLessonId={nextLessonId}
-    />
+    <>
+      <StepCelebration
+        message={message}
+        stars={stars}
+        badgeId={badgeId}
+        nextLessonId={nextLessonId}
+      />
+      <CompletionUpgradeNudge lessonId={lessonId} plan="free" />
+    </>
   );
 }
