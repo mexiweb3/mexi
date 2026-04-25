@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { PricingActions } from "@/app/precios/PricingActions";
+
 const freeFeatures: ReadonlyArray<string> = [
   "Cuenta para padre o madre",
   "Un perfil de niño",
@@ -88,17 +90,7 @@ export default function PreciosPage() {
                 </li>
               ))}
             </ul>
-            <button
-              type="button"
-              aria-disabled="true"
-              disabled
-              className="kid-button mt-10 w-full cursor-not-allowed opacity-60"
-            >
-              Probar 7 días gratis
-            </button>
-            <p className="mt-3 text-center text-sm font-medium text-brand-700">
-              Disponible pronto.
-            </p>
+            <PricingActions plan="monthly" label="Probar 7 dias gratis" />
           </div>
         </div>
 
