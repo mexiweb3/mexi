@@ -468,7 +468,7 @@ export default function PlaySong({
           <>
             <button
               type="button"
-              className="btn-primary min-h-[60px]"
+              className="kid-button min-h-[60px]"
               onClick={() => {
                 void handleStart();
               }}
@@ -477,7 +477,7 @@ export default function PlaySong({
             </button>
             <button
               type="button"
-              className="btn-secondary min-h-[60px]"
+              className="kid-button-secondary min-h-[60px]"
               onClick={() => {
                 void handleDemo();
               }}
@@ -488,7 +488,7 @@ export default function PlaySong({
             {currentTimeSec > 0 ? (
               <button
                 type="button"
-                className="btn-secondary min-h-[60px]"
+                className="kid-button-secondary min-h-[60px]"
                 onClick={handleReset}
               >
                 Volver a empezar
@@ -501,14 +501,14 @@ export default function PlaySong({
           <>
             <button
               type="button"
-              className="btn-secondary min-h-[60px]"
+              className="kid-button-secondary min-h-[60px]"
               onClick={handlePause}
             >
               Pausar
             </button>
             <button
               type="button"
-              className="btn-secondary min-h-[60px]"
+              className="kid-button-secondary min-h-[60px]"
               onClick={handleStop}
             >
               Detener
@@ -529,7 +529,7 @@ export default function PlaySong({
             </p>
             <button
               type="button"
-              className="btn-primary min-h-[60px]"
+              className="kid-button min-h-[60px]"
               onClick={handleReset}
             >
               Volver a empezar
