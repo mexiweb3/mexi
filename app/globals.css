@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  height: 100%;
+  background: #fff7e6;
+  color: #1f1500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .kid-button {
+    @apply inline-flex min-h-[60px] min-w-[60px] items-center justify-center rounded-2xl bg-brand-400 px-6 py-3 text-lg font-bold text-brand-900 shadow-[0_6px_0_0_#cc7600] transition-transform active:translate-y-1 active:shadow-[0_2px_0_0_#cc7600] hover:bg-brand-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-300;
+  }
+  .kid-button-secondary {
+    @apply inline-flex min-h-[60px] items-center justify-center rounded-2xl border-2 border-brand-300 bg-white px-6 py-3 text-lg font-bold text-brand-700 shadow-[0_4px_0_0_#ffd87a] transition-transform active:translate-y-1 active:shadow-[0_1px_0_0_#ffd87a] hover:bg-brand-50;
+  }
+}

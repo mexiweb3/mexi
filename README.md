@@ -1,52 +1,59 @@
-# mexi
+# Pianitos
 
-Meximalist.
+Tu primer teclado, ahora con maestro propio.
 
-## Aprende Piano
+App educativa para que niñas y niños de 7 a 12 años aprendan a tocar el
+teclado en casa, validada con su instrumento físico vía MIDI USB.
 
-Mini‑proyecto para aprender a tocar el piano: un piano virtual interactivo
-en el navegador con prácticas de notas, escalas y acordes, más un plan de
-estudio de 8 semanas.
+> Estado: **MVP en construcción · semana 1/8.** Este repo contiene el
+> esqueleto navegable. Para el plan completo y el cronograma ver
+> [`PLAN.md`](PLAN.md).
 
-### Cómo usarlo
+## Cómo correrlo en local
 
-Abre [`piano/index.html`](piano/index.html) en cualquier navegador moderno.
-No requiere instalación ni servidor.
+Requisitos: Node 22+, pnpm 10+.
 
 ```bash
-# opción rápida en local
-open piano/index.html        # macOS
-xdg-open piano/index.html    # Linux
+pnpm install
+cp .env.example .env.local   # rellenar cuando se enchufen Supabase/Stripe/etc.
+pnpm dev
+# http://localhost:3000
 ```
 
-### Qué incluye
+Páginas disponibles esta semana:
 
-- **Libre** · piano de 2 octavas tocable con ratón, táctil o teclado
-  (`A`–`K` teclas blancas, `W E T Y U` negras). Etiquetas en notación
-  inglesa (C D E…) o solfeo (Do Re Mi…).
-- **Reconocer notas** · suena una nota y tienes que identificarla en el
-  teclado. Lleva contador de aciertos.
-- **Escalas** · resalta y reproduce mayor, menor natural, menor armónica,
-  pentatónicas y blues, en cualquier tónica.
-- **Acordes** · tríadas (mayor, menor, dim, aug) y séptimas (maj7, m7, 7).
-- **Plan de estudio** · 8 semanas y rutina diaria de 20–30 minutos.
+- `/` · landing.
+- `/teclado` · teclado virtual jugable con audio (Tone.js) y detección
+  de teclado MIDI USB (Chrome/Edge en escritorio).
+- `/registro`, `/ingresar` · stubs de auth (UI sin backend aún).
+- `/precios`, `/para-padres`, `/privacidad`, `/terminos` · páginas estáticas.
 
-### Hoja de ruta del aprendizaje
+## Atajos del teclado virtual
 
-1. Postura, manos relajadas, identificar Do central.
-2. Cinco dedos en Do mayor, mano derecha y luego izquierda.
-3. Manos juntas en paralelo y en movimiento contrario.
-4. Escala mayor de Do, una octava, con cruce de pulgar.
-5. Acordes I‑IV‑V (Do, Fa, Sol mayores) y cambios entre ellos.
-6. Primera canción: melodía en derecha + acordes en izquierda.
-7. Lectura básica en clave de sol y de fa alrededor del Do central.
-8. Repertorio de memoria + improvisación con pentatónica sobre I‑V‑vi‑IV.
+Conecta tu teclado USB y toca: si el navegador soporta Web MIDI lo verás
+arriba como "¡Tu teclado *Nombre* está listo!". Si no:
 
-### Estructura
+- Toca con el ratón o el dedo.
+- Teclas blancas: `A S D F G H J K L ; '`
+- Teclas negras: `W E T Y U`
+
+## Stack
+
+Next.js 14 (App Router) · TypeScript · Tailwind · Tone.js · Web MIDI ·
+Zustand · Framer Motion. Auth/DB con Supabase y pagos con Stripe llegan
+en semana 2 y 5 respectivamente.
+
+## Estructura
 
 ```
-piano/
-  index.html   # interfaz y pestañas
-  styles.css
-  app.js       # audio (Web Audio API), teclado, escalas y acordes
+app/                # rutas (landing, teclado, auth stubs, legales)
+components/piano/   # VirtualKeyboard, MidiStatus, KeyboardMidiBridge, PianoStage
+lib/audio/          # motor Tone.js
+lib/midi/           # motor Web MIDI + parser
+lib/types/          # tipos compartidos de música
+store/              # zustand stores (midi por ahora)
+archive/            # versiones previas (sandbox-piano y linktree)
 ```
+
+Ver [`PLAN.md`](PLAN.md) para el cronograma completo y las decisiones
+abiertas.
