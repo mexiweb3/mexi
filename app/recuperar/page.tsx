@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-import { SignInForm } from "@/components/auth/SignInForm";
+import { RecuperarClient } from "./RecuperarClient";
 import { supabaseEnv } from "@/lib/supabase/env";
 
-export default function IngresarPage() {
+export default function RecuperarPage() {
   const demoMode = !supabaseEnv.isConfigured;
 
   return (
@@ -16,36 +16,33 @@ export default function IngresarPage() {
           Pianitos
         </Link>
         <Link
-          href="/"
+          href="/ingresar"
           className="text-sm font-semibold text-brand-800 hover:text-brand-600 sm:text-base"
         >
-          Volver al inicio
+          Volver a ingresar
         </Link>
       </header>
 
       <section className="mx-auto max-w-md px-6 pb-20 pt-4">
         <h1 className="text-3xl font-extrabold tracking-tight text-brand-900 sm:text-4xl">
-          Ingresar
+          Recuperar contrasena
         </h1>
         <p className="mt-3 text-brand-800">
-          Accede a la cuenta del padre o madre para ver el progreso del nino
-          o nina.
+          Ingresa el correo de tu cuenta y te enviaremos un enlace para crear
+          una nueva contrasena.
         </p>
-
-        <SignInForm />
 
         {demoMode ? (
           <div
             role="status"
-            className="mt-6 rounded-2xl border-2 border-yellow-300 bg-yellow-50 px-4 py-3 text-sm text-yellow-900"
+            className="mt-6 rounded-3xl border-2 border-yellow-300 bg-yellow-50 p-6 text-sm text-yellow-900"
           >
             <p className="font-semibold">Modo demo</p>
-            <p className="mt-1">
-              No hay backend conectado. Si te registraste en este navegador
-              puedes ingresar con el mismo correo.
-            </p>
+            <p className="mt-1">Disponible cuando configures Supabase.</p>
           </div>
-        ) : null}
+        ) : (
+          <RecuperarClient />
+        )}
       </section>
     </main>
   );

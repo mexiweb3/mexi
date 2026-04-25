@@ -19,3 +19,10 @@ yarn-error.log*
 
 next-env.d.ts
 *.tsbuildinfo
+.vercel
+
+# next-pwa generated files (created at production build)
+public/sw.js
+public/workbox-*.js
+public/sw.js.map
+public/workbox-*.js.map
