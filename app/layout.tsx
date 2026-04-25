@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "App divertida para que niñas y niños aprendan a tocar el teclado en casa. Valida con su instrumento real vía MIDI.",
   applicationName: "Pianitos",
-  themeColor: "#ffb01f",
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  themeColor: "#ffb01f",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
