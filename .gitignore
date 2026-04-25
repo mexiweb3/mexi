@@ -28,3 +28,7 @@ public/workbox-*.js
 public/workbox-*.js.map
 public/swe-worker-*.js
 public/swe-worker-*.js.map
+
+playwright-report
+test-results
+/tests/.cache

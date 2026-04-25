@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
+import { PlausibleScript } from "@/components/analytics/PlausibleScript";
 import { PwaRegister } from "@/components/PwaRegister";
+import { FeedbackWidget } from "@/components/feedback/FeedbackWidget";
 
 export const metadata: Metadata = {
   title: "Pianitos · Tu primer teclado, ahora con maestro propio",
@@ -27,6 +29,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans antialiased">
         {children}
         <PwaRegister />
+        <FeedbackWidget />
+        <PlausibleScript />
       </body>
     </html>
   );
