@@ -119,9 +119,9 @@ a {{ color: #000; text-decoration: none; }}
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 20mm 14mm 0;
+  padding: 8mm 14mm 0;
 }}
-.bio .top-rule {{ width: 28mm; height: 1px; background: #000; margin-bottom: 10mm; }}
+.bio .top-rule {{ width: 28mm; height: 1px; background: #000; margin-bottom: 6mm; }}
 .bio .artist {{
   font-family: 'Cormorant Garamond', serif;
   font-size: 18pt; font-weight: 400; letter-spacing: .01em;
@@ -135,6 +135,17 @@ a {{ color: #000; text-decoration: none; }}
   letter-spacing: -0.012em;
   margin: 0 0 6mm 0;
 }}
+.bio .wordmark {{
+  width: 88mm; max-width: 100%;
+  height: auto; display: block;
+  margin: 0 auto 4mm;
+}}
+.bio .wordmark-cap {{
+  font-family: 'Inter', sans-serif;
+  font-size: 7pt; letter-spacing: .25em; text-transform: uppercase;
+  color: #555; margin: 0 0 5mm 0;
+}}
+.bio .wordmark-cap em {{ font-style: italic; text-transform: none; letter-spacing: 0; color: #000; }}
 .bio .lede {{
   font-size: 14pt; max-width: 130mm; margin: 0 0 6mm; color: #000;
 }}
@@ -196,10 +207,7 @@ a {{ color: #000; text-decoration: none; }}
   margin-right: 4px; vertical-align: middle;
 }}
 .grid-page .head .legend .swatch.na {{
-  background: transparent; border: 1px solid #000; position: relative;
-}}
-.grid-page .head .legend .swatch.na::after {{
-  content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: #000;
+  background: #c0392b; border: 0;
 }}
 
 .grid {{
@@ -255,20 +263,19 @@ a {{ color: #000; text-decoration: none; }}
 }}
 .card-na .card-img::before {{
   content: ""; position: absolute; inset: 0;
-  background:
-    linear-gradient(135deg, transparent 49.6%, #000 49.6%, #000 50.4%, transparent 50.4%),
-    rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.55);
   pointer-events: none;
 }}
 .card-na .card-img img {{ opacity: 0.30; }}
 .card-na .tag-na {{
   position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-12deg);
   font-family: 'Inter', sans-serif; font-weight: 600;
-  font-size: 4.4pt; letter-spacing: .15em; text-transform: uppercase;
-  background: #fff; color: #000; padding: 0.6mm 1.4mm;
-  border: 0.6pt solid #000; white-space: nowrap;
+  font-size: 3.6pt; letter-spacing: .2em; text-transform: uppercase;
+  background: #c0392b; color: #fff; padding: 0.4mm 1mm;
+  border: 0; white-space: nowrap;
+  line-height: 1;
 }}
-.card-na .card-meta .name {{ color: #555; text-decoration: line-through; }}
+.card-na .card-meta .name {{ color: #555; }}
 
 /* ---------- PAGE 4: PHANTOM MANUAL ---------- */
 .manual {{
@@ -393,8 +400,9 @@ a {{ color: #000; text-decoration: none; }}
 <section class="bio">
   <div class="top-rule"></div>
   <p class="artist">Daniel Serna Garza</p>
-  <h1>Monos.</h1>
-  <p class="lede">Boceto de monos diario por <em>un año</em>, iniciado el <em>11 de junio de 2021</em> — los hermanos digitales de los monos de bronce que habitan la Calzada San Pedro.</p>
+  <img class="wordmark" src="{wordmark_src}" alt="Monos — wordmark de Daniel Serna" />
+  <p class="wordmark-cap">Plancha 001 — <em>Texto Monos</em>, el wordmark del propio artista</p>
+  <p class="lede">Boceto de monos diario por <em>un año</em>, iniciado el <em>11 de junio de 2021</em>.</p>
   <p class="meta-line">Solana <span class="sep"></span> {domain} <span class="sep"></span> Hasta {total_goal} piezas</p>
 
   <div class="body">
@@ -406,9 +414,9 @@ a {{ color: #000; text-decoration: none; }}
 
   <dl class="stats">
     <div><dt>Minteadas</dt><dd>{n_total}<small>de {total_goal} máx.</small></dd></div>
+    <div><dt>Por mintear</dt><dd>{n_remaining}<small>restantes</small></dd></div>
     <div><dt>Disponibles</dt><dd>{n_avail}<small>en {domain}</small></dd></div>
     <div><dt>No disponibles</dt><dd>{n_unavail}<small>en otras carteras</small></dd></div>
-    <div><dt>Inicio</dt><dd>2021<small>11 de junio</small></dd></div>
   </dl>
 
   <p class="links sans">
@@ -556,17 +564,29 @@ def build():
     n_avail = sum(1 for it in items if it["available"])
     n_unavail = n_total - n_avail
 
+    # First piece — its image is used as the PDF title wordmark, cropped tight.
+    wordmark_local = ROOT / "build" / "wordmark.png"
+    if wordmark_local.exists():
+        wm_pdf = f"file://{wordmark_local.resolve()}"
+        wm_web = "./wordmark.png"
+    else:
+        wm_pdf = wm_web = ""
+
+    n_remaining = max(0, TOTAL_GOAL - n_total)
     common = dict(
         n_total=n_total, n_avail=n_avail, n_unavail=n_unavail,
+        n_remaining=n_remaining,
         total_goal=TOTAL_GOAL, domain=DOMAIN, wallet=WALLET,
     )
 
     pdf_html = TEMPLATE.format(
         cards_first_half=cards_first_pdf,
-        cards_second_half=cards_second_pdf, **common)
+        cards_second_half=cards_second_pdf,
+        wordmark_src=wm_pdf, **common)
     web_html = TEMPLATE.format(
         cards_first_half=cards_first_web,
-        cards_second_half=cards_second_web, **common)
+        cards_second_half=cards_second_web,
+        wordmark_src=wm_web, **common)
 
     pdf_html_path = DIST / "monos-sol-catalogo.html"
     pdf_html_path.write_text(pdf_html, encoding="utf-8")
