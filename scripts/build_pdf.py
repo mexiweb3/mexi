@@ -423,7 +423,7 @@ a {{ color: #000; text-decoration: none; }}
   <div class="head">
     <h2>Las <em>{n_total}</em> piezas</h2>
     <div class="legend sans">
-      <span><span class="swatch"></span>Disponible — clic para coordinar el envío</span>
+      <span><span class="swatch"></span>Disponible</span>
       <span><span class="swatch na"></span>No disponible — clic para ofertar SOL al dueño</span>
     </div>
   </div>
@@ -436,7 +436,7 @@ a {{ color: #000; text-decoration: none; }}
   <div class="head">
     <h2>Las <em>{n_total}</em> piezas</h2>
     <div class="legend sans">
-      <span><span class="swatch"></span>Disponible — clic para coordinar el envío</span>
+      <span><span class="swatch"></span>Disponible</span>
       <span><span class="swatch na"></span>No disponible — clic para ofertar SOL al dueño</span>
     </div>
   </div>
