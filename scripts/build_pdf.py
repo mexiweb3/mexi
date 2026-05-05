@@ -212,10 +212,10 @@ a {{ color: #000; text-decoration: none; }}
 
 .grid {{
   display: grid;
-  grid-template-columns: repeat(11, 16mm);
+  grid-template-columns: repeat(10, 16mm);
   grid-auto-rows: 19mm;
   gap: 1.2mm 1.2mm;
-  justify-content: space-between;
+  justify-content: start;
 }}
 
 /* Cards: 244/2 = 122 per page → 11×12 = 132 cells (room for 122) */
