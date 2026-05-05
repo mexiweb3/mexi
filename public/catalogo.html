@@ -173,21 +173,15 @@ a { color: #000; text-decoration: none; }
   text-overflow: ellipsis; overflow: hidden;
 }
 
-/* Unavailable: stripe across image + tag chip */
+/* Unavailable: thin red banner in top-right corner — art stays untouched */
 .card-na .card-img {
   border-color: #000;
 }
-.card-na .card-img::before {
-  content: ""; position: absolute; inset: 0;
-  background: rgba(255,255,255,0.55);
-  pointer-events: none;
-}
-.card-na .card-img img { opacity: 0.30; }
 .card-na .tag-na {
-  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-12deg);
+  position: absolute; top: 0; right: 0;
   font-family: 'Inter', sans-serif; font-weight: 600;
-  font-size: 3.6pt; letter-spacing: .2em; text-transform: uppercase;
-  background: #c0392b; color: #fff; padding: 0.4mm 1mm;
+  font-size: 3.2pt; letter-spacing: .15em; text-transform: uppercase;
+  background: #c0392b; color: #fff; padding: 0.3mm 1mm;
   border: 0; white-space: nowrap;
   line-height: 1;
 }
