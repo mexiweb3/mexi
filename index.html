@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0d12" />
+  <meta name="description" content="Afinador de guitarra PWA con visualización en tiempo real" />
+  <title>Afinador de Guitarra</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="icon.svg" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>Afinador</h1>
+      <p class="subtitle">Toca una cuerda</p>
+    </header>
+
+    <section class="display">
+      <div class="note-row">
+        <span id="prevNote" class="side-note"></span>
+        <div class="note-main">
+          <span id="note">—</span>
+          <span id="octave" class="octave"></span>
+        </div>
+        <span id="nextNote" class="side-note"></span>
+      </div>
+
+      <div class="freq">
+        <span id="freq">0.0</span> Hz
+        <span class="target" id="targetFreq"></span>
+      </div>
+
+      <div class="meter" aria-hidden="true">
+        <div class="meter-track">
+          <div class="meter-tick center"></div>
+          <div class="meter-tick" style="left: 25%"></div>
+          <div class="meter-tick" style="left: 75%"></div>
+          <div class="meter-tick" style="left: 12.5%"></div>
+          <div class="meter-tick" style="left: 87.5%"></div>
+          <div id="needle" class="needle"></div>
+        </div>
+        <div class="meter-labels">
+          <span>-50</span>
+          <span>0</span>
+          <span>+50</span>
+        </div>
+        <div id="cents" class="cents">0¢</div>
+      </div>
+
+      <div id="status" class="status">in tune</div>
+    </section>
+
+    <section class="graph">
+      <canvas id="scope" width="800" height="220"></canvas>
+    </section>
+
+    <section class="strings">
+      <p class="strings-label">Cuerdas estándar (E A D G B E)</p>
+      <div class="string-row">
+        <button class="string-btn" data-freq="82.41" data-note="E2">E<sub>2</sub></button>
+        <button class="string-btn" data-freq="110.00" data-note="A2">A<sub>2</sub></button>
+        <button class="string-btn" data-freq="146.83" data-note="D3">D<sub>3</sub></button>
+        <button class="string-btn" data-freq="196.00" data-note="G3">G<sub>3</sub></button>
+        <button class="string-btn" data-freq="246.94" data-note="B3">B<sub>3</sub></button>
+        <button class="string-btn" data-freq="329.63" data-note="E4">E<sub>4</sub></button>
+      </div>
+    </section>
+
+    <div class="controls">
+      <button id="startBtn" class="primary">Iniciar micrófono</button>
+      <button id="stopBtn" class="secondary" disabled>Detener</button>
+    </div>
+
+    <p id="error" class="error" hidden></p>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
