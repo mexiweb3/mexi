@@ -1,8 +1,15 @@
 (() => {
   'use strict';
 
-  const NOTE_NAMES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+  const NOTE_NAMES_EN = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+  const NOTE_NAMES_ES = ['Do', 'Do#', 'Re', 'Re#', 'Mi', 'Fa', 'Fa#', 'Sol', 'Sol#', 'La', 'La#', 'Si'];
   const A4 = 440;
+
+  const state = {
+    lang: localStorage.getItem('tuner.lang') || 'es', // 'es' | 'en'
+    mode: localStorage.getItem('tuner.mode') || 'tune', // 'tune' | 'chroma'
+  };
+  const noteNames = () => (state.lang === 'es' ? NOTE_NAMES_ES : NOTE_NAMES_EN);
 
   const $ = (id) => document.getElementById(id);
   const noteEl = $('note');
@@ -21,6 +28,11 @@
   const canvas = $('scope');
   const ctx = canvas.getContext('2d');
   const stringBtns = document.querySelectorAll('.string-btn');
+  const stringsSection = $('stringsSection');
+  const stringsLabel = $('stringsLabel');
+  const subtitleEl = document.querySelector('.subtitle');
+  const modeBtns = document.querySelectorAll('.seg-btn[data-mode]');
+  const langBtns = document.querySelectorAll('.seg-btn[data-lang]');
 
   let audioCtx = null;
   let analyser = null;
@@ -53,7 +65,7 @@
     const targetFreq = A4 * Math.pow(2, (midi - 69) / 12);
     const cents = 1200 * Math.log2(freq / targetFreq);
     return {
-      name: NOTE_NAMES[noteIndex],
+      name: noteNames()[noteIndex],
       octave,
       midi,
       targetFreq,
@@ -64,7 +76,7 @@
   function midiToName(midi) {
     const noteIndex = ((midi % 12) + 12) % 12;
     const octave = Math.floor(midi / 12) - 1;
-    return NOTE_NAMES[noteIndex] + octave;
+    return noteNames()[noteIndex] + octave;
   }
 
   // Pitch detection via autocorrelation with parabolic interpolation.
@@ -392,6 +404,43 @@
     drawScope(-1, 0);
   }
 
+  function applyMode() {
+    if (state.mode === 'chroma') {
+      stringsSection.classList.add('hidden');
+      subtitleEl.textContent = 'Toca cualquier nota';
+    } else {
+      stringsSection.classList.remove('hidden');
+      subtitleEl.textContent = 'Toca una cuerda';
+    }
+    modeBtns.forEach((b) => b.classList.toggle('active', b.dataset.mode === state.mode));
+  }
+
+  function applyLang() {
+    langBtns.forEach((b) => b.classList.toggle('active', b.dataset.lang === state.lang));
+    // Re-render the string button labels based on data-midi
+    stringBtns.forEach((btn) => {
+      const midi = parseInt(btn.dataset.midi, 10);
+      const idx = ((midi % 12) + 12) % 12;
+      const sn = btn.querySelector('.sn');
+      if (sn) sn.textContent = noteNames()[idx];
+    });
+  }
+
+  modeBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      state.mode = btn.dataset.mode;
+      localStorage.setItem('tuner.mode', state.mode);
+      applyMode();
+    });
+  });
+  langBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      state.lang = btn.dataset.lang;
+      localStorage.setItem('tuner.lang', state.lang);
+      applyLang();
+    });
+  });
+
   startBtn.addEventListener('click', start);
   stopBtn.addEventListener('click', stop);
 
@@ -419,6 +468,8 @@
   }
 
   // Initial paint
+  applyLang();
+  applyMode();
   resizeCanvas();
   clearUI();
   drawScope(-1, 0);

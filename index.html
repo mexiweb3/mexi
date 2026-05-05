@@ -19,6 +19,16 @@
     <header class="header">
       <h1>Afinador</h1>
       <p class="subtitle">Toca una cuerda</p>
+      <div class="toggles">
+        <div class="seg" role="tablist" aria-label="Modo">
+          <button class="seg-btn active" data-mode="tune" role="tab">Afinar</button>
+          <button class="seg-btn" data-mode="chroma" role="tab">Identificar nota</button>
+        </div>
+        <div class="seg seg-small" role="tablist" aria-label="Notación">
+          <button class="seg-btn active" data-lang="es" role="tab">Do Re Mi</button>
+          <button class="seg-btn" data-lang="en" role="tab">C D E</button>
+        </div>
+      </div>
     </header>
 
     <section class="display">
@@ -60,15 +70,15 @@
       <canvas id="scope" width="800" height="220"></canvas>
     </section>
 
-    <section class="strings">
-      <p class="strings-label">Cuerdas estándar (E A D G B E)</p>
+    <section class="strings" id="stringsSection">
+      <p class="strings-label" id="stringsLabel">Cuerdas estándar</p>
       <div class="string-row">
-        <button class="string-btn" data-freq="82.41" data-note="E2">E<sub>2</sub></button>
-        <button class="string-btn" data-freq="110.00" data-note="A2">A<sub>2</sub></button>
-        <button class="string-btn" data-freq="146.83" data-note="D3">D<sub>3</sub></button>
-        <button class="string-btn" data-freq="196.00" data-note="G3">G<sub>3</sub></button>
-        <button class="string-btn" data-freq="246.94" data-note="B3">B<sub>3</sub></button>
-        <button class="string-btn" data-freq="329.63" data-note="E4">E<sub>4</sub></button>
+        <button class="string-btn" data-freq="82.41" data-midi="40"><span class="sn"></span><sub>2</sub></button>
+        <button class="string-btn" data-freq="110.00" data-midi="45"><span class="sn"></span><sub>2</sub></button>
+        <button class="string-btn" data-freq="146.83" data-midi="50"><span class="sn"></span><sub>3</sub></button>
+        <button class="string-btn" data-freq="196.00" data-midi="55"><span class="sn"></span><sub>3</sub></button>
+        <button class="string-btn" data-freq="246.94" data-midi="59"><span class="sn"></span><sub>3</sub></button>
+        <button class="string-btn" data-freq="329.63" data-midi="64"><span class="sn"></span><sub>4</sub></button>
       </div>
     </section>
 

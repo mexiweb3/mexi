@@ -49,6 +49,42 @@ html, body {
   font-size: 14px;
 }
 
+.toggles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.seg {
+  display: inline-flex;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+}
+.seg-btn {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 150ms, color 150ms;
+}
+.seg-btn:hover { color: var(--text); }
+.seg-btn.active {
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.seg-small .seg-btn { font-size: 11px; padding: 5px 11px; }
+
 .display {
   background: linear-gradient(180deg, var(--panel), var(--bg-2));
   border: 1px solid var(--border);
@@ -228,6 +264,8 @@ canvas#scope {
   font-family: inherit;
 }
 .string-btn sub { font-size: 11px; color: var(--muted); margin-left: 1px; }
+.string-btn .sn { letter-spacing: 0; }
+.strings.hidden { display: none; }
 .string-btn:hover { border-color: var(--accent-2); }
 .string-btn.active {
   background: rgba(56, 193, 255, 0.12);
