@@ -453,7 +453,17 @@ a {{ color: #000; text-decoration: none; }}
   </div>
 
   <p class="intro">
-    Estos coleccionables viven en la red <strong>Solana</strong>.
+    Estos coleccionables viven en la red <strong>Solana</strong>: una
+    <em>blockchain</em> rápida y de bajo costo (la comisión de un envío ronda
+    centavos de dólar). Su moneda nativa es <strong>SOL</strong>; basta tener
+    una pizca para pagar el envío de una pieza o para hacer una oferta. La
+    forma más sencilla de comprar SOL desde México es directo desde la app
+    de <strong>Phantom</strong> con tarjeta, o en <strong>Bitso</strong>; también funcionan exchanges
+    internacionales como Binance, Coinbase o Kraken — desde cualquiera de
+    ellos envías el SOL a tu dirección pública (paso 4).
+  </p>
+
+  <p class="intro">
     Hay dos maneras de hacerte de una pieza: pedírsela a
     <strong>Mauricio Cruz</strong> si está disponible en <em>monos.sol</em>, o
     hacerle una <strong>oferta en SOL</strong> al dueño actual si aparece marcada
@@ -461,7 +471,7 @@ a {{ color: #000; text-decoration: none; }}
     este PDF y enviar tu propuesta en exchange.art; el dueño decide si la
     acepta, la rechaza o la ignora. En cualquiera de los dos caminos
     necesitas una <em>cartera</em> (wallet) en Solana. Phantom es la más
-    sencilla y segura para empezar; el proceso toma cinco minutos.
+    sencilla y segura para empezar.
   </p>
 
   <ol class="steps">
