@@ -402,7 +402,7 @@ a {{ color: #000; text-decoration: none; }}
     <p><strong>Daniel Serna Garza</strong> (Monterrey, 1972) es escultor. Estudió arquitectura en el ITESM y desde el año 2000 trabaja la materia: bronce, moldes, soldadura, talla en piedra. En 2003 viajó a Pietrasanta, Italia, donde labró por primera vez el mármol blanco de Carrara y obtuvo el segundo lugar de un Simposio Internacional de Escultura.</p>
     <p>De vuelta en Monterrey, expuso más de veinticinco piezas en mármol negro, regresó a Italia con la casa Henraux, levantó su primera obra de gran formato en 2008 y abrió, en 2010, su propio taller, <em>la Piedra</em>. Desde entonces alterna obra por encargo con series temáticas: <em>Animales</em>, <em>Papel Arrugado</em>, <em>la Urbe</em>, <em>Monos</em>.</p>
     <p>En 2019 instaló cinco esculturas monumentales de ocho toneladas cada una sobre la <strong>Calzada San Pedro</strong>. Esos monos, hijos del mármol y la calle, fueron el origen de esta serie digital: el 11 de junio de 2021 comenzó a dibujar uno cada día.</p>
-    <p>El presente volumen reúne las <strong>{n_total}</strong> piezas minteadas hasta hoy de un proyecto que contempla, como máximo, <strong>{total_goal}</strong> obras digitales. <strong>{n_avail}</strong> permanecen bajo custodia de la wallet <em>{domain}</em>; <strong>{n_unavail}</strong> ya fueron adquiridas y se marcan, en estas páginas, como <em>no disponibles</em>. Cada pieza enlaza, al hacer clic, con su ficha en exchange.art.</p>
+    <p>El presente volumen reúne las <strong>{n_total}</strong> piezas minteadas hasta hoy de un proyecto que contempla, como máximo, <strong>{total_goal}</strong> obras digitales. <strong>{n_avail}</strong> permanecen bajo custodia de la wallet <em>{domain}</em>; <strong>{n_unavail}</strong> ya fueron adquiridas y se marcan, en estas páginas, como <em>no disponibles</em>. Cada pieza enlaza, al hacer clic, con su ficha en exchange.art — incluso las no disponibles, donde puedes <strong>ofertar SOL</strong> al dueño actual y dejarle considerar la propuesta.</p>
   </div>
 
   <dl class="stats">
@@ -423,8 +423,8 @@ a {{ color: #000; text-decoration: none; }}
   <div class="head">
     <h2>Las <em>{n_total}</em> piezas</h2>
     <div class="legend sans">
-      <span><span class="swatch"></span>Disponible</span>
-      <span><span class="swatch na"></span>No disponible</span>
+      <span><span class="swatch"></span>Disponible — clic para coordinar el envío</span>
+      <span><span class="swatch na"></span>No disponible — clic para ofertar SOL al dueño</span>
     </div>
   </div>
   <div class="grid">
@@ -436,8 +436,8 @@ a {{ color: #000; text-decoration: none; }}
   <div class="head">
     <h2>Las <em>{n_total}</em> piezas</h2>
     <div class="legend sans">
-      <span><span class="swatch"></span>Disponible</span>
-      <span><span class="swatch na"></span>No disponible</span>
+      <span><span class="swatch"></span>Disponible — clic para coordinar el envío</span>
+      <span><span class="swatch na"></span>No disponible — clic para ofertar SOL al dueño</span>
     </div>
   </div>
   <div class="grid">
@@ -454,10 +454,14 @@ a {{ color: #000; text-decoration: none; }}
 
   <p class="intro">
     Estos coleccionables viven en la red <strong>Solana</strong>.
-    Para que Mauricio Cruz pueda enviarte una pieza, primero necesitas una
-    <em>cartera</em> (wallet) en Solana, y compartirle la <em>dirección pública</em>
-    de esa cartera. Phantom es la cartera más sencilla y segura para empezar.
-    El proceso completo toma cinco minutos.
+    Hay dos maneras de hacerte de una pieza: pedírsela a
+    <strong>Mauricio Cruz</strong> si está disponible en <em>monos.sol</em>, o
+    hacerle una <strong>oferta en SOL</strong> al dueño actual si aparece marcada
+    como <em>no disponible</em> — basta con hacer clic en la miniatura desde
+    este PDF y enviar tu propuesta en exchange.art; el dueño decide si la
+    acepta, la rechaza o la ignora. En cualquiera de los dos caminos
+    necesitas una <em>cartera</em> (wallet) en Solana. Phantom es la más
+    sencilla y segura para empezar; el proceso toma cinco minutos.
   </p>
 
   <ol class="steps">
