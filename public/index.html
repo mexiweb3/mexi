@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catálogo · monos.sol</title>
+<meta name="description" content="Catálogo impreso de las obras NFT alojadas en la wallet monos.sol sobre la red Solana.">
+<meta property="og:title" content="Catálogo · monos.sol">
+<meta property="og:description" content="89 obras digitales de Daniel Serna Garza, compiladas en un PDF de 49 páginas.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6efe1;
+    --paper-2:#efe4cf;
+    --ink:#1c150d;
+    --ink-2:#2b2418;
+    --muted:#6b5a44;
+    --accent:#b04a1f;
+    --accent-2:#d98a4f;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:'EB Garamond','Iowan Old Style',Georgia,serif;
+    background:
+      radial-gradient(120% 80% at 80% 0%, rgba(176,74,31,.07), transparent 60%),
+      radial-gradient(110% 90% at 10% 100%, rgba(28,21,13,.06), transparent 60%),
+      var(--paper);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+    min-height:100vh;
+  }
+  .sans{font-family:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif}
+  .mono{font-family:'JetBrains Mono','Menlo',monospace}
+
+  .page{
+    max-width:1080px;margin:0 auto;
+    padding:32px 28px 80px;
+    position:relative;min-height:100vh;
+    display:flex;flex-direction:column;
+  }
+  header.nav{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-bottom:24px;border-bottom:1px solid var(--ink);
+    font-family:'Inter',sans-serif;font-size:11px;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--muted);
+  }
+  .nav .brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:600}
+  .nav .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
+  .nav .links{display:flex;gap:24px}
+  .nav a{color:var(--muted);text-decoration:none}
+  .nav a:hover{color:var(--accent)}
+
+  .hero{padding:64px 0 32px;display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end}
+  .eyebrow{
+    font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.35em;
+    text-transform:uppercase;color:var(--muted);margin:0 0 16px;font-weight:500;
+  }
+  h1{
+    font-family:'EB Garamond',serif;font-weight:500;
+    font-size:clamp(56px,9vw,128px);line-height:.95;
+    letter-spacing:-0.012em;margin:0 0 24px;
+  }
+  h1 em{font-style:italic;color:var(--accent)}
+  .lede{
+    font-size:clamp(18px,2vw,22px);max-width:42ch;color:var(--ink-2);
+    margin:0 0 36px;
+  }
+  .lede strong{color:var(--ink)}
+
+  .meta{
+    border-top:1px solid var(--ink);padding-top:18px;
+    display:grid;grid-template-columns:repeat(2,1fr);gap:18px 24px;
+  }
+  .meta dt{
+    font-family:'Inter',sans-serif;font-size:9px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:4px;font-weight:600;
+  }
+  .meta dd{margin:0;font-size:14px}
+  .meta dd.mono{font-size:11.5px;word-break:break-all;color:var(--ink-2)}
+
+  .cta-row{
+    margin-top:40px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;font-weight:600;
+    padding:16px 22px;border-radius:0;text-decoration:none;
+    transition:transform .15s ease,background .15s ease,color .15s ease;
+  }
+  .btn-primary{background:var(--ink);color:var(--paper);}
+  .btn-primary:hover{background:var(--accent);transform:translateY(-1px);}
+  .btn-ghost{
+    color:var(--ink);border:1px solid var(--ink);
+  }
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);}
+  .btn .arrow{display:inline-block;transition:transform .15s}
+  .btn:hover .arrow{transform:translate(2px,-2px)}
+
+  /* Preview */
+  .viewer{margin:64px 0 0;border-top:1px solid var(--ink);padding-top:32px}
+  .viewer-head{
+    display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;
+  }
+  .viewer-head h2{
+    font-family:'EB Garamond',serif;font-weight:500;font-size:32px;margin:0;
+  }
+  .viewer-head h2 em{color:var(--accent);font-style:italic}
+  .viewer-head .count{
+    font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.25em;
+    text-transform:uppercase;color:var(--muted);
+  }
+  .pdf-frame{
+    width:100%;aspect-ratio: 210 / 297;border:1px solid rgba(28,21,13,.25);
+    background:#fffaf0;box-shadow:0 1px 0 rgba(28,21,13,.18);
+  }
+
+  footer{
+    margin-top:64px;padding-top:24px;border-top:1px solid rgba(28,21,13,.4);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;
+    font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--muted);
+  }
+  footer a{color:var(--muted);text-decoration:none}
+  footer a:hover{color:var(--accent)}
+  .domain{
+    font-family:'EB Garamond',serif;font-style:italic;text-transform:none;
+    font-size:18px;letter-spacing:0;color:var(--ink);
+  }
+
+  @media (max-width: 760px){
+    .hero{grid-template-columns:1fr;gap:24px}
+    .meta{grid-template-columns:1fr 1fr}
+    .nav .links{display:none}
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="nav">
+      <div class="brand"><span class="dot"></span><span>monos.sol · catálogo</span></div>
+      <nav class="links">
+        <a href="#descargar">Descargar</a>
+        <a href="#preview">Ver PDF</a>
+        <a href="https://www.danielserna.com" target="_blank" rel="noopener">danielserna.com</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Catálogo de obra digital · Solana mainnet</p>
+        <h1>Monos<br><em>en cadena.</em></h1>
+        <p class="lede">Una compilación impresa de las <strong>89 obras</strong> alojadas en la wallet <strong>monos.sol</strong>, autoría y resguardo de Daniel Serna Garza sobre la red Solana.</p>
+
+        <div class="cta-row" id="descargar">
+          <a class="btn btn-primary" href="/monos-sol-catalogo.pdf" download>
+            Descargar PDF <span class="arrow">↗</span>
+          </a>
+          <a class="btn btn-ghost" href="#preview">
+            Ver en pantalla
+          </a>
+        </div>
+      </div>
+
+      <dl class="meta">
+        <div>
+          <dt>Dominio</dt>
+          <dd>monos.sol</dd>
+        </div>
+        <div>
+          <dt>Wallet</dt>
+          <dd class="mono">APc8…o5jpP</dd>
+        </div>
+        <div>
+          <dt>Total de planchas</dt>
+          <dd>89</dd>
+        </div>
+        <div>
+          <dt>Páginas · A4</dt>
+          <dd>49</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="viewer" id="preview">
+      <div class="viewer-head">
+        <h2>Vista <em>previa</em></h2>
+        <span class="count">A4 · 49 pp · 3.3 mb</span>
+      </div>
+      <iframe class="pdf-frame" src="/monos-sol-catalogo.pdf#view=FitH" title="Catálogo monos.sol — vista previa PDF"></iframe>
+    </section>
+
+    <footer>
+      <span>Solana · Compilado mayo 2026</span>
+      <span class="domain">monos.sol</span>
+      <span><a href="https://github.com/mexiweb3/mexi/tree/claude/solana-nft-catalog-rtdUt" target="_blank" rel="noopener">Repositorio ↗</a></span>
+    </footer>
+  </div>
+</body>
+</html>
