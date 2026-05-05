@@ -401,7 +401,6 @@ a {{ color: #000; text-decoration: none; }}
   <div class="top-rule"></div>
   <p class="artist">Daniel Serna Garza</p>
   <img class="wordmark" src="{wordmark_src}" alt="Monos — wordmark de Daniel Serna" />
-  <p class="wordmark-cap">Plancha 001 — <em>Texto Monos</em>, el wordmark del propio artista</p>
   <p class="lede">Boceto de monos diario por <em>un año</em>, iniciado el <em>11 de junio de 2021</em>.</p>
   <p class="meta-line">Solana <span class="sep"></span> {domain} <span class="sep"></span> Hasta {total_goal} piezas</p>
 
@@ -428,7 +427,7 @@ a {{ color: #000; text-decoration: none; }}
 
 <section class="grid-page grid-page-1">
   <div class="head">
-    <h2>Las <em>{n_total}</em> piezas — i</h2>
+    <h2>Las <em>{n_total}</em> piezas</h2>
     <div class="legend sans">
       <span><span class="swatch"></span>Disponible</span>
       <span><span class="swatch na"></span>No disponible</span>
@@ -441,7 +440,7 @@ a {{ color: #000; text-decoration: none; }}
 
 <section class="grid-page grid-page-2">
   <div class="head">
-    <h2>Las <em>{n_total}</em> piezas — ii</h2>
+    <h2>Las <em>{n_total}</em> piezas</h2>
     <div class="legend sans">
       <span><span class="swatch"></span>Disponible</span>
       <span><span class="swatch na"></span>No disponible</span>
