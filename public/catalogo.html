@@ -1,0 +1,2166 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Monos · Daniel Serna Garza</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Catálogo de la serie Monos de Daniel Serna Garza sobre Solana — 244 piezas minteadas, 109 disponibles en monos.sol.">
+<style>
+@page {
+  size: A4;
+  margin: 14mm 14mm 14mm 14mm;
+  @bottom-left  { content: "monos.sol — danielserna.com"; font: 8pt 'EB Garamond', Georgia, serif; color: #555; }
+  @bottom-right { content: counter(page) " / 4"; font: 8pt 'EB Garamond', Georgia, serif; color: #555; }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #ffffff; color: #000; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.45;
+}
+.sans { font-family: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif; }
+
+a { color: #000; text-decoration: none; }
+
+/* ---------- PAGE 1: BIO ---------- */
+.bio {
+  page-break-after: always;
+  width: 100%;
+  min-height: calc(297mm - 28mm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20mm 14mm 0;
+}
+.bio .top-rule { width: 28mm; height: 1px; background: #000; margin-bottom: 10mm; }
+.bio .artist {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18pt; font-weight: 400; letter-spacing: .01em;
+  margin: 0 0 4mm; font-style: italic;
+}
+.bio h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 78pt;
+  line-height: .9;
+  letter-spacing: -0.012em;
+  margin: 0 0 6mm 0;
+}
+.bio .lede {
+  font-size: 14pt; max-width: 130mm; margin: 0 0 6mm; color: #000;
+}
+.bio .lede em { font-style: italic; }
+.bio .meta-line {
+  font-family: 'Inter', sans-serif;
+  font-size: 8pt; letter-spacing: .28em; text-transform: uppercase;
+  color: #000; margin: 0 0 8mm;
+}
+.bio .meta-line .sep { display: inline-block; width: 6mm; }
+
+.bio .body {
+  text-align: left; max-width: 168mm;
+  font-size: 10pt; columns: 2; column-gap: 8mm; column-rule: 0; orphans: 3; widows: 3;
+  line-height: 1.4;
+}
+.bio .body p { margin: 0 0 3mm 0; }
+.bio .body p:first-child::first-line { font-variant: small-caps; letter-spacing: .04em; }
+.bio .body p strong { font-weight: 600; }
+
+.bio .stats {
+  margin-top: 6mm; padding-top: 4mm; border-top: 1px solid #000;
+  width: 168mm;
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 4mm;
+  font-family: 'Inter', sans-serif;
+}
+.bio .stats > div { text-align: center; }
+.bio .stats dt { font-size: 6.5pt; letter-spacing: .25em; text-transform: uppercase; color: #000; margin-bottom: 1mm; }
+.bio .stats dd { margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 20pt; line-height: 1; }
+.bio .stats dd small { font-family: 'Inter', sans-serif; font-size: 7pt; letter-spacing: .15em; color: #555; display: block; margin-top: 0.8mm; }
+
+.bio .links {
+  margin-top: 5mm; font-family: 'Inter', sans-serif; font-size: 7.5pt;
+  letter-spacing: .22em; text-transform: uppercase;
+}
+.bio .links a { border-bottom: 0.4pt solid #000; padding-bottom: 1px; margin: 0 4mm; }
+
+/* ---------- PAGES 2–3: GRID ---------- */
+.grid-page {
+  page-break-before: always;
+}
+.grid-page .head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3mm; margin-bottom: 4mm;
+}
+.grid-page .head h2 {
+  font-family: 'Cormorant Garamond', serif; font-weight: 500;
+  font-size: 18pt; margin: 0;
+}
+.grid-page .head h2 em { font-style: italic; }
+.grid-page .head .legend {
+  font-family: 'Inter', sans-serif; font-size: 7.5pt;
+  letter-spacing: .15em; text-transform: uppercase; color: #000;
+  display: flex; gap: 10mm;
+}
+.grid-page .head .legend .swatch {
+  display: inline-block; width: 8px; height: 8px; background: #000;
+  margin-right: 4px; vertical-align: middle;
+}
+.grid-page .head .legend .swatch.na {
+  background: transparent; border: 1px solid #000; position: relative;
+}
+.grid-page .head .legend .swatch.na::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: #000;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(11, 16mm);
+  grid-auto-rows: 19mm;
+  gap: 1.2mm 1.2mm;
+  justify-content: space-between;
+}
+
+/* Cards: 244/2 = 122 per page → 11×12 = 132 cells (room for 122) */
+.card {
+  display: block; color: #000; text-decoration: none;
+  position: relative;
+  width: 16mm; height: 19mm;
+  overflow: hidden;
+}
+.card-img {
+  width: 16mm;
+  height: 16mm;
+  background: #fff;
+  border: 0.4pt solid #000;
+  position: relative;
+  overflow: hidden;
+}
+.card-img img {
+  width: 100%; height: 100%; object-fit: contain;
+}
+.card-img .no-img {
+  width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+  font-size: 14pt; color: #ccc; font-family: 'Cormorant Garamond', serif;
+}
+.card-meta {
+  margin-top: 0.4mm;
+  display: flex; gap: 1mm; align-items: baseline;
+  font-size: 4.4pt; line-height: 1;
+  white-space: nowrap; overflow: hidden;
+  height: 2.5mm;
+}
+.card-meta .num {
+  font-family: 'Inter', monospace; font-weight: 500;
+  font-size: 3.8pt; color: #555; letter-spacing: .04em; flex-shrink: 0;
+}
+.card-meta .name {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 4.6pt; color: #000;
+  text-overflow: ellipsis; overflow: hidden;
+}
+
+/* Unavailable: stripe across image + tag chip */
+.card-na .card-img {
+  border-color: #000;
+}
+.card-na .card-img::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(135deg, transparent 49.6%, #000 49.6%, #000 50.4%, transparent 50.4%),
+    rgba(255,255,255,0.55);
+  pointer-events: none;
+}
+.card-na .card-img img { opacity: 0.30; }
+.card-na .tag-na {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-12deg);
+  font-family: 'Inter', sans-serif; font-weight: 600;
+  font-size: 4.4pt; letter-spacing: .15em; text-transform: uppercase;
+  background: #fff; color: #000; padding: 0.6mm 1.4mm;
+  border: 0.6pt solid #000; white-space: nowrap;
+}
+.card-na .card-meta .name { color: #555; text-decoration: line-through; }
+
+/* ---------- PAGE 4: PHANTOM MANUAL ---------- */
+.manual {
+  page-break-before: always;
+  padding: 0;
+}
+.manual .head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: 1px solid #000;
+  padding-bottom: 2mm; margin-bottom: 4mm;
+}
+.manual .head h2 {
+  font-family: 'Cormorant Garamond', serif; font-weight: 500;
+  font-size: 20pt; margin: 0;
+}
+.manual .head h2 em { font-style: italic; }
+.manual .head .head-aside {
+  font-size: 7pt; letter-spacing: .2em; text-transform: uppercase; color: #000;
+}
+.manual .intro {
+  font-size: 9.5pt; max-width: 100%; margin: 0 0 4mm 0; line-height: 1.4;
+}
+.manual .intro strong { font-weight: 600; }
+.manual .intro em { font-style: italic; }
+
+.manual ol.steps {
+  list-style: none; margin: 0 0 5mm 0; padding: 0;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 3mm;
+}
+.manual ol.steps li {
+  break-inside: avoid;
+  border-top: 0.6pt solid #000; padding-top: 2mm;
+  display: flex; flex-direction: column;
+}
+.manual ol.steps .num {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 22pt; line-height: 1; color: #000;
+  margin-bottom: 1.5mm;
+}
+.manual ol.steps h3 {
+  font-family: 'Cormorant Garamond', serif; font-weight: 500;
+  font-size: 9.5pt; line-height: 1.2; margin: 0 0 1.5mm 0;
+}
+.manual ol.steps p {
+  font-size: 7.8pt; line-height: 1.35; margin: 0;
+}
+.manual ol.steps p strong { font-weight: 600; }
+.manual ol.steps p em { font-style: italic; }
+.manual ol.steps p .mono { font-family: 'Inter', monospace; font-size: 7.4pt; }
+
+.manual .security {
+  border: 0.6pt solid #000;
+  padding: 3mm 4mm 3mm;
+  margin: 0 0 4mm;
+}
+.manual .security h4 {
+  font-size: 7.5pt; letter-spacing: .25em; text-transform: uppercase; font-weight: 600;
+  margin: 0 0 2mm 0;
+  display: flex; align-items: center; gap: 3mm;
+}
+.manual .security h4::before {
+  content: ""; width: 14mm; height: 1px; background: #000;
+}
+.manual .security ul {
+  list-style: none; padding: 0; margin: 0;
+  font-size: 8.5pt; line-height: 1.4;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0 6mm;
+}
+.manual .security ul li {
+  padding: 0.5mm 0; padding-left: 4mm; position: relative;
+  break-inside: avoid;
+}
+.manual .security ul li::before {
+  content: "—"; position: absolute; left: 0; top: 0.5mm; color: #000;
+}
+.manual .security ul li strong { font-weight: 600; }
+
+.manual .signoff {
+  text-align: center; font-size: 10pt; color: #000;
+  border-top: 0.4pt solid #000; padding-top: 3mm; margin-top: 0;
+  font-style: italic;
+}
+.manual .signoff em { font-style: italic; }
+.manual a { border-bottom: 0.4pt solid #000; }
+
+/* Web-only tweaks: bigger thumbnails, more breathing room */
+@media screen {
+  body { background: #fafafa; }
+  .grid-page, .bio, .manual {
+    background: #fff; max-width: 1120px; margin: 24px auto;
+    padding: 44px 36px; box-shadow: 0 1px 0 rgba(0,0,0,.06);
+  }
+  .bio { min-height: auto; padding-top: 64px; padding-bottom: 64px; }
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-auto-rows: auto;
+    gap: 16px;
+  }
+  .card { width: auto; }
+  .card-img {
+    width: 100%; height: auto; aspect-ratio: 1/1;
+    border-width: 1px;
+  }
+  .card-meta { font-size: 11px; line-height: 1.2; padding-top: 4px; }
+  .card-meta .num { font-size: 10px; }
+  .card-meta .name { font-size: 13px; }
+  .card-na .tag-na { font-size: 10px; padding: 3px 8px; border-width: 1px; }
+  .grid-page .head { position: sticky; top: 0; background: #fff; z-index: 5; padding: 8px 0; }
+  .grid-page, .manual { page-break-before: auto; }
+  .manual ol.steps { grid-template-columns: 1fr 1fr; }
+  @page { /* ignored on screen */ }
+}
+@media screen and (max-width: 720px) {
+  .grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+  .bio h1 { font-size: 18vw; }
+  .manual ol.steps { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<section class="bio">
+  <div class="top-rule"></div>
+  <p class="artist">Daniel Serna Garza</p>
+  <h1>Monos.</h1>
+  <p class="lede">Boceto de monos diario por <em>un año</em>, iniciado el <em>11 de junio de 2021</em> — los hermanos digitales de los monos de bronce que habitan la Calzada San Pedro.</p>
+  <p class="meta-line">Solana <span class="sep"></span> monos.sol <span class="sep"></span> Hasta 400 piezas</p>
+
+  <div class="body">
+    <p><strong>Daniel Serna Garza</strong> (Monterrey, 1972) es escultor. Estudió arquitectura en el ITESM y desde el año 2000 trabaja la materia: bronce, moldes, soldadura, talla en piedra. En 2003 viajó a Pietrasanta, Italia, donde labró por primera vez el mármol blanco de Carrara y obtuvo el segundo lugar de un Simposio Internacional de Escultura.</p>
+    <p>De vuelta en Monterrey, expuso más de veinticinco piezas en mármol negro, regresó a Italia con la casa Henraux, levantó su primera obra de gran formato en 2008 y abrió, en 2010, su propio taller, <em>la Piedra</em>. Desde entonces alterna obra por encargo con series temáticas: <em>Animales</em>, <em>Papel Arrugado</em>, <em>la Urbe</em>, <em>Monos</em>.</p>
+    <p>En 2019 instaló cinco esculturas monumentales de ocho toneladas cada una sobre la <strong>Calzada San Pedro</strong>. Esos monos, hijos del mármol y la calle, fueron el origen de esta serie digital: el 11 de junio de 2021 comenzó a dibujar uno cada día.</p>
+    <p>El presente volumen reúne las <strong>244</strong> piezas minteadas hasta hoy de un proyecto que contempla, como máximo, <strong>400</strong> obras digitales. <strong>109</strong> permanecen bajo custodia de la wallet <em>monos.sol</em>; <strong>135</strong> ya fueron adquiridas y se marcan, en estas páginas, como <em>no disponibles</em>. Cada pieza enlaza, al hacer clic, con su ficha en exchange.art.</p>
+  </div>
+
+  <dl class="stats">
+    <div><dt>Minteadas</dt><dd>244<small>de 400 máx.</small></dd></div>
+    <div><dt>Disponibles</dt><dd>109<small>en monos.sol</small></dd></div>
+    <div><dt>No disponibles</dt><dd>135<small>en otras carteras</small></dd></div>
+    <div><dt>Inicio</dt><dd>2021<small>11 de junio</small></dd></div>
+  </dl>
+
+  <p class="links sans">
+    <a href="https://www.danielserna.com" target="_blank" rel="noopener">danielserna.com</a>
+    <a href="https://www.instagram.com/dsgescultor" target="_blank" rel="noopener">@dsgescultor</a>
+    <a href="https://www.instagram.com/monosmonosymasmonos" target="_blank" rel="noopener">@monosmonosymasmonos</a>
+  </p>
+</section>
+
+<section class="grid-page grid-page-1">
+  <div class="head">
+    <h2>Las <em>244</em> piezas — i</h2>
+    <div class="legend sans">
+      <span><span class="swatch"></span>Disponible</span>
+      <span><span class="swatch na"></span>No disponible</span>
+    </div>
+  </div>
+  <div class="grid">
+    
+    <a class="card card-na" href="https://exchange.art/single/82EUiqNkSfXfUxKUjxaF9SbSzsCUUErH1YnBpxG1o1U1" target="_blank" rel="noopener" title="Texto Monos — 82EU…o1U1">
+      <div class="card-img"><img src="./images/82EUiqNkSfXfUxKUjxaF9SbSzsCUUErH1YnBpxG1o1U1.jpg" alt="Texto Monos" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">001</span>
+        <span class="name">Texto Monos</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/AE3nj5JXduWMuQJfgiCLc7ky8szytuJyWT2vGywig2XY" target="_blank" rel="noopener" title="Mono — AE3n…g2XY">
+      <div class="card-img"><img src="./images/AE3nj5JXduWMuQJfgiCLc7ky8szytuJyWT2vGywig2XY.jpg" alt="Mono" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">002</span>
+        <span class="name">Mono</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/A79bUS7MsM8DmDwcm57kmDEHmG7iVLhfGrTqbNPEXXaA" target="_blank" rel="noopener" title="Alegría — A79b…XXaA">
+      <div class="card-img"><img src="./images/A79bUS7MsM8DmDwcm57kmDEHmG7iVLhfGrTqbNPEXXaA.jpg" alt="Alegría" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">003</span>
+        <span class="name">Alegría</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/4TnWcrB3h9XAwSodZPiV1ZLbs2mEuz6oHTvvHVzVFsTa" target="_blank" rel="noopener" title="Danzante — 4TnW…FsTa">
+      <div class="card-img"><img src="./images/4TnWcrB3h9XAwSodZPiV1ZLbs2mEuz6oHTvvHVzVFsTa.jpg" alt="Danzante" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">004</span>
+        <span class="name">Danzante</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/7FXW2U2ss8NjZ4Jd2Xp56xmaZh9XP8vGxUCsVjAz8VLd" target="_blank" rel="noopener" title="Cemento Fresco — 7FXW…8VLd">
+      <div class="card-img"><img src="./images/7FXW2U2ss8NjZ4Jd2Xp56xmaZh9XP8vGxUCsVjAz8VLd.jpg" alt="Cemento Fresco" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">005</span>
+        <span class="name">Cemento Fresco</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/YjgPqTYS8xXrLjoRSqH5Ei7bz3wWFYKopXrY1UqtTNT" target="_blank" rel="noopener" title="Poniendo el pino — YjgP…tTNT">
+      <div class="card-img"><img src="./images/YjgPqTYS8xXrLjoRSqH5Ei7bz3wWFYKopXrY1UqtTNT.jpg" alt="Poniendo el pino" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">006</span>
+        <span class="name">Poniendo el pino</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/D91B9rSthdxC5wL9wz2bUf7q255JEU8wkWoWGCZ7hciv" target="_blank" rel="noopener" title="Espejito espejito — D91B…hciv">
+      <div class="card-img"><img src="./images/D91B9rSthdxC5wL9wz2bUf7q255JEU8wkWoWGCZ7hciv.jpg" alt="Espejito espejito" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">007</span>
+        <span class="name">Espejito espejito</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/AjT5wirLx2kcs4p8NNbV15aLZ1oudQDpWTecXbyrx7Wy" target="_blank" rel="noopener" title="Chiflador — AjT5…x7Wy">
+      <div class="card-img"><img src="./images/AjT5wirLx2kcs4p8NNbV15aLZ1oudQDpWTecXbyrx7Wy.jpg" alt="Chiflador" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">008</span>
+        <span class="name">Chiflador</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/8Kqq9SZ3fkaYchzGBZXcvgfFp8HwEJGAzJDh7BssSxoS" target="_blank" rel="noopener" title="Vikingo — 8Kqq…SxoS">
+      <div class="card-img"><img src="./images/8Kqq9SZ3fkaYchzGBZXcvgfFp8HwEJGAzJDh7BssSxoS.jpg" alt="Vikingo" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">009</span>
+        <span class="name">Vikingo</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/9bvt4En9Xqz8rLHtJzDBG3DY6fQ4iGTqSsZDVfwj1SWX" target="_blank" rel="noopener" title="Ventrílocuo — 9bvt…1SWX">
+      <div class="card-img"><img src="./images/9bvt4En9Xqz8rLHtJzDBG3DY6fQ4iGTqSsZDVfwj1SWX.jpg" alt="Ventrílocuo" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">010</span>
+        <span class="name">Ventrílocuo</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/89XYBpRN9NLZkdS6F567cNjWae8y1BKcy9AipKBmVPkh" target="_blank" rel="noopener" title="Zombie — 89XY…VPkh">
+      <div class="card-img"><img src="./images/89XYBpRN9NLZkdS6F567cNjWae8y1BKcy9AipKBmVPkh.jpg" alt="Zombie" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">011</span>
+        <span class="name">Zombie</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/9mR1WGJ9viwiSnH6F15LCbBCCSjBUneyzggdEUGLLCUX" target="_blank" rel="noopener" title="Disfrazado — 9mR1…LCUX">
+      <div class="card-img"><img src="./images/9mR1WGJ9viwiSnH6F15LCbBCCSjBUneyzggdEUGLLCUX.jpg" alt="Disfrazado" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">012</span>
+        <span class="name">Disfrazado</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/Aru71faiZQ5vVtxaNTbAYtx3GvVdnCFBvpCvFxSQQrVq" target="_blank" rel="noopener" title="Mono LEGO — Aru7…QrVq">
+      <div class="card-img"><img src="./images/Aru71faiZQ5vVtxaNTbAYtx3GvVdnCFBvpCvFxSQQrVq.jpg" alt="Mono LEGO" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">013</span>
+        <span class="name">Mono LEGO</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/9NGVjV9DSUPm4ugmVHxJxs74kcto7hrmciMq8miEbmt" target="_blank" rel="noopener" title="Hermanito — 9NGV…Ebmt">
+      <div class="card-img"><img src="./images/9NGVjV9DSUPm4ugmVHxJxs74kcto7hrmciMq8miEbmt.jpg" alt="Hermanito" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">014</span>
+        <span class="name">Hermanito</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/H6xMrZQAEdDbykDVKrKtFNrnd9J4BtM8JJWKHTJTPMo5" target="_blank" rel="noopener" title="Catrino — H6xM…PMo5">
+      <div class="card-img"><img src="./images/H6xMrZQAEdDbykDVKrKtFNrnd9J4BtM8JJWKHTJTPMo5.jpg" alt="Catrino" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">015</span>
+        <span class="name">Catrino</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/7NeDthAfRdAehZ4gmyxW4XDDmCSHey8mDR27q5s282oU" target="_blank" rel="noopener" title="Donde está Wally — 7NeD…82oU">
+      <div class="card-img"><img src="./images/7NeDthAfRdAehZ4gmyxW4XDDmCSHey8mDR27q5s282oU.jpg" alt="Donde está Wally" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">016</span>
+        <span class="name">Donde está Wally</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/9NxhPiRwdS2n45kriKgnzHpDo5XEStR1fgsiWkPxLQHH" target="_blank" rel="noopener" title="Al mar — 9Nxh…LQHH">
+      <div class="card-img"><img src="./images/9NxhPiRwdS2n45kriKgnzHpDo5XEStR1fgsiWkPxLQHH.jpg" alt="Al mar" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">017</span>
+        <span class="name">Al mar</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/3Ud2iKgfhCV8MuQ7SFzSnab7icexsr1QvcPW1PbVcAX7" target="_blank" rel="noopener" title="Nadador — 3Ud2…cAX7">
+      <div class="card-img"><img src="./images/3Ud2iKgfhCV8MuQ7SFzSnab7icexsr1QvcPW1PbVcAX7.jpg" alt="Nadador" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">018</span>
+        <span class="name">Nadador</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/7euLJFqeMURC8X6NjSoWEPtGJXCoyo76MeXJMrS1MwoA" target="_blank" rel="noopener" title="Mono con camisa — 7euL…MwoA">
+      <div class="card-img"><img src="./images/7euLJFqeMURC8X6NjSoWEPtGJXCoyo76MeXJMrS1MwoA.jpg" alt="Mono con camisa" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">019</span>
+        <span class="name">Mono con camisa</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/3KJdqsyqPKYPt3UVwqTw3bRPnt5Ji89u7GAYzrJxtsSb" target="_blank" rel="noopener" title="Stickers — 3KJd…tsSb">
+      <div class="card-img"><img src="./images/3KJdqsyqPKYPt3UVwqTw3bRPnt5Ji89u7GAYzrJxtsSb.jpg" alt="Stickers" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">020</span>
+        <span class="name">Stickers</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/xpgfaT8S5tZ2fpDoP1avfefBMdAZgym9kEszxJiuN75" target="_blank" rel="noopener" title="Fortachón — xpgf…uN75">
+      <div class="card-img"><img src="./images/xpgfaT8S5tZ2fpDoP1avfefBMdAZgym9kEszxJiuN75.jpg" alt="Fortachón" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">021</span>
+        <span class="name">Fortachón</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/HyAy5nt3ErGmRpHheLBrvH87ac6VLSCqtrEWdazntuzc" target="_blank" rel="noopener" title="Clark Kent — HyAy…tuzc">
+      <div class="card-img"><img src="./images/HyAy5nt3ErGmRpHheLBrvH87ac6VLSCqtrEWdazntuzc.jpg" alt="Clark Kent" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">022</span>
+        <span class="name">Clark Kent</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/39iBrfmCuHyBphnRix5LVJCARGh3YLjPJdpiZF3spuhv" target="_blank" rel="noopener" title="Super Mono — 39iB…puhv">
+      <div class="card-img"><img src="./images/39iBrfmCuHyBphnRix5LVJCARGh3YLjPJdpiZF3spuhv.jpg" alt="Super Mono" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">023</span>
+        <span class="name">Super Mono</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/46oXEBdVLUEFNehyETxCaFz4qS9S1h8oY9M4T5s7McE7" target="_blank" rel="noopener" title="Triste — 46oX…McE7">
+      <div class="card-img"><img src="./images/46oXEBdVLUEFNehyETxCaFz4qS9S1h8oY9M4T5s7McE7.jpg" alt="Triste" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">024</span>
+        <span class="name">Triste</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/5iBhDWdzvQSWEJCd78gpDy9HSH1WYQAZHdbk8qL2R3TG" target="_blank" rel="noopener" title="Mono X — 5iBh…R3TG">
+      <div class="card-img"><img src="./images/5iBhDWdzvQSWEJCd78gpDy9HSH1WYQAZHdbk8qL2R3TG.jpg" alt="Mono X" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">025</span>
+        <span class="name">Mono X</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/9NtsBKp5vqAQnjAKZxp9tCQsnyenwZX5osvDSZAukeKX" target="_blank" rel="noopener" title="Sigo cayendo — 9Nts…keKX">
+      <div class="card-img"><img src="./images/9NtsBKp5vqAQnjAKZxp9tCQsnyenwZX5osvDSZAukeKX.jpg" alt="Sigo cayendo" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">026</span>
+        <span class="name">Sigo cayendo</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/AhqmQ3LZA4QripgX8dFf86iWiChdLytoozsfpthHdzCa" target="_blank" rel="noopener" title="Danzante 1 — Ahqm…dzCa">
+      <div class="card-img"><img src="./images/AhqmQ3LZA4QripgX8dFf86iWiChdLytoozsfpthHdzCa.jpg" alt="Danzante 1" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">027</span>
+        <span class="name">Danzante 1</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/74ULoij7wNMj11VL2ey1rt3Kbcfwbit6STRKoKPmoNWK" target="_blank" rel="noopener" title="Mono cactus — 74UL…oNWK">
+      <div class="card-img"><img src="./images/74ULoij7wNMj11VL2ey1rt3Kbcfwbit6STRKoKPmoNWK.jpg" alt="Mono cactus" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">028</span>
+        <span class="name">Mono cactus</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/HHYwd1X2qM4GPeaNTgNaLLigmH3BFuWwKfDDcuhi12n1" target="_blank" rel="noopener" title="Apriétate el cinturón — HHYw…12n1">
+      <div class="card-img"><img src="./images/HHYwd1X2qM4GPeaNTgNaLLigmH3BFuWwKfDDcuhi12n1.jpg" alt="Apriétate el cinturón" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">029</span>
+        <span class="name">Apriétate el cinturón</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/J1FM5N1t2KUUUEg31UyBWNXMPiptUjHPW53kYoZ99aME" target="_blank" rel="noopener" title="Pintor — J1FM…9aME">
+      <div class="card-img"><img src="./images/J1FM5N1t2KUUUEg31UyBWNXMPiptUjHPW53kYoZ99aME.jpg" alt="Pintor" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">030</span>
+        <span class="name">Pintor</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/AayCur3ZQ7AacKesDoFHt7Fxg5xCSWhuMr5MhX5jcFAG" target="_blank" rel="noopener" title="Bob Ross — AayC…cFAG">
+      <div class="card-img"><img src="./images/AayCur3ZQ7AacKesDoFHt7Fxg5xCSWhuMr5MhX5jcFAG.jpg" alt="Bob Ross" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">031</span>
+        <span class="name">Bob Ross</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/DYULYyZwrxA8e4GunpyVFWUfWvgSBA565asd2UsL2pSR" target="_blank" rel="noopener" title="Monorioneta — DYUL…2pSR">
+      <div class="card-img"><img src="./images/DYULYyZwrxA8e4GunpyVFWUfWvgSBA565asd2UsL2pSR.jpg" alt="Monorioneta" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">032</span>
+        <span class="name">Monorioneta</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/ESEfpNerbprEyT4T2hv41RfGBZoNM4PThc2xRuNPHMhr" target="_blank" rel="noopener" title="Caballero — ESEf…HMhr">
+      <div class="card-img"><img src="./images/ESEfpNerbprEyT4T2hv41RfGBZoNM4PThc2xRuNPHMhr.jpg" alt="Caballero" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">033</span>
+        <span class="name">Caballero</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/BxmRq9Rr3DwHwhg2jGs8jpzWJTrG7iuC9caXxGUqdgGT" target="_blank" rel="noopener" title="Bien y mal — BxmR…dgGT">
+      <div class="card-img"><img src="./images/BxmRq9Rr3DwHwhg2jGs8jpzWJTrG7iuC9caXxGUqdgGT.jpg" alt="Bien y mal" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">034</span>
+        <span class="name">Bien y mal</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/2DsmKJVVNcqw6wz78fc1xKw6n7YEr9U7eLpX8JGKeJPk" target="_blank" rel="noopener" title="Luchador — 2Dsm…eJPk">
+      <div class="card-img"><img src="./images/2DsmKJVVNcqw6wz78fc1xKw6n7YEr9U7eLpX8JGKeJPk.jpg" alt="Luchador" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">035</span>
+        <span class="name">Luchador</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/GNRbHd93mwBstUiLFMwoVYMQ4RWHUKV4AX48A2W3Zrpg" target="_blank" rel="noopener" title="Mono de las cavernas — GNRb…Zrpg">
+      <div class="card-img"><img src="./images/GNRbHd93mwBstUiLFMwoVYMQ4RWHUKV4AX48A2W3Zrpg.jpg" alt="Mono de las cavernas" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">036</span>
+        <span class="name">Mono de las cavernas</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/2MxmVB5PxVrN7XfvT93UuEGqkMJhkDzP1xiEkL1K4P88" target="_blank" rel="noopener" title="Patinador — 2Mxm…4P88">
+      <div class="card-img"><img src="./images/2MxmVB5PxVrN7XfvT93UuEGqkMJhkDzP1xiEkL1K4P88.jpg" alt="Patinador" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">037</span>
+        <span class="name">Patinador</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/CicagyaxGrtoFgSJd8WFzigAY7M8EeN1RFzMFdYEzyVV" target="_blank" rel="noopener" title="Patinadora — Cica…zyVV">
+      <div class="card-img"><img src="./images/CicagyaxGrtoFgSJd8WFzigAY7M8EeN1RFzMFdYEzyVV.jpg" alt="Patinadora" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">038</span>
+        <span class="name">Patinadora</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/HQ4285DSLX8Dda1JzH2SsX2t32gA3YKP8TwWirbC4rYE" target="_blank" rel="noopener" title="Mono de hojalata — HQ42…4rYE">
+      <div class="card-img"><img src="./images/HQ4285DSLX8Dda1JzH2SsX2t32gA3YKP8TwWirbC4rYE.jpg" alt="Mono de hojalata" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">039</span>
+        <span class="name">Mono de hojalata</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/3ARm8sVDHV8Djc8Gv9v7Suf4yrVV7sG9iTPDo46Ps9Ry" target="_blank" rel="noopener" title="Pinocho — 3ARm…s9Ry">
+      <div class="card-img"><img src="./images/3ARm8sVDHV8Djc8Gv9v7Suf4yrVV7sG9iTPDo46Ps9Ry.jpg" alt="Pinocho" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">040</span>
+        <span class="name">Pinocho</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/GcTUWHmAzSErjZ8gb4J9AB4DJ56kyVPY6eAB56Skd3x9" target="_blank" rel="noopener" title="Blancanieves — GcTU…d3x9">
+      <div class="card-img"><img src="./images/GcTUWHmAzSErjZ8gb4J9AB4DJ56kyVPY6eAB56Skd3x9.jpg" alt="Blancanieves" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">041</span>
+        <span class="name">Blancanieves</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/B4SiiQYSHVKc8SAcwpb2QGqyjnpLVg2YLb7cbyFLJpKG" target="_blank" rel="noopener" title="Cenicienta — B4Si…JpKG">
+      <div class="card-img"><img src="./images/B4SiiQYSHVKc8SAcwpb2QGqyjnpLVg2YLb7cbyFLJpKG.jpg" alt="Cenicienta" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">042</span>
+        <span class="name">Cenicienta</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/DVJcZx5H9TxoncfxBXKg5igAJsPTqjqo2y7iFWVAGfAm" target="_blank" rel="noopener" title="Aurora — DVJc…GfAm">
+      <div class="card-img"><img src="./images/DVJcZx5H9TxoncfxBXKg5igAJsPTqjqo2y7iFWVAGfAm.jpg" alt="Aurora" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">043</span>
+        <span class="name">Aurora</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/A52vjNtfWetfhhB1Un4pJ2ycvsgtmabM6pGfoJRuEYgt" target="_blank" rel="noopener" title="Triatleta — A52v…EYgt">
+      <div class="card-img"><img src="./images/A52vjNtfWetfhhB1Un4pJ2ycvsgtmabM6pGfoJRuEYgt.jpg" alt="Triatleta" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">044</span>
+        <span class="name">Triatleta</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/w4JqgZgEXj9gabUKToJy4ytRT9c7L7cpYU6B69LjTwP" target="_blank" rel="noopener" title="Nadador 2 — w4Jq…jTwP">
+      <div class="card-img"><img src="./images/w4JqgZgEXj9gabUKToJy4ytRT9c7L7cpYU6B69LjTwP.jpg" alt="Nadador 2" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">045</span>
+        <span class="name">Nadador 2</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/6BScmeMRveg7LMGFkYnPFE11t3W1LDdgLSZRBu7j9784" target="_blank" rel="noopener" title="Cocinero — 6BSc…9784">
+      <div class="card-img"><img src="./images/6BScmeMRveg7LMGFkYnPFE11t3W1LDdgLSZRBu7j9784.jpg" alt="Cocinero" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">046</span>
+        <span class="name">Cocinero</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/CGDmV74q1orfmu1cWaNCAKx2KPXr4teFWtedhEzxfhcP" target="_blank" rel="noopener" title="Apache — CGDm…fhcP">
+      <div class="card-img"><img src="./images/CGDmV74q1orfmu1cWaNCAKx2KPXr4teFWtedhEzxfhcP.jpg" alt="Apache" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">047</span>
+        <span class="name">Apache</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/Fx7cQ39ghCJUf1kgEzrSjukezia8KpnPPcJJdTHTCRxu" target="_blank" rel="noopener" title="Músico — Fx7c…CRxu">
+      <div class="card-img"><img src="./images/Fx7cQ39ghCJUf1kgEzrSjukezia8KpnPPcJJdTHTCRxu.jpg" alt="Músico" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">048</span>
+        <span class="name">Músico</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/Cyaq8ZpS9DhL3Rt2yBbFA1saqnki8je4AWN6ukE2P1q3" target="_blank" rel="noopener" title="Bruja — Cyaq…P1q3">
+      <div class="card-img"><img src="./images/Cyaq8ZpS9DhL3Rt2yBbFA1saqnki8je4AWN6ukE2P1q3.jpg" alt="Bruja" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">049</span>
+        <span class="name">Bruja</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/22mAW8kgeXouvFd9SXnYaZ4eDdgFy8xsRWNhf5tDt8AT" target="_blank" rel="noopener" title="Pérez — 22mA…t8AT">
+      <div class="card-img"><img src="./images/22mAW8kgeXouvFd9SXnYaZ4eDdgFy8xsRWNhf5tDt8AT.jpg" alt="Pérez" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">050</span>
+        <span class="name">Pérez</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/5sLaJsrmxsCqi7hBVZsqZRBjqRJemfD7STWMARTUy2CU" target="_blank" rel="noopener" title="El accidente — 5sLa…y2CU">
+      <div class="card-img"><img src="./images/5sLaJsrmxsCqi7hBVZsqZRBjqRJemfD7STWMARTUy2CU.jpg" alt="El accidente" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">051</span>
+        <span class="name">El accidente</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/E3ff5ed3ptbWgNJwrS3wsmKjcJrNwc3ZCv7aAAPL7UXr" target="_blank" rel="noopener" title="Gatito — E3ff…7UXr">
+      <div class="card-img"><img src="./images/E3ff5ed3ptbWgNJwrS3wsmKjcJrNwc3ZCv7aAAPL7UXr.jpg" alt="Gatito" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">052</span>
+        <span class="name">Gatito</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/6QSMyG6hj53aPVNHbC8AsetyzPhE6KRWW8QYnvhoyxaN" target="_blank" rel="noopener" title="Castillito — 6QSM…yxaN">
+      <div class="card-img"><img src="./images/6QSMyG6hj53aPVNHbC8AsetyzPhE6KRWW8QYnvhoyxaN.jpg" alt="Castillito" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">053</span>
+        <span class="name">Castillito</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/HgyhhA2Sco9M1WgFZXHxDCDxfGocw3n64caEgLdpPQu5" target="_blank" rel="noopener" title="Castillote — Hgyh…PQu5">
+      <div class="card-img"><img src="./images/HgyhhA2Sco9M1WgFZXHxDCDxfGocw3n64caEgLdpPQu5.jpg" alt="Castillote" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">054</span>
+        <span class="name">Castillote</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/CJsR41osLGu7E2CZdgvRqffuKUMnAhLzz56ba25A155o" target="_blank" rel="noopener" title="Accidentado — CJsR…155o">
+      <div class="card-img"><img src="./images/CJsR41osLGu7E2CZdgvRqffuKUMnAhLzz56ba25A155o.jpg" alt="Accidentado" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">055</span>
+        <span class="name">Accidentado</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/FXxC65mgbfD9ih9K9Mohp7cL8MNq3TgMj3LyjowDSx58" target="_blank" rel="noopener" title="Pinta caritas — FXxC…Sx58">
+      <div class="card-img"><img src="./images/FXxC65mgbfD9ih9K9Mohp7cL8MNq3TgMj3LyjowDSx58.jpg" alt="Pinta caritas" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">056</span>
+        <span class="name">Pinta caritas</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/BGGVPh4o2PrWnPEognZsz5M5FxDTxL6Bwxi5Do8rbVYD" target="_blank" rel="noopener" title="Torero con nopal — BGGV…bVYD">
+      <div class="card-img"><img src="./images/BGGVPh4o2PrWnPEognZsz5M5FxDTxL6Bwxi5Do8rbVYD.jpg" alt="Torero con nopal" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">057</span>
+        <span class="name">Torero con nopal</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/8aMXBsDSkfwrvTBQLdxpLHgN35RH2Zt7wNSWdwYTFy4S" target="_blank" rel="noopener" title="Torero con flores — 8aMX…Fy4S">
+      <div class="card-img"><img src="./images/8aMXBsDSkfwrvTBQLdxpLHgN35RH2Zt7wNSWdwYTFy4S.jpg" alt="Torero con flores" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">058</span>
+        <span class="name">Torero con flores</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/CcHm4wwtxAGJ1tNfAyAqpHgq2zkbBe9tQiDWsVVcwTmM" target="_blank" rel="noopener" title="Danzante 2 — CcHm…wTmM">
+      <div class="card-img"><img src="./images/CcHm4wwtxAGJ1tNfAyAqpHgq2zkbBe9tQiDWsVVcwTmM.jpg" alt="Danzante 2" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">059</span>
+        <span class="name">Danzante 2</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/7ePWWRqAkDJtcLhDXhkaQNuxGH9uxn1kqbq24jGwxYRe" target="_blank" rel="noopener" title="Astronauta — 7ePW…xYRe">
+      <div class="card-img"><img src="./images/7ePWWRqAkDJtcLhDXhkaQNuxGH9uxn1kqbq24jGwxYRe.jpg" alt="Astronauta" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">060</span>
+        <span class="name">Astronauta</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/6dPTuarPKoD7Ho3XCyADr6MHc3y2P573MzQbEeFF3Mhu" target="_blank" rel="noopener" title="Fantasma — 6dPT…3Mhu">
+      <div class="card-img"><img src="./images/6dPTuarPKoD7Ho3XCyADr6MHc3y2P573MzQbEeFF3Mhu.jpg" alt="Fantasma" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">061</span>
+        <span class="name">Fantasma</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/S3WTfJNStBsvGpEYCvHgp8TYtiz54quz7FoAwW5DtiN" target="_blank" rel="noopener" title="Charro — S3WT…DtiN">
+      <div class="card-img"><img src="./images/S3WTfJNStBsvGpEYCvHgp8TYtiz54quz7FoAwW5DtiN.jpg" alt="Charro" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">062</span>
+        <span class="name">Charro</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/5i9iL2MFTwfUccpDJ4EkSaJve6zzKjy6PznMuaGzeaq7" target="_blank" rel="noopener" title="Mono de Whatsapp — 5i9i…eaq7">
+      <div class="card-img"><img src="./images/5i9iL2MFTwfUccpDJ4EkSaJve6zzKjy6PznMuaGzeaq7.jpg" alt="Mono de Whatsapp" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">063</span>
+        <span class="name">Mono de Whatsapp</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/GcecHovUd1UVggCNT8wZU119CRH6h2mAvugJaeEqnWFE" target="_blank" rel="noopener" title="Mamá — Gcec…nWFE">
+      <div class="card-img"><img src="./images/GcecHovUd1UVggCNT8wZU119CRH6h2mAvugJaeEqnWFE.jpg" alt="Mamá" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">064</span>
+        <span class="name">Mamá</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/4MFmYL1yCGeJTQG9LLJCyoAiB4Ep61Rz83E7KTPMuMRw" target="_blank" rel="noopener" title="Ciclista — 4MFm…uMRw">
+      <div class="card-img"><img src="./images/4MFmYL1yCGeJTQG9LLJCyoAiB4Ep61Rz83E7KTPMuMRw.jpg" alt="Ciclista" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">065</span>
+        <span class="name">Ciclista</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/EJy3mPCfXrgHPLBxAJh2ZPenEtTvwpeZfvULrkMbHyxw" target="_blank" rel="noopener" title="Caminante 1 — EJy3…Hyxw">
+      <div class="card-img"><img src="./images/EJy3mPCfXrgHPLBxAJh2ZPenEtTvwpeZfvULrkMbHyxw.jpg" alt="Caminante 1" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">066</span>
+        <span class="name">Caminante 1</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/JCsBwAeFgYA8h6QtJswmZpBqsHMfeN95sYkV9oomtmAW" target="_blank" rel="noopener" title="Niño — JCsB…tmAW">
+      <div class="card-img"><img src="./images/JCsBwAeFgYA8h6QtJswmZpBqsHMfeN95sYkV9oomtmAW.jpg" alt="Niño" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">067</span>
+        <span class="name">Niño</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/9Z6xRW18zWVpVMjb1pn21aMWFSk7BmHtxoiMZA6uK1nx" target="_blank" rel="noopener" title="Niña — 9Z6x…K1nx">
+      <div class="card-img"><img src="./images/9Z6xRW18zWVpVMjb1pn21aMWFSk7BmHtxoiMZA6uK1nx.jpg" alt="Niña" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">068</span>
+        <span class="name">Niña</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/9oRRSHAMdmN3rBwZAD3JpLK61ga3B7X4Aagy6YQK2swd" target="_blank" rel="noopener" title="Danzante 3 — 9oRR…2swd">
+      <div class="card-img"><img src="./images/9oRRSHAMdmN3rBwZAD3JpLK61ga3B7X4Aagy6YQK2swd.jpg" alt="Danzante 3" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">069</span>
+        <span class="name">Danzante 3</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/4wpqP4mDK47p881UygVp31yV76ZzZXEQgmnTzPeyoKmF" target="_blank" rel="noopener" title="Caminante 2 — 4wpq…oKmF">
+      <div class="card-img"><img src="./images/4wpqP4mDK47p881UygVp31yV76ZzZXEQgmnTzPeyoKmF.jpg" alt="Caminante 2" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">070</span>
+        <span class="name">Caminante 2</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/5TK6oEi6HeFUFn3cbiPpWST3g6mySfx6VHxRXFemAJb4" target="_blank" rel="noopener" title="Caminante 3 — 5TK6…AJb4">
+      <div class="card-img"><img src="./images/5TK6oEi6HeFUFn3cbiPpWST3g6mySfx6VHxRXFemAJb4.jpg" alt="Caminante 3" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">071</span>
+        <span class="name">Caminante 3</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/7ZwvqaZTLusZA2tUAFoax5QDaHpYisuTTU16SXcMdqqP" target="_blank" rel="noopener" title="Subcomandante Mono — 7Zwv…dqqP">
+      <div class="card-img"><img src="./images/7ZwvqaZTLusZA2tUAFoax5QDaHpYisuTTU16SXcMdqqP.jpg" alt="Subcomandante Mono" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">072</span>
+        <span class="name">Subcomandante Mono</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/BUoDk4TtNNo6aon4SmgDGKiX2YyrNdzKYiBvxnZyaTus" target="_blank" rel="noopener" title="Perro — BUoD…aTus">
+      <div class="card-img"><img src="./images/BUoDk4TtNNo6aon4SmgDGKiX2YyrNdzKYiBvxnZyaTus.jpg" alt="Perro" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">073</span>
+        <span class="name">Perro</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/EN1MF6z71WrAn3UP8hKxhYxQTuw8MVPuSRkguFsAUxdP" target="_blank" rel="noopener" title="Acción de gracias — EN1M…UxdP">
+      <div class="card-img"><img src="./images/EN1MF6z71WrAn3UP8hKxhYxQTuw8MVPuSRkguFsAUxdP.jpg" alt="Acción de gracias" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">074</span>
+        <span class="name">Acción de gracias</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/BYnoEsY6Drfv9R8qk1maEaNTZwD1B3FsGkB9vKDbwELx" target="_blank" rel="noopener" title="Buda — BYno…wELx">
+      <div class="card-img"><img src="./images/BYnoEsY6Drfv9R8qk1maEaNTZwD1B3FsGkB9vKDbwELx.jpg" alt="Buda" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">075</span>
+        <span class="name">Buda</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/FbJUhoZY4VXh536jmGGhKX43pGWUhnMEL7wCWCjovpch" target="_blank" rel="noopener" title="Nadador 3 — FbJU…vpch">
+      <div class="card-img"><img src="./images/FbJUhoZY4VXh536jmGGhKX43pGWUhnMEL7wCWCjovpch.jpg" alt="Nadador 3" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">076</span>
+        <span class="name">Nadador 3</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/B9DPokUNUjd2xVSTguKMe97cpg6GeZyrddWkLTpcVBmw" target="_blank" rel="noopener" title="Nadador 4 — B9DP…VBmw">
+      <div class="card-img"><img src="./images/B9DPokUNUjd2xVSTguKMe97cpg6GeZyrddWkLTpcVBmw.jpg" alt="Nadador 4" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">077</span>
+        <span class="name">Nadador 4</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/3w6PFkzDhYeSsiZJP8CNkbm922kFzjPFaWKHKkA63pdX" target="_blank" rel="noopener" title="Nadador 5 — 3w6P…3pdX">
+      <div class="card-img"><img src="./images/3w6PFkzDhYeSsiZJP8CNkbm922kFzjPFaWKHKkA63pdX.jpg" alt="Nadador 5" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">078</span>
+        <span class="name">Nadador 5</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/B8dxvEVcAU29DZB8BffZXiEvFjpMASoCHr2Nj2QzAoNB" target="_blank" rel="noopener" title="Dracula — B8dx…AoNB">
+      <div class="card-img"><img src="./images/B8dxvEVcAU29DZB8BffZXiEvFjpMASoCHr2Nj2QzAoNB.jpg" alt="Dracula" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">079</span>
+        <span class="name">Dracula</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/851esKzcvvFt3CtYGPic5PN2SgWQQeWomLGqFx8HhLGb" target="_blank" rel="noopener" title="Mono panda — 851e…hLGb">
+      <div class="card-img"><img src="./images/851esKzcvvFt3CtYGPic5PN2SgWQQeWomLGqFx8HhLGb.jpg" alt="Mono panda" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">080</span>
+        <span class="name">Mono panda</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/7JvZLPGhw2MeEdvgqGZjpiwrGoJhpQVVqE2DC4NDmrEK" target="_blank" rel="noopener" title="Viendo TV — 7JvZ…mrEK">
+      <div class="card-img"><img src="./images/7JvZLPGhw2MeEdvgqGZjpiwrGoJhpQVVqE2DC4NDmrEK.jpg" alt="Viendo TV" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">081</span>
+        <span class="name">Viendo TV</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/FmxLHboebNVYb3ay8TdMugkE56kv5xZEUqKDbEmRgJ2y" target="_blank" rel="noopener" title="Monorelos — FmxL…gJ2y">
+      <div class="card-img"><img src="./images/FmxLHboebNVYb3ay8TdMugkE56kv5xZEUqKDbEmRgJ2y.jpg" alt="Monorelos" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">082</span>
+        <span class="name">Monorelos</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/B6fJQMpG1fsVSwSBQqBrUGdWvfQPkU9gZChSNALQf73n" target="_blank" rel="noopener" title="De compras — B6fJ…f73n">
+      <div class="card-img"><img src="./images/B6fJQMpG1fsVSwSBQqBrUGdWvfQPkU9gZChSNALQf73n.jpg" alt="De compras" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">083</span>
+        <span class="name">De compras</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/5RVNnzhyw9kqbDkncN9fKxdmVJ6sCJ1CrrXmU8YcU9hT" target="_blank" rel="noopener" title="Monmiguel Hidalgo — 5RVN…U9hT">
+      <div class="card-img"><img src="./images/5RVNnzhyw9kqbDkncN9fKxdmVJ6sCJ1CrrXmU8YcU9hT.jpg" alt="Monmiguel Hidalgo" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">084</span>
+        <span class="name">Monmiguel Hidalgo</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/7Rzmy9qTr25dCTN3oUvt4PDHCk4TY3g64sNmYMgXnvfy" target="_blank" rel="noopener" title="Mono heroes — 7Rzm…nvfy">
+      <div class="card-img"><img src="./images/7Rzmy9qTr25dCTN3oUvt4PDHCk4TY3g64sNmYMgXnvfy.jpg" alt="Mono heroes" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">085</span>
+        <span class="name">Mono heroes</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/Hxaty7g4ir5dvGMChh9tyAVafxbJdQBS1ALeBgVDweCh" target="_blank" rel="noopener" title="Ayuda — Hxat…weCh">
+      <div class="card-img"><img src="./images/Hxaty7g4ir5dvGMChh9tyAVafxbJdQBS1ALeBgVDweCh.jpg" alt="Ayuda" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">086</span>
+        <span class="name">Ayuda</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/4tpf7eAzPiELWTYrWpJii4NWC3jnVuxKjSNrgLLRfscQ" target="_blank" rel="noopener" title="Mión — 4tpf…fscQ">
+      <div class="card-img"><img src="./images/4tpf7eAzPiELWTYrWpJii4NWC3jnVuxKjSNrgLLRfscQ.jpg" alt="Mión" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">087</span>
+        <span class="name">Mión</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/D6ENSBhGDWNMHnyHVFyGVLHFnizi2K4jp9BDbMrZ6Bam" target="_blank" rel="noopener" title="Corredor — D6EN…6Bam">
+      <div class="card-img"><img src="./images/D6ENSBhGDWNMHnyHVFyGVLHFnizi2K4jp9BDbMrZ6Bam.jpg" alt="Corredor" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">088</span>
+        <span class="name">Corredor</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/ANgorWanbtBKfbdmrQYqocY9AGpt1DMJqqUTTrRLWcBt" target="_blank" rel="noopener" title="La sirena — ANgo…WcBt">
+      <div class="card-img"><img src="./images/ANgorWanbtBKfbdmrQYqocY9AGpt1DMJqqUTTrRLWcBt.jpg" alt="La sirena" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">089</span>
+        <span class="name">La sirena</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/924nBj5vhcWNsDpTGYjTk8rqzqrXV94AWTjwdbymcWZK" target="_blank" rel="noopener" title="Lo que hiciste con tu desayuno — 924n…cWZK">
+      <div class="card-img"><img src="./images/924nBj5vhcWNsDpTGYjTk8rqzqrXV94AWTjwdbymcWZK.jpg" alt="Lo que hiciste con tu desayuno" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">090</span>
+        <span class="name">Lo que hiciste con tu desayuno</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/H17XSr9pbxv1MfZPmHARxZXca56SPDyqEhctYX74BLak" target="_blank" rel="noopener" title="Escultura de Christo — H17X…BLak">
+      <div class="card-img"><img src="./images/H17XSr9pbxv1MfZPmHARxZXca56SPDyqEhctYX74BLak.jpg" alt="Escultura de Christo" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">091</span>
+        <span class="name">Escultura de Christo</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/Cs1EC1NZ3skWetwjZiYn6DVao11VbEH6YBdMhxVda15A" target="_blank" rel="noopener" title="Salto de altura — Cs1E…a15A">
+      <div class="card-img"><img src="./images/Cs1EC1NZ3skWetwjZiYn6DVao11VbEH6YBdMhxVda15A.jpg" alt="Salto de altura" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">092</span>
+        <span class="name">Salto de altura</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/5DncGMB1HdkFC9vzAPPpPuCZtoM3boGbvArNDk9GSpk1" target="_blank" rel="noopener" title="Casados — 5Dnc…Spk1">
+      <div class="card-img"><img src="./images/5DncGMB1HdkFC9vzAPPpPuCZtoM3boGbvArNDk9GSpk1.jpg" alt="Casados" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">093</span>
+        <span class="name">Casados</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/9EbjBDNyT4bftFy9T6DDSSQACmnBCcd15jvfm5mZsLQf" target="_blank" rel="noopener" title="Corredor 2 — 9Ebj…sLQf">
+      <div class="card-img"><img src="./images/9EbjBDNyT4bftFy9T6DDSSQACmnBCcd15jvfm5mZsLQf.jpg" alt="Corredor 2" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">094</span>
+        <span class="name">Corredor 2</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/7LRzEtmu3bQGVrzxuzpaEK35MfPahN2p7foW9x8T6PJa" target="_blank" rel="noopener" title="Día de Suerte — 7LRz…6PJa">
+      <div class="card-img"><img src="./images/7LRzEtmu3bQGVrzxuzpaEK35MfPahN2p7foW9x8T6PJa.jpg" alt="Día de Suerte" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">095</span>
+        <span class="name">Día de Suerte</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/HW2Zs4VHdM5ZrfdKvKekUqrevWKQVevn3Kqw6LfKiij3" target="_blank" rel="noopener" title="Lazarillo — HW2Z…iij3">
+      <div class="card-img"><img src="./images/HW2Zs4VHdM5ZrfdKvKekUqrevWKQVevn3Kqw6LfKiij3.jpg" alt="Lazarillo" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">096</span>
+        <span class="name">Lazarillo</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/CHegnRkT8g3p4TkRN8HVT6UBvCua9KKmDMYc348fJ7BW" target="_blank" rel="noopener" title="Evolución del mono — CHeg…J7BW">
+      <div class="card-img"><img src="./images/CHegnRkT8g3p4TkRN8HVT6UBvCua9KKmDMYc348fJ7BW.jpg" alt="Evolución del mono" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">097</span>
+        <span class="name">Evolución del mono</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/9LWRJmgEQ8dKqzDJVn5QbnqZWKpaeeJpa1UukrfK1vxN" target="_blank" rel="noopener" title="Corre mono corre — 9LWR…1vxN">
+      <div class="card-img"><img src="./images/9LWRJmgEQ8dKqzDJVn5QbnqZWKpaeeJpa1UukrfK1vxN.jpg" alt="Corre mono corre" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">098</span>
+        <span class="name">Corre mono corre</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/9ZmdfrD9rtcNbppiu4DHpuPhNwdg25eFwAuJNipssUgH" target="_blank" rel="noopener" title="Viva Allende — 9Zmd…sUgH">
+      <div class="card-img"><img src="./images/9ZmdfrD9rtcNbppiu4DHpuPhNwdg25eFwAuJNipssUgH.jpg" alt="Viva Allende" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">099</span>
+        <span class="name">Viva Allende</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/7aNWs2SZz8cFTw8DxdsQmLdLXjrnKsFLrL7JkJmftD1f" target="_blank" rel="noopener" title="Mona Josefa Ortiz de Domínguez — 7aNW…tD1f">
+      <div class="card-img"><img src="./images/7aNWs2SZz8cFTw8DxdsQmLdLXjrnKsFLrL7JkJmftD1f.jpg" alt="Mona Josefa Ortiz de Domínguez" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">100</span>
+        <span class="name">Mona Josefa Ortiz de Domínguez</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/7Tnk7uPkwHnPnT5S9FY8MwgHyNQbNyfbAtpTy69qzHUw" target="_blank" rel="noopener" title="¿Qué ropa me pongo hoy? — 7Tnk…zHUw">
+      <div class="card-img"><img src="./images/7Tnk7uPkwHnPnT5S9FY8MwgHyNQbNyfbAtpTy69qzHUw.jpg" alt="¿Qué ropa me pongo hoy?" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">101</span>
+        <span class="name">¿Qué ropa me pongo hoy?</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/8WoQVMLxgj9hWgMJFwYsbqwj618dSjZ6YLg1mfgsWcmM" target="_blank" rel="noopener" title="Nadador 6 — 8WoQ…WcmM">
+      <div class="card-img"><img src="./images/8WoQVMLxgj9hWgMJFwYsbqwj618dSjZ6YLg1mfgsWcmM.jpg" alt="Nadador 6" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">102</span>
+        <span class="name">Nadador 6</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/Ex2XySossDebfGQ2nzSKuuBftEqkgyw99cqKDb2RRg9X" target="_blank" rel="noopener" title="Domingo en la mañana — Ex2X…Rg9X">
+      <div class="card-img"><img src="./images/Ex2XySossDebfGQ2nzSKuuBftEqkgyw99cqKDb2RRg9X.jpg" alt="Domingo en la mañana" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">103</span>
+        <span class="name">Domingo en la mañana</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/2WRKBou21Xm4erCHmpmLFdGfQTsRm8JLYhLgDugHL1jn" target="_blank" rel="noopener" title="Poltergeist — 2WRK…L1jn">
+      <div class="card-img"><img src="./images/2WRKBou21Xm4erCHmpmLFdGfQTsRm8JLYhLgDugHL1jn.jpg" alt="Poltergeist" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">104</span>
+        <span class="name">Poltergeist</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/Br52VDNTWePBE5aG1EQJZtMTK2KoJWztB88Tei1VYZZB" target="_blank" rel="noopener" title="Mono alien — Br52…YZZB">
+      <div class="card-img"><img src="./images/Br52VDNTWePBE5aG1EQJZtMTK2KoJWztB88Tei1VYZZB.jpg" alt="Mono alien" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">105</span>
+        <span class="name">Mono alien</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/HgAA8zF6JG5QmptA5beCatEPavwUgcMXFy1V2gHQ7oDk" target="_blank" rel="noopener" title="Mono Kruger — HgAA…7oDk">
+      <div class="card-img"><img src="./images/HgAA8zF6JG5QmptA5beCatEPavwUgcMXFy1V2gHQ7oDk.jpg" alt="Mono Kruger" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">106</span>
+        <span class="name">Mono Kruger</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/BJruxMDEbDuVmborUPoDSaq1yDGe2ZzFEtH39y71dGsr" target="_blank" rel="noopener" title="Jason — BJru…dGsr">
+      <div class="card-img"><img src="./images/BJruxMDEbDuVmborUPoDSaq1yDGe2ZzFEtH39y71dGsr.jpg" alt="Jason" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">107</span>
+        <span class="name">Jason</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/2i1tJeKQm9qDgokTuthnunTEWdgCvH1mbnu6B1mSyYE9" target="_blank" rel="noopener" title="Super Mono 2 — 2i1t…yYE9">
+      <div class="card-img"><img src="./images/2i1tJeKQm9qDgokTuthnunTEWdgCvH1mbnu6B1mSyYE9.jpg" alt="Super Mono 2" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">108</span>
+        <span class="name">Super Mono 2</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/8m4yBRdxKrV5jxqe7p74QJd5F8eQAyiQ1Dko7mhbGnb8" target="_blank" rel="noopener" title="Monozinger Z — 8m4y…Gnb8">
+      <div class="card-img"><img src="./images/8m4yBRdxKrV5jxqe7p74QJd5F8eQAyiQ1Dko7mhbGnb8.jpg" alt="Monozinger Z" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">109</span>
+        <span class="name">Monozinger Z</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/2WNRaz8WhVS7CAVr2bk1TaodKCaiZzicw9ucUmZSGErc" target="_blank" rel="noopener" title="Adan y Eva — 2WNR…GErc">
+      <div class="card-img"><img src="./images/2WNRaz8WhVS7CAVr2bk1TaodKCaiZzicw9ucUmZSGErc.jpg" alt="Adan y Eva" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">110</span>
+        <span class="name">Adan y Eva</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/4sY51NMmG7yGbBm5vA4eb4Ho4M2JGodvDWnxFnf5GUUs" target="_blank" rel="noopener" title="Kiss — 4sY5…GUUs">
+      <div class="card-img"><img src="./images/4sY51NMmG7yGbBm5vA4eb4Ho4M2JGodvDWnxFnf5GUUs.jpg" alt="Kiss" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">111</span>
+        <span class="name">Kiss</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/6g33bnKosbgxmzRqE6S8DxsPBGyPVKyQhfr6JJ4TsXYz" target="_blank" rel="noopener" title="Fragmentos — 6g33…sXYz">
+      <div class="card-img"><img src="./images/6g33bnKosbgxmzRqE6S8DxsPBGyPVKyQhfr6JJ4TsXYz.jpg" alt="Fragmentos" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">112</span>
+        <span class="name">Fragmentos</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/8W5tJEMpdhmxVB6C8G9LrzXfBqnME7jRDoEUti2acSGS" target="_blank" rel="noopener" title="Mono invisible — 8W5t…cSGS">
+      <div class="card-img"><img src="./images/8W5tJEMpdhmxVB6C8G9LrzXfBqnME7jRDoEUti2acSGS.jpg" alt="Mono invisible" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">113</span>
+        <span class="name">Mono invisible</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/LUae21iwUtSgxDArNFdNhc7ULLUvvrTRbB6zvFJMuzC" target="_blank" rel="noopener" title="Monomia — LUae…MuzC">
+      <div class="card-img"><img src="./images/LUae21iwUtSgxDArNFdNhc7ULLUvvrTRbB6zvFJMuzC.jpg" alt="Monomia" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">114</span>
+        <span class="name">Monomia</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/H4QSfTrdiDJkUK1aPuD7ytwpxGTPumgCHFwFmBjerNHj" target="_blank" rel="noopener" title="Mono lobo — H4QS…rNHj">
+      <div class="card-img"><img src="./images/H4QSfTrdiDJkUK1aPuD7ytwpxGTPumgCHFwFmBjerNHj.jpg" alt="Mono lobo" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">115</span>
+        <span class="name">Mono lobo</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/9pt5ect6Y4nxXM7KKKyCtcsGE4eXgSjvcxJ5nKC6gTMr" target="_blank" rel="noopener" title="Frankenmono — 9pt5…gTMr">
+      <div class="card-img"><img src="./images/9pt5ect6Y4nxXM7KKKyCtcsGE4eXgSjvcxJ5nKC6gTMr.jpg" alt="Frankenmono" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">116</span>
+        <span class="name">Frankenmono</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/3PsKs5v6N5tJsWvR4MPXgukk61bx7fk5SG2qCpsoo9oz" target="_blank" rel="noopener" title="Selfie — 3PsK…o9oz">
+      <div class="card-img"><img src="./images/3PsKs5v6N5tJsWvR4MPXgukk61bx7fk5SG2qCpsoo9oz.jpg" alt="Selfie" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">117</span>
+        <span class="name">Selfie</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/637gBUQLYf4kvSkm84q4wp5XmHTknj5emCZL7FZ6FKrc" target="_blank" rel="noopener" title="Vagabundo — 637g…FKrc">
+      <div class="card-img"><img src="./images/637gBUQLYf4kvSkm84q4wp5XmHTknj5emCZL7FZ6FKrc.jpg" alt="Vagabundo" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">118</span>
+        <span class="name">Vagabundo</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/6hrcdFFcWhxNhhLBJDsT7fMW4DA4oqxBiPpdrNeXSBpq" target="_blank" rel="noopener" title="3 monos — 6hrc…SBpq">
+      <div class="card-img"><img src="./images/6hrcdFFcWhxNhhLBJDsT7fMW4DA4oqxBiPpdrNeXSBpq.jpg" alt="3 monos" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">119</span>
+        <span class="name">3 monos</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/8BYqP5sBPn7cVkjZh7KSaawRGXqtuVEKxBgGz2Ugj2Zw" target="_blank" rel="noopener" title="Caminante 4 — 8BYq…j2Zw">
+      <div class="card-img"><img src="./images/8BYqP5sBPn7cVkjZh7KSaawRGXqtuVEKxBgGz2Ugj2Zw.jpg" alt="Caminante 4" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">120</span>
+        <span class="name">Caminante 4</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/8Pwd8CHmfJzgpW7fK9qGzbQVPhp22zqRjg8xhiHFQVtK" target="_blank" rel="noopener" title="3 Caminantes — 8Pwd…QVtK">
+      <div class="card-img"><img src="./images/8Pwd8CHmfJzgpW7fK9qGzbQVPhp22zqRjg8xhiHFQVtK.jpg" alt="3 Caminantes" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">121</span>
+        <span class="name">3 Caminantes</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/7FexKpusR6jKxh2ZMuVL57oPmVrYb2xVWUgPBoVbaNP4" target="_blank" rel="noopener" title="Popeye — 7Fex…aNP4">
+      <div class="card-img"><img src="./images/7FexKpusR6jKxh2ZMuVL57oPmVrYb2xVWUgPBoVbaNP4.jpg" alt="Popeye" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">122</span>
+        <span class="name">Popeye</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="grid-page grid-page-2">
+  <div class="head">
+    <h2>Las <em>244</em> piezas — ii</h2>
+    <div class="legend sans">
+      <span><span class="swatch"></span>Disponible</span>
+      <span><span class="swatch na"></span>No disponible</span>
+    </div>
+  </div>
+  <div class="grid">
+    
+    <a class="card" href="https://exchange.art/single/9uh55Rhw4iu9CTpJzh6AFwjjiocU7HtTV4mJWxsmPXKW" target="_blank" rel="noopener" title="Echenle Aire — 9uh5…PXKW">
+      <div class="card-img"><img src="./images/9uh55Rhw4iu9CTpJzh6AFwjjiocU7HtTV4mJWxsmPXKW.jpg" alt="Echenle Aire" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">123</span>
+        <span class="name">Echenle Aire</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/3oMjmcMCvJtKsr1LA9CvX4xZ4UE4gUHHt5RDom8gByj8" target="_blank" rel="noopener" title="Dibujandose — 3oMj…Byj8">
+      <div class="card-img"><img src="./images/3oMjmcMCvJtKsr1LA9CvX4xZ4UE4gUHHt5RDom8gByj8.jpg" alt="Dibujandose" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">124</span>
+        <span class="name">Dibujandose</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/3TmnqDirWr1EBA99CAoqCmdK86EKkGQQZcJfhMKrBuF5" target="_blank" rel="noopener" title="Playa Nudista — 3Tmn…BuF5">
+      <div class="card-img"><img src="./images/3TmnqDirWr1EBA99CAoqCmdK86EKkGQQZcJfhMKrBuF5.jpg" alt="Playa Nudista" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">125</span>
+        <span class="name">Playa Nudista</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/GWtWc1YTfc3ba5Sk8mB9kAMaExUZpV346kw4PSPGZPZ1" target="_blank" rel="noopener" title="Turista — GWtW…ZPZ1">
+      <div class="card-img"><img src="./images/GWtWc1YTfc3ba5Sk8mB9kAMaExUZpV346kw4PSPGZPZ1.jpg" alt="Turista" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">126</span>
+        <span class="name">Turista</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/CXRHXbspmoGFM27noq7rQWjyeHw3LyN35ZZTYou8mSv7" target="_blank" rel="noopener" title="Monero Simpson — CXRH…mSv7">
+      <div class="card-img"><img src="./images/CXRHXbspmoGFM27noq7rQWjyeHw3LyN35ZZTYou8mSv7.jpg" alt="Monero Simpson" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">127</span>
+        <span class="name">Monero Simpson</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/FykGR6qLjNxaokcWzQba32aVBW8sesCBS9EEA2dbMcmw" target="_blank" rel="noopener" title="Jack — FykG…Mcmw">
+      <div class="card-img"><img src="./images/FykGR6qLjNxaokcWzQba32aVBW8sesCBS9EEA2dbMcmw.jpg" alt="Jack" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">128</span>
+        <span class="name">Jack</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/J6hYmvoxcvrQMMykkegAvJQAifLMnYfxtsUDir98hRoZ" target="_blank" rel="noopener" title="La Vacuna — J6hY…hRoZ">
+      <div class="card-img"><img src="./images/J6hYmvoxcvrQMMykkegAvJQAifLMnYfxtsUDir98hRoZ.jpg" alt="La Vacuna" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">129</span>
+        <span class="name">La Vacuna</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/59JSo5A3y28F9djhtBmwt9n2PYmHPTF69T8tXeR2vM8U" target="_blank" rel="noopener" title="Monoravirus — 59JS…vM8U">
+      <div class="card-img"><img src="./images/59JSo5A3y28F9djhtBmwt9n2PYmHPTF69T8tXeR2vM8U.jpg" alt="Monoravirus" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">130</span>
+        <span class="name">Monoravirus</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/HztxFDAQqqfD46MCrMhV8zvNbTzzQGeXoidT6KrbJZ2W" target="_blank" rel="noopener" title="El Columpio — Hztx…JZ2W">
+      <div class="card-img"><img src="./images/HztxFDAQqqfD46MCrMhV8zvNbTzzQGeXoidT6KrbJZ2W.jpg" alt="El Columpio" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">131</span>
+        <span class="name">El Columpio</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/GgMLmE4qDykN99tKu4ffpNqMBnacQJaKQGY9rrQqVnjV" target="_blank" rel="noopener" title="Engañando al Buitre 1 — GgML…VnjV">
+      <div class="card-img"><img src="./images/GgMLmE4qDykN99tKu4ffpNqMBnacQJaKQGY9rrQqVnjV.jpg" alt="Engañando al Buitre 1" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">132</span>
+        <span class="name">Engañando al Buitre 1</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/3HCBQvZVqj2YAoeDTMRkvfiVCFnwkzgw2psyJcAjqfLs" target="_blank" rel="noopener" title="Engañando al buitre 2 — 3HCB…qfLs">
+      <div class="card-img"><img src="./images/3HCBQvZVqj2YAoeDTMRkvfiVCFnwkzgw2psyJcAjqfLs.jpg" alt="Engañando al buitre 2" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">133</span>
+        <span class="name">Engañando al buitre 2</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/4MAqDnfCxKgpiyjGy281ZHHRT6CfH4RS446VfykL1bfy" target="_blank" rel="noopener" title="Títere — 4MAq…1bfy">
+      <div class="card-img"><img src="./images/4MAqDnfCxKgpiyjGy281ZHHRT6CfH4RS446VfykL1bfy.jpg" alt="Títere" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">134</span>
+        <span class="name">Títere</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/5MmGQDSV6RQbkQArxB7XmpQzdjeBhAsZRAtJuojHrbD4" target="_blank" rel="noopener" title="Títere — 5MmG…rbD4">
+      <div class="card-img"><img src="./images/5MmGQDSV6RQbkQArxB7XmpQzdjeBhAsZRAtJuojHrbD4.jpg" alt="Títere" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">135</span>
+        <span class="name">Títere</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/HMSJ9YwYDNxsZVLLGPCRWxY32dyypN8E9rqjAMY5Uout" target="_blank" rel="noopener" title="Solo falta que un perro... — HMSJ…Uout">
+      <div class="card-img"><img src="./images/HMSJ9YwYDNxsZVLLGPCRWxY32dyypN8E9rqjAMY5Uout.jpg" alt="Solo falta que un perro..." loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">136</span>
+        <span class="name">Solo falta que un perro...</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/C4MgvtVQaUpbzaFgsuTj4dQ3A6brD1j5Q8mfswoPRFsH" target="_blank" rel="noopener" title="Tiburón — C4Mg…RFsH">
+      <div class="card-img"><img src="./images/C4MgvtVQaUpbzaFgsuTj4dQ3A6brD1j5Q8mfswoPRFsH.jpg" alt="Tiburón" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">137</span>
+        <span class="name">Tiburón</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/7AwHGtx7i5L32SH3YrDCiFmUehRYTTBYKqw6EZD8kUns" target="_blank" rel="noopener" title="Yoda — 7AwH…kUns">
+      <div class="card-img"><img src="./images/7AwHGtx7i5L32SH3YrDCiFmUehRYTTBYKqw6EZD8kUns.jpg" alt="Yoda" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">138</span>
+        <span class="name">Yoda</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/65UdN7GUWgUCDLDCY7aTu4Uvsct3XSbiVc6YqefM9iUN" target="_blank" rel="noopener" title="C3PO — 65Ud…9iUN">
+      <div class="card-img"><img src="./images/65UdN7GUWgUCDLDCY7aTu4Uvsct3XSbiVc6YqefM9iUN.jpg" alt="C3PO" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">139</span>
+        <span class="name">C3PO</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/BzB8nfvWs1GEsrCRqAU4mXf6wpUucb7zKFmmxZoorbHL" target="_blank" rel="noopener" title="Retro digital — BzB8…rbHL">
+      <div class="card-img"><img src="./images/BzB8nfvWs1GEsrCRqAU4mXf6wpUucb7zKFmmxZoorbHL.jpg" alt="Retro digital" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">140</span>
+        <span class="name">Retro digital</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/CLsKXG7HQSQiAX1g1CFjX11xEQtgnH1WrAJvuHLVfHtd" target="_blank" rel="noopener" title="Tatuado — CLsK…fHtd">
+      <div class="card-img"><img src="./images/CLsKXG7HQSQiAX1g1CFjX11xEQtgnH1WrAJvuHLVfHtd.jpg" alt="Tatuado" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">141</span>
+        <span class="name">Tatuado</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/9JQDt6L4AoZofSYYpzcubNjqZYzK2b4zBt7CVGzQgt8f" target="_blank" rel="noopener" title="Rueda de choche — 9JQD…gt8f">
+      <div class="card-img"><img src="./images/9JQDt6L4AoZofSYYpzcubNjqZYzK2b4zBt7CVGzQgt8f.jpg" alt="Rueda de choche" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">142</span>
+        <span class="name">Rueda de choche</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/3xfV84m3EGu2tStdrAPiwp28UtGUGryN3YEmWDwZAjfM" target="_blank" rel="noopener" title="Gimnasta — 3xfV…AjfM">
+      <div class="card-img"><img src="./images/3xfV84m3EGu2tStdrAPiwp28UtGUGryN3YEmWDwZAjfM.jpg" alt="Gimnasta" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">143</span>
+        <span class="name">Gimnasta</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/5oASuoH9vLz2QHH49bwYgniW3DvfSnmEvG2ppjJVrKaM" target="_blank" rel="noopener" title="Patinador — 5oAS…rKaM">
+      <div class="card-img"><img src="./images/5oASuoH9vLz2QHH49bwYgniW3DvfSnmEvG2ppjJVrKaM.jpg" alt="Patinador" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">144</span>
+        <span class="name">Patinador</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/CJuRDR7iB3UpeBfo4Q6XY5mVt96TcTMpnoqd8ZwGowKX" target="_blank" rel="noopener" title="Patinador — CJuR…owKX">
+      <div class="card-img"><img src="./images/CJuRDR7iB3UpeBfo4Q6XY5mVt96TcTMpnoqd8ZwGowKX.jpg" alt="Patinador" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">145</span>
+        <span class="name">Patinador</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/4VGagopkRWSWMP5xYREkff13EvzPV8Pj45zazU3vwZMJ" target="_blank" rel="noopener" title="Prende la luz — 4VGa…wZMJ">
+      <div class="card-img"><img src="./images/4VGagopkRWSWMP5xYREkff13EvzPV8Pj45zazU3vwZMJ.jpg" alt="Prende la luz" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">146</span>
+        <span class="name">Prende la luz</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/5JTSqHp2KDi9jmRN4UkJFVJeEbL1VHJzfeWjqHXJtxXy" target="_blank" rel="noopener" title="Tigres — 5JTS…txXy">
+      <div class="card-img"><img src="./images/5JTSqHp2KDi9jmRN4UkJFVJeEbL1VHJzfeWjqHXJtxXy.jpg" alt="Tigres" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">147</span>
+        <span class="name">Tigres</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/8cTw3a78ddRWsafh5iMQMyWBZVE9L5STks8htZ9wWKKC" target="_blank" rel="noopener" title="Dormido — 8cTw…WKKC">
+      <div class="card-img"><img src="./images/8cTw3a78ddRWsafh5iMQMyWBZVE9L5STks8htZ9wWKKC.jpg" alt="Dormido" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">148</span>
+        <span class="name">Dormido</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/E8x84jpTev36UNVurmCm2iq8AqVaBNEQb3axmHwVUnoc" target="_blank" rel="noopener" title="El Catrín — E8x8…Unoc">
+      <div class="card-img"><img src="./images/E8x84jpTev36UNVurmCm2iq8AqVaBNEQb3axmHwVUnoc.jpg" alt="El Catrín" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">149</span>
+        <span class="name">El Catrín</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/A2hMNzmppefGxNCX8xDqB6aCjmBVNVm2FjMdunx5a49q" target="_blank" rel="noopener" title="Fortachón — A2hM…a49q">
+      <div class="card-img"><img src="./images/A2hMNzmppefGxNCX8xDqB6aCjmBVNVm2FjMdunx5a49q.jpg" alt="Fortachón" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">150</span>
+        <span class="name">Fortachón</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/F9Cw8rt5BB2zfhfoivrgh1SGGsdpopDmEd53o81qAzRQ" target="_blank" rel="noopener" title="Oh happy day — F9Cw…AzRQ">
+      <div class="card-img"><img src="./images/F9Cw8rt5BB2zfhfoivrgh1SGGsdpopDmEd53o81qAzRQ.jpg" alt="Oh happy day" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">151</span>
+        <span class="name">Oh happy day</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/E216H1YfTk8h6f1LRBnW7n9V96zL2vWvD9QtqtuiZiUH" target="_blank" rel="noopener" title="Ballet — E216…ZiUH">
+      <div class="card-img"><img src="./images/E216H1YfTk8h6f1LRBnW7n9V96zL2vWvD9QtqtuiZiUH.jpg" alt="Ballet" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">152</span>
+        <span class="name">Ballet</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/HjXsWANGFLZUkNjWWPHNpgK1N5FVc9pHXjdYdzoS5xwM" target="_blank" rel="noopener" title="Chapuzón — HjXs…5xwM">
+      <div class="card-img"><img src="./images/HjXsWANGFLZUkNjWWPHNpgK1N5FVc9pHXjdYdzoS5xwM.jpg" alt="Chapuzón" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">153</span>
+        <span class="name">Chapuzón</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/GHgQroBxc2HQ9oB24KuAw4EADLsxRA3iiNxSXFBuFK5v" target="_blank" rel="noopener" title="El Pirata — GHgQ…FK5v">
+      <div class="card-img"><img src="./images/GHgQroBxc2HQ9oB24KuAw4EADLsxRA3iiNxSXFBuFK5v.jpg" alt="El Pirata" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">154</span>
+        <span class="name">El Pirata</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/2C2kqfVjF8J7RS5BSrjRB3Z5tExtxC1x6VU7hwfNKJJW" target="_blank" rel="noopener" title="El valiente — 2C2k…KJJW">
+      <div class="card-img"><img src="./images/2C2kqfVjF8J7RS5BSrjRB3Z5tExtxC1x6VU7hwfNKJJW.jpg" alt="El valiente" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">155</span>
+        <span class="name">El valiente</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/GWUpEx4va26TZtdyrjfDb79YqeBjwH3gQzSaCnw6oDUA" target="_blank" rel="noopener" title="El borracho — GWUp…oDUA">
+      <div class="card-img"><img src="./images/GWUpEx4va26TZtdyrjfDb79YqeBjwH3gQzSaCnw6oDUA.jpg" alt="El borracho" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">156</span>
+        <span class="name">El borracho</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/EsSZjLf5iREyUauDzdWW3Bt2TXmAsSUfyik7Cu2yYvts" target="_blank" rel="noopener" title="El mundo — EsSZ…Yvts">
+      <div class="card-img"><img src="./images/EsSZjLf5iREyUauDzdWW3Bt2TXmAsSUfyik7Cu2yYvts.jpg" alt="El mundo" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">157</span>
+        <span class="name">El mundo</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/EHRd2o7hA17oPVvouJN1SBK5mtpHM76tsMWzqkZ8v154" target="_blank" rel="noopener" title="El diablillo — EHRd…v154">
+      <div class="card-img"><img src="./images/EHRd2o7hA17oPVvouJN1SBK5mtpHM76tsMWzqkZ8v154.jpg" alt="El diablillo" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">158</span>
+        <span class="name">El diablillo</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/7kyTB2UQXwYPSchHyTeAm1HWqBCwLQv4mX45RzE2Jq3e" target="_blank" rel="noopener" title="El negrito — 7kyT…Jq3e">
+      <div class="card-img"><img src="./images/7kyTB2UQXwYPSchHyTeAm1HWqBCwLQv4mX45RzE2Jq3e.jpg" alt="El negrito" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">159</span>
+        <span class="name">El negrito</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/5VBsWsqiKewtUUWQzQsdGwSDKcViQcqGdrhEtiuQUAP1" target="_blank" rel="noopener" title="El anciano — 5VBs…UAP1">
+      <div class="card-img"><img src="./images/5VBsWsqiKewtUUWQzQsdGwSDKcViQcqGdrhEtiuQUAP1.jpg" alt="El anciano" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">160</span>
+        <span class="name">El anciano</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/HeWBtEumWeWMpphTsyCepyZ8a99kDeihwztYnYtJgnCu" target="_blank" rel="noopener" title="La botarga — HeWB…gnCu">
+      <div class="card-img"><img src="./images/HeWBtEumWeWMpphTsyCepyZ8a99kDeihwztYnYtJgnCu.jpg" alt="La botarga" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">161</span>
+        <span class="name">La botarga</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/FqoowsbqJ18ifM9JHdN6KXPicNYAJ9WoaUK2BSGDEQt6" target="_blank" rel="noopener" title="Rasurándose — Fqoo…EQt6">
+      <div class="card-img"><img src="./images/FqoowsbqJ18ifM9JHdN6KXPicNYAJ9WoaUK2BSGDEQt6.jpg" alt="Rasurándose" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">162</span>
+        <span class="name">Rasurándose</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/Akh48UUGivvJ9qgvYJqMfwNavbrUG3yf5YiUmMnTJqq3" target="_blank" rel="noopener" title="Tomando el sol — Akh4…Jqq3">
+      <div class="card-img"><img src="./images/Akh48UUGivvJ9qgvYJqMfwNavbrUG3yf5YiUmMnTJqq3.jpg" alt="Tomando el sol" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">163</span>
+        <span class="name">Tomando el sol</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/FYCP6ffC2NQ5wjNjQNUwGiQNaakZsJTTBCdv5B2nWcrW" target="_blank" rel="noopener" title="Tomando el sol 2 — FYCP…WcrW">
+      <div class="card-img"><img src="./images/FYCP6ffC2NQ5wjNjQNUwGiQNaakZsJTTBCdv5B2nWcrW.jpg" alt="Tomando el sol 2" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">164</span>
+        <span class="name">Tomando el sol 2</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/2xiyukbatwcHdqe9rbpwbVQkv5bMGVtPrKkhcRzxBy7J" target="_blank" rel="noopener" title="The force be with you — 2xiy…By7J">
+      <div class="card-img"><img src="./images/2xiyukbatwcHdqe9rbpwbVQkv5bMGVtPrKkhcRzxBy7J.jpg" alt="The force be with you" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">165</span>
+        <span class="name">The force be with you</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/DwLEb26tcpnhLPkue72YjsnrfxxwGf9qkk8C5WeyrK1L" target="_blank" rel="noopener" title="Momentos de buena literatura — DwLE…rK1L">
+      <div class="card-img"><img src="./images/DwLEb26tcpnhLPkue72YjsnrfxxwGf9qkk8C5WeyrK1L.jpg" alt="Momentos de buena literatura" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">166</span>
+        <span class="name">Momentos de buena literatura</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/FkNxVqH11uBdAT81jp4azC3vQyxyZRPSAJvk2JcwMZEm" target="_blank" rel="noopener" title="The shining — FkNx…MZEm">
+      <div class="card-img"><img src="./images/FkNxVqH11uBdAT81jp4azC3vQyxyZRPSAJvk2JcwMZEm.jpg" alt="The shining" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">167</span>
+        <span class="name">The shining</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/2vyMz4rTSqDKy5JVyGdvropkonjjMAZZEe87uYNAjPTd" target="_blank" rel="noopener" title="Mono negro — 2vyM…jPTd">
+      <div class="card-img"><img src="./images/2vyMz4rTSqDKy5JVyGdvropkonjjMAZZEe87uYNAjPTd.jpg" alt="Mono negro" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">168</span>
+        <span class="name">Mono negro</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/9ctFvWRpSkXDirKtMbazEN3p8xHEioW1xWUHdg57pAEu" target="_blank" rel="noopener" title="Boceto de danzante — 9ctF…pAEu">
+      <div class="card-img"><img src="./images/9ctFvWRpSkXDirKtMbazEN3p8xHEioW1xWUHdg57pAEu.jpg" alt="Boceto de danzante" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">169</span>
+        <span class="name">Boceto de danzante</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/EvyY36vtjwtfC8pLtsZQrdgdNkpZGjcb5VWUa786CZ9k" target="_blank" rel="noopener" title="Resbalón — EvyY…CZ9k">
+      <div class="card-img"><img src="./images/EvyY36vtjwtfC8pLtsZQrdgdNkpZGjcb5VWUa786CZ9k.jpg" alt="Resbalón" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">170</span>
+        <span class="name">Resbalón</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/GvSThc7hT62KmPxKo22jm16tmnKzNg2pcnSAL82DTM2j" target="_blank" rel="noopener" title="Sumo — GvST…TM2j">
+      <div class="card-img"><img src="./images/GvSThc7hT62KmPxKo22jm16tmnKzNg2pcnSAL82DTM2j.jpg" alt="Sumo" loading="lazy" /><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">171</span>
+        <span class="name">Sumo</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/21ygCKJEUVbmFxkBAoBQkuuXLYgYKnopYKeLC4yoTh2n" target="_blank" rel="noopener" title="Perdí la cabeza — 21yg…Th2n">
+      <div class="card-img"><img src="./images/21ygCKJEUVbmFxkBAoBQkuuXLYgYKnopYKeLC4yoTh2n.jpg" alt="Perdí la cabeza" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">172</span>
+        <span class="name">Perdí la cabeza</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/GUKNRNFaRJAsnXL75yK1rZJBQarUP7KTWP2J73GCCvV1" target="_blank" rel="noopener" title="Un buen baño — GUKN…CvV1">
+      <div class="card-img"><img src="./images/GUKNRNFaRJAsnXL75yK1rZJBQarUP7KTWP2J73GCCvV1.jpg" alt="Un buen baño" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">173</span>
+        <span class="name">Un buen baño</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/EesAJoTqDV864yhpoErFF1ALg8XSLWjXpMuk8zMbcUrX" target="_blank" rel="noopener" title="Bien arropado — EesA…cUrX">
+      <div class="card-img"><img src="./images/EesAJoTqDV864yhpoErFF1ALg8XSLWjXpMuk8zMbcUrX.jpg" alt="Bien arropado" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">174</span>
+        <span class="name">Bien arropado</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/82zw517jXU3SPsSPppNEdq9imK2gQvVDLc3B3HwzUxQ2" target="_blank" rel="noopener" title="Pega de locura — 82zw…UxQ2">
+      <div class="card-img"><img src="./images/82zw517jXU3SPsSPppNEdq9imK2gQvVDLc3B3HwzUxQ2.jpg" alt="Pega de locura" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">175</span>
+        <span class="name">Pega de locura</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/BBzxBgajkojKHftmWePUg7urfuCvQjN7G2vDQqTrUqnz" target="_blank" rel="noopener" title="Cepillándose los dientes — BBzx…Uqnz">
+      <div class="card-img"><img src="./images/BBzxBgajkojKHftmWePUg7urfuCvQjN7G2vDQqTrUqnz.jpg" alt="Cepillándose los dientes" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">176</span>
+        <span class="name">Cepillándose los dientes</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/B49esMkXWUnLwXhhVZpoqtCWmuctsEh6uokjdqYkSBRA" target="_blank" rel="noopener" title="Electricidad, cuando tu me miras — B49e…SBRA">
+      <div class="card-img"><img src="./images/B49esMkXWUnLwXhhVZpoqtCWmuctsEh6uokjdqYkSBRA.jpg" alt="Electricidad, cuando tu me miras" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">177</span>
+        <span class="name">Electricidad, cuando tu me miras</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/HWPPWCUSqLxA8XztbSNA8Kr7qHr6FKvxjdgFa2mteFNk" target="_blank" rel="noopener" title="Bateador — HWPP…eFNk">
+      <div class="card-img"><img src="./images/HWPPWCUSqLxA8XztbSNA8Kr7qHr6FKvxjdgFa2mteFNk.jpg" alt="Bateador" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">178</span>
+        <span class="name">Bateador</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/3opQRFgmn3HmeQGYpbdVhRitjPYMnEATXf8DhJxUu1u3" target="_blank" rel="noopener" title="Electrocutado — 3opQ…u1u3">
+      <div class="card-img"><img src="./images/3opQRFgmn3HmeQGYpbdVhRitjPYMnEATXf8DhJxUu1u3.jpg" alt="Electrocutado" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">179</span>
+        <span class="name">Electrocutado</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/4MVL319aP9zmK9ciNjwuCBH3TzFw2CenHUmiJqNUfHTH" target="_blank" rel="noopener" title="Mono en fondo negro — 4MVL…fHTH">
+      <div class="card-img"><img src="./images/4MVL319aP9zmK9ciNjwuCBH3TzFw2CenHUmiJqNUfHTH.jpg" alt="Mono en fondo negro" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">180</span>
+        <span class="name">Mono en fondo negro</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/2SgAHGjPsvE64q2RFA61LgaFJQHsZ1fPZi6VtoWFbWaR" target="_blank" rel="noopener" title="Sorpresa!!! — 2SgA…bWaR">
+      <div class="card-img"><img src="./images/2SgAHGjPsvE64q2RFA61LgaFJQHsZ1fPZi6VtoWFbWaR.jpg" alt="Sorpresa!!!" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">181</span>
+        <span class="name">Sorpresa!!!</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/GfeLWxWHAfze6Aikm2QoDQhQkseNfTi9WouznJnsoRed" target="_blank" rel="noopener" title="El Clavadista — GfeL…oRed">
+      <div class="card-img"><img src="./images/GfeLWxWHAfze6Aikm2QoDQhQkseNfTi9WouznJnsoRed.jpg" alt="El Clavadista" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">182</span>
+        <span class="name">El Clavadista</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/2J2RXK1pXLxbDeStL6irEAtyR7V5yHP4EpvZsvEExn3U" target="_blank" rel="noopener" title="Mono Bitcoin — 2J2R…xn3U">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">183</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/2v3LBYR1UVARXTgXuZqzNunyAZn3JzyP28bLK9JaNH5A" target="_blank" rel="noopener" title="Mono Bitcoin — 2v3L…NH5A">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">184</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/39AgPaVf1uyqtMsXfKA2QzpvXgymwwAdr2eyfKPPo176" target="_blank" rel="noopener" title="Mono Bitcoin — 39Ag…o176">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">185</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/3Yty47L7tYt9BFHcRXv8gnBaSZJq2KGp1ApsVLP9YZMn" target="_blank" rel="noopener" title="Mono Bitcoin — 3Yty…YZMn">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">186</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/3n4fEJj4JXjnaYcNY2rJX5SeUQNY8wzXqL5xWCLRG73W" target="_blank" rel="noopener" title="Mono Bitcoin — 3n4f…G73W">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">187</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/4CgHqzn8ZoVUsmyo2rjrALog4J5RBhdWea2VkgrtzX6J" target="_blank" rel="noopener" title="Mono Bitcoin — 4CgH…zX6J">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">188</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/4CtRiU32GitNc1a3vKWJh2wAnrvMpoZYvfhTT7Hcg2NP" target="_blank" rel="noopener" title="Mono Bitcoin — 4CtR…g2NP">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">189</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/4fgquBrKN9VtADHU3ydXEhifKGsM9u4TGrqwWSEdfniM" target="_blank" rel="noopener" title="Mono Bitcoin — 4fgq…fniM">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">190</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/4qhLo5QSQuSZHAtYrxNjedccVezM5BnPGZZYmenbKyXp" target="_blank" rel="noopener" title="Mono Bitcoin — 4qhL…KyXp">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">191</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/4zxfiSncYK1ytFnpKdzxniLDjZQfagxqAPtVoC6rXd9Z" target="_blank" rel="noopener" title="Mono Bitcoin — 4zxf…Xd9Z">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">192</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/5PwhAguwxur8wLHf46HTcvU7iqSF7phDm3QE1MmrdA8P" target="_blank" rel="noopener" title="Mono Bitcoin — 5Pwh…dA8P">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">193</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/5SG8XwPajhPGxyyQdqNCCX47pXBEmgVHXaAdYHpEiCD2" target="_blank" rel="noopener" title="Mono Bitcoin — 5SG8…iCD2">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">194</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/5T172xRnPLDNHab3k8mcv33unSV2A4ZLBXU6Ccyh7SiU" target="_blank" rel="noopener" title="Mono Bitcoin — 5T17…7SiU">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">195</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/5VnUfRzimpiBMFAcfh4f64EKHZVvPVce9F8dEqRVhgqZ" target="_blank" rel="noopener" title="Mono Bitcoin — 5VnU…hgqZ">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">196</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/5gHiHaAQ9EXJAMVYadxTfJSwNWR7fa2uRkqvhJHmjZj" target="_blank" rel="noopener" title="Mono Bitcoin — 5gHi…mjZj">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">197</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/5qizbgMgMKFLwhwop9DD5jg286wmTRmcrvoSPqL9Qgfp" target="_blank" rel="noopener" title="Mono Bitcoin — 5qiz…Qgfp">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">198</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/6XeDNVN4Ah2SabWTSP9Z7WZhVMUVidwKBn48U5sVZKjq" target="_blank" rel="noopener" title="Mono Bitcoin — 6XeD…ZKjq">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">199</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/7WsSHrL5r21dE9vTSW9pmRiwjXH2AxEV1uFVnphjmicF" target="_blank" rel="noopener" title="Mono Bitcoin — 7WsS…micF">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">200</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/7ch21RrZt7PEBiPpc9qy3hDiHVTXJqyk32RDMgTiqYWC" target="_blank" rel="noopener" title="Mono Bitcoin — 7ch2…qYWC">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">201</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/7eQJ3FceUz9SkQXfuM9839w1BEMmBnvci6UwNqM4rXvB" target="_blank" rel="noopener" title="Mono Bitcoin — 7eQJ…rXvB">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">202</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/7f42R5eVTny7YQawTVPREYHLiamKznz7J2wgHfgCzghY" target="_blank" rel="noopener" title="Mono Bitcoin — 7f42…zghY">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">203</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/7nL5Vii7QG5pk84astyscvsgZn1b3BZLTU95NaTWdMB6" target="_blank" rel="noopener" title="Mono Bitcoin — 7nL5…dMB6">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">204</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/7nxdwRe4dRBUwSzEALsBTkbbB419SPkpYg5DipyKPWgK" target="_blank" rel="noopener" title="Mono Bitcoin — 7nxd…PWgK">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">205</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/7sUT1eQRcVpPpEVDewPndKFiyqSMM3LPZkibnbADPMnd" target="_blank" rel="noopener" title="Mono Bitcoin — 7sUT…PMnd">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">206</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/8T3vMvsocT31cmgLK35BLyFbf3FSfdDpwRRTJVMpYaZe" target="_blank" rel="noopener" title="Mono Bitcoin — 8T3v…YaZe">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">207</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/8jdXpGEnizZm9UpiDh25gpV7mZQ6X33WRy1mqLRM32F1" target="_blank" rel="noopener" title="Mono Bitcoin — 8jdX…32F1">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">208</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/9PFFV2yTXbZx5Usa7DfNwFHNKqyTbdaBcJbckoR36ABB" target="_blank" rel="noopener" title="Mono Bitcoin — 9PFF…6ABB">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">209</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/9wzwQMpoVTri2aAiZCN9uAMJYSFgxKg2RfsmVzY8G4p5" target="_blank" rel="noopener" title="Mono Bitcoin — 9wzw…G4p5">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">210</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/AoUTNu3kUGSahvQ1ZhbeVuSsL4XHtKx82Cpx7ok8ZwZM" target="_blank" rel="noopener" title="Mono Bitcoin — AoUT…ZwZM">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">211</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/AuQajCZV23gitYF3MHfTkKVJajEUxmLuD82CuZWNU1Ku" target="_blank" rel="noopener" title="Mono Bitcoin — AuQa…U1Ku">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">212</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/Azs46fAPG35UieG2AyZrCsWDZ6H5BCEGMq8bnjf5wC4T" target="_blank" rel="noopener" title="Mono Bitcoin — Azs4…wC4T">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">213</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/B16BmVVWxXoBn3fQq3CgSpgWJbNVgj1nPDNvpE4QdAQm" target="_blank" rel="noopener" title="Mono Bitcoin — B16B…dAQm">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">214</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/B6CwkL1jwaycVjjhCmbnwtjXgH9jeE2mkaFP6UPm9Dmc" target="_blank" rel="noopener" title="Mono Bitcoin — B6Cw…9Dmc">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">215</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/BAYtF4veExwenHWYwswD4r4wkw6qMdpBaA4ypJQZpSQb" target="_blank" rel="noopener" title="Mono Bitcoin — BAYt…pSQb">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">216</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/BY1CMnf6p7yGisG7wJfqYqM3XmAUw1T8zoAbswtuYV8Z" target="_blank" rel="noopener" title="Mono Bitcoin — BY1C…YV8Z">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">217</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/BcyXL1BP2YYSU1RA9RobULXViYvVZWWPj8xPjD96Ju7c" target="_blank" rel="noopener" title="Mono Bitcoin — BcyX…Ju7c">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">218</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/C6rAbQigtSoeAymVXhanoJWXZAd6NGAAaFDMuKCCEdMD" target="_blank" rel="noopener" title="Mono Bitcoin — C6rA…EdMD">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">219</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/CU1KUBAwRSKiQTZMXfGwRzSoYRcBFu2kcSoFiiM1PQWE" target="_blank" rel="noopener" title="Mono Bitcoin — CU1K…PQWE">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">220</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/Casqk1ac6K4SqSvk7LM4pSbBzG8FwN4YPDvJ7nwToStn" target="_blank" rel="noopener" title="Mono Bitcoin — Casq…oStn">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">221</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/CckhnNiyrcKKhQgJWCR4rQFe9eRXNPEj9bptDaPPupLK" target="_blank" rel="noopener" title="Mono Bitcoin — Cckh…upLK">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">222</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/Cdw1V95sYQBhT4jGAKSsS5EUGNvL6GF1ETiMfwsJcSd9" target="_blank" rel="noopener" title="Mono Bitcoin — Cdw1…cSd9">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">223</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/Ci4cPQFMWhzwrkdbCEsPVPwLaB6etD433wD83XWLajrW" target="_blank" rel="noopener" title="Mono Bitcoin — Ci4c…ajrW">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">224</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/Cxz7UCMTUn7guw2RtH9SgrpYbUh3rQVJ7aPwpofTMiG7" target="_blank" rel="noopener" title="Mono Bitcoin — Cxz7…MiG7">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">225</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/EBofCWSnDEsPadWriJjfXHJz188MYYG4gPFjZtbxHkcu" target="_blank" rel="noopener" title="Mono Bitcoin — EBof…Hkcu">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">226</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/EYBUH25hn2Cb9wGGSUc6W1DWNKSv3DpagYBDdtgsCrxB" target="_blank" rel="noopener" title="Mono Bitcoin — EYBU…CrxB">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">227</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/EenkpGxd9sWTRyy4xg1YABcNrcbtJcbPAWR1TRhT7HTS" target="_blank" rel="noopener" title="Mono Bitcoin — Eenk…7HTS">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">228</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/EetR9WcR5qPjBU6NBAmZWAU9gQsg5oeuQENgLWG6He9i" target="_blank" rel="noopener" title="Mono Bitcoin — EetR…He9i">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">229</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/EvCHxeEbu85yhBGpg1JgrCQTtqkQpK35XePVScNibfu4" target="_blank" rel="noopener" title="Mono Bitcoin — EvCH…bfu4">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">230</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/FnuPQ69RGRRgaN2BMAGG1tccJrVZQDv43qbWT9uGaPTA" target="_blank" rel="noopener" title="Mono Bitcoin — FnuP…aPTA">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">231</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/Fy8ZudQ93Hrn5tXgZ3GTEby7uyMLiyu3UwVjPjuyRpxR" target="_blank" rel="noopener" title="Mono Bitcoin — Fy8Z…RpxR">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">232</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/FyZUmYBEVDqqMMF2m4rZ8Ab8MuVNg5Fu18GZxkzWniY4" target="_blank" rel="noopener" title="Mono Bitcoin — FyZU…niY4">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">233</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/G72SaMqsCh9sEMjDH2rYFzFAneKwMfBPWNFZjza9ZhJa" target="_blank" rel="noopener" title="Mono Bitcoin — G72S…ZhJa">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">234</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/G7RoDjqs4MLWj7epUBFGW5nEtHihcNj1c6N9D1BxNiGH" target="_blank" rel="noopener" title="Mono Bitcoin — G7Ro…NiGH">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">235</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/GDHLQmJP7xFBNtrndnQLiKho7Fke2XFyBKgxy7vq3eqG" target="_blank" rel="noopener" title="Mono Bitcoin — GDHL…3eqG">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">236</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/HKbHmnHrUPgjD52iFirdFLeSHfVfzNwLt59rV1c1Uw9V" target="_blank" rel="noopener" title="Mono Bitcoin — HKbH…Uw9V">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">237</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/HKthnVbA2trYCFQg3Zs6XHg6kHf3JA3FyB9xgM4KR2TH" target="_blank" rel="noopener" title="Mono Bitcoin — HKth…R2TH">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">238</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/HekU2tLhcDoVdvpeYQwwKspK3gKmqAPnFcRJhXoMNPep" target="_blank" rel="noopener" title="Mono Bitcoin — HekU…NPep">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">239</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/J6deBFkRcna2gLzPTtS19HyCrDMg9rYhYXL6ZfwcibRb" target="_blank" rel="noopener" title="Mono Bitcoin — J6de…ibRb">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">240</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/QjKeHyyDXyGPfx2zjno6HgQ5V9Bx5To1QWxau9XvuXU" target="_blank" rel="noopener" title="Mono Bitcoin — QjKe…vuXU">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">241</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/UHyqY8kE57spqWURLK1ceJXzKYM4AoFin9ZxE9XFUdj" target="_blank" rel="noopener" title="Mono Bitcoin — UHyq…FUdj">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div></div>
+      <div class="card-meta">
+        <span class="num">242</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card card-na" href="https://exchange.art/single/VfsEUjny4ytZS7oFjPUZUxGwxpt5Xf1aztjvVFzd7Lm" target="_blank" rel="noopener" title="Mono Bitcoin — VfsE…d7Lm">
+      <div class="card-img"><div class="no-img" aria-hidden="true">▢</div><span class="tag-na">no disponible</span></div>
+      <div class="card-meta">
+        <span class="num">243</span>
+        <span class="name">Mono Bitcoin</span>
+      </div>
+    </a>
+    <a class="card" href="https://exchange.art/single/BvxeW5JuFaV5UhzDTGNVzCWG5jn2di3ois6sBR75ZeTw" target="_blank" rel="noopener" title="Monos by Daniel Serna Garza — Bvxe…ZeTw">
+      <div class="card-img"><img src="./images/BvxeW5JuFaV5UhzDTGNVzCWG5jn2di3ois6sBR75ZeTw.jpg" alt="Monos by Daniel Serna Garza" loading="lazy" /></div>
+      <div class="card-meta">
+        <span class="num">244</span>
+        <span class="name">Monos by Daniel Serna Garza</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- PAGE 4 — Manual Phantom -->
+<section class="manual">
+  <div class="head">
+    <h2>Para recibir <em>una pieza</em></h2>
+    <span class="head-aside sans">Manual breve · Phantom · Solana</span>
+  </div>
+
+  <p class="intro">
+    Estos coleccionables viven en la red <strong>Solana</strong>.
+    Para que Daniel pueda enviarte una pieza, primero necesitas una
+    <em>cartera</em> (wallet) en Solana, y compartirle la <em>dirección pública</em>
+    de esa cartera. Phantom es la cartera más sencilla y segura para empezar.
+    El proceso completo toma cinco minutos.
+  </p>
+
+  <ol class="steps">
+    <li>
+      <span class="num">1</span>
+      <div class="body">
+        <h3>Descarga Phantom desde el sitio oficial.</h3>
+        <p>
+          Entra únicamente a <a href="https://phantom.com" target="_blank" rel="noopener"><strong>phantom.com</strong></a>
+          (extensión para Chrome / Brave / Firefox y app para iPhone / Android).
+          Verifica que el dominio diga exactamente <em>phantom.com</em> antes de descargar
+          — existen sitios falsos diseñados para robar contraseñas.
+        </p>
+      </div>
+    </li>
+    <li>
+      <span class="num">2</span>
+      <div class="body">
+        <h3>Crea una cartera nueva.</h3>
+        <p>
+          Abre Phantom, elige <em>“Crear nueva cartera”</em> y define una contraseña
+          fuerte para desbloquear la app en este dispositivo. (Esa contraseña
+          protege tu computadora; no es tu cartera.)
+        </p>
+      </div>
+    </li>
+    <li>
+      <span class="num">3</span>
+      <div class="body">
+        <h3>Guarda tu frase de recuperación. Esto es lo más importante.</h3>
+        <p>
+          Phantom te mostrará <strong>doce palabras</strong> en orden — es la única llave
+          de tu cartera. <em>Apúntalas en papel, dos veces, y guárdalas en sitios
+          distintos.</em> No las saques en foto, no las copies a la nube, no las
+          escribas en chats. Quien tiene esas doce palabras, tiene tu cartera.
+        </p>
+      </div>
+    </li>
+    <li>
+      <span class="num">4</span>
+      <div class="body">
+        <h3>Copia tu dirección pública.</h3>
+        <p>
+          En la pantalla principal de Phantom verás tu dirección — un texto
+          de 32–44 caracteres tipo <span class="mono">7xK9…aB3Q</span>. Haz clic
+          sobre ella para copiarla. <em>Esta sí se puede compartir</em>: es como
+          el número de cuenta para recibir.
+        </p>
+      </div>
+    </li>
+    <li>
+      <span class="num">5</span>
+      <div class="body">
+        <h3>Envíasela a Daniel para que pueda enviarte la pieza.</h3>
+        <p>
+          Mándale tu dirección pública por mensaje directo a
+          <a href="https://www.instagram.com/dsgescultor" target="_blank" rel="noopener"><strong>@dsgescultor</strong></a>
+          o <a href="https://www.instagram.com/monosmonosymasmonos" target="_blank" rel="noopener"><strong>@monosmonosymasmonos</strong></a>
+          en Instagram. Cuando reciba la transferencia, tu pieza aparecerá en la
+          pestaña <em>Coleccionables</em> de Phantom en cuestión de segundos.
+        </p>
+      </div>
+    </li>
+  </ol>
+
+  <div class="security">
+    <h4 class="sans">Reglas de seguridad — léelas con calma</h4>
+    <ul>
+      <li><strong>Nadie</strong>, ni Daniel, ni Phantom, ni soporte técnico, te pedirá tu frase de recuperación. Si te la piden, es un fraude.</li>
+      <li>Phantom solo se descarga desde <strong>phantom.com</strong>. Cualquier otro dominio (incluso si aparece en buscadores) puede ser falso.</li>
+      <li>Antes de firmar cualquier transacción dentro de Phantom, lee el texto: si no entiendes lo que pide, no firmes.</li>
+      <li>Si extravías la frase de recuperación pierdes el acceso a la cartera. Nadie puede recuperarla por ti.</li>
+    </ul>
+  </div>
+
+  <p class="signoff">
+    <em>Una vez que tengas tu cartera, escribe a Daniel — la pieza viaja en
+    segundos y se queda contigo, en cadena, para siempre.</em>
+  </p>
+</section>
+
+</body>
+</html>

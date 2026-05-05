@@ -3,3 +3,4 @@ __pycache__/
 .DS_Store
 dist/monos-sol-catalogo.html
 build/image_map.json
+build/bw/
