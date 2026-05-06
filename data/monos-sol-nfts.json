@@ -1,0 +1,656 @@
+[
+  {
+    "name": "3 Caminantes",
+    "image": "https://arweave.net/1GlbRpC-2CgrH3yn0anqt7D8u6m5Vqw3EZ42uFtVHS8?ext=jpg",
+    "mint": "8Pwd8CHmfJzgpW7fK9qGzbQVPhp22zqRjg8xhiHFQVtK",
+    "collection": ""
+  },
+  {
+    "name": "Adan y Eva",
+    "image": "https://www.arweave.net/c_yUN70-044v5tgXZ2iaoX_DxGNlnIDpRWmGU1v-agE?ext=jpg",
+    "mint": "2WNRaz8WhVS7CAVr2bk1TaodKCaiZzicw9ucUmZSGErc",
+    "collection": ""
+  },
+  {
+    "name": "Ayuda",
+    "image": "https://www.arweave.net/zE6bQT9QFjPhJJrZxH7L2JwSar3OYbXAVtWPJ_egJds?ext=jpg",
+    "mint": "Hxaty7g4ir5dvGMChh9tyAVafxbJdQBS1ALeBgVDweCh",
+    "collection": ""
+  },
+  {
+    "name": "Bateador",
+    "image": "https://arweave.net/3KaC2uBqsqlOFkkJG62wDa1KAwchjsIEEXdNU9CmBgA?ext=jpg",
+    "mint": "HWPPWCUSqLxA8XztbSNA8Kr7qHr6FKvxjdgFa2mteFNk",
+    "collection": ""
+  },
+  {
+    "name": "Bien arropado",
+    "image": "https://arweave.net/vH02KGnOa8j7vYwATKeVoXCs-3TYVSxkoCia7KB0KkY?ext=jpg",
+    "mint": "EesAJoTqDV864yhpoErFF1ALg8XSLWjXpMuk8zMbcUrX",
+    "collection": ""
+  },
+  {
+    "name": "C3PO",
+    "image": "https://arweave.net/Hv8dxuGyEKk1Em9eQF7J_jYdyBH2ULA4KqDeVDLpssM?ext=jpg",
+    "mint": "65UdN7GUWgUCDLDCY7aTu4Uvsct3XSbiVc6YqefM9iUN",
+    "collection": ""
+  },
+  {
+    "name": "Caminante 2",
+    "image": "https://www.arweave.net/3xPg3qu8_gfDsPMF6fEPLecBcv_kOn9w5YAgSnyDtwk?ext=jpg",
+    "mint": "4wpqP4mDK47p881UygVp31yV76ZzZXEQgmnTzPeyoKmF",
+    "collection": ""
+  },
+  {
+    "name": "Caminante 3",
+    "image": "https://www.arweave.net/rRKopNSosEjbwGN7g-cgsO6q7PECV8xRzi1YCu2k1FQ?ext=jpg",
+    "mint": "5TK6oEi6HeFUFn3cbiPpWST3g6mySfx6VHxRXFemAJb4",
+    "collection": ""
+  },
+  {
+    "name": "Caminante 4",
+    "image": "https://www.arweave.net/7mp7UrGrLYlHdqOpK25DJ0tPatzSMsIfFsb2_NiRaac?ext=jpg",
+    "mint": "8BYqP5sBPn7cVkjZh7KSaawRGXqtuVEKxBgGz2Ugj2Zw",
+    "collection": ""
+  },
+  {
+    "name": "Castillito",
+    "image": "https://www.arweave.net/Tn9AnaAqrBVfsAAu1Rp1lw5koZ2hY4EfdUV9rI7A2-I?ext=jpg",
+    "mint": "6QSMyG6hj53aPVNHbC8AsetyzPhE6KRWW8QYnvhoyxaN",
+    "collection": ""
+  },
+  {
+    "name": "Cemento Fresco",
+    "image": "https://www.arweave.net/pu7FPhksvZGZHcwjwK9kGrEt96ay3h0hIz_QZ52u-R8?ext=jpg",
+    "mint": "7FXW2U2ss8NjZ4Jd2Xp56xmaZh9XP8vGxUCsVjAz8VLd",
+    "collection": ""
+  },
+  {
+    "name": "Cepillándose los dientes",
+    "image": "https://arweave.net/UzhbUXas9tyXJc62f9UjZ6xCFt1OKWb9aNf9LP5-lYk?ext=jpg",
+    "mint": "BBzxBgajkojKHftmWePUg7urfuCvQjN7G2vDQqTrUqnz",
+    "collection": ""
+  },
+  {
+    "name": "Chapuzón",
+    "image": "https://arweave.net/SUTP78dwxP8eOkWZJg87pTTSj5E9x9IxBevPMG9osmU?ext=jpg",
+    "mint": "HjXsWANGFLZUkNjWWPHNpgK1N5FVc9pHXjdYdzoS5xwM",
+    "collection": ""
+  },
+  {
+    "name": "Corredor",
+    "image": "https://www.arweave.net/QATbnYsJM_JYYw1xDx55gqPRKHKPzsV2jXI_ZXJ6_dM?ext=jpg",
+    "mint": "D6ENSBhGDWNMHnyHVFyGVLHFnizi2K4jp9BDbMrZ6Bam",
+    "collection": ""
+  },
+  {
+    "name": "Corredor 2",
+    "image": "https://www.arweave.net/2rryWlVwrv9kvWFRH6FPahs0uimKu0uj2vMwPbnC4xE?ext=jpg",
+    "mint": "9EbjBDNyT4bftFy9T6DDSSQACmnBCcd15jvfm5mZsLQf",
+    "collection": ""
+  },
+  {
+    "name": "Día de Suerte",
+    "image": "https://www.arweave.net/8Hw9NCHTvpLE75igQgeStVWsKeGJqlhKJ_LNKHk7uvE?ext=jpg",
+    "mint": "7LRzEtmu3bQGVrzxuzpaEK35MfPahN2p7foW9x8T6PJa",
+    "collection": ""
+  },
+  {
+    "name": "Disfrazado",
+    "image": "https://www.arweave.net/Lk2munAq6qew5rFzluk4Ps3gCA6nLPbCsva1Ek-lWjs?ext=jpg",
+    "mint": "9mR1WGJ9viwiSnH6F15LCbBCCSjBUneyzggdEUGLLCUX",
+    "collection": ""
+  },
+  {
+    "name": "Dormido",
+    "image": "https://arweave.net/k4OlY_vflnHqTK3vUXrRkS9DZU18nx-zZMwCgd38yF4?ext=jpg",
+    "mint": "8cTw3a78ddRWsafh5iMQMyWBZVE9L5STks8htZ9wWKKC",
+    "collection": ""
+  },
+  {
+    "name": "Dracula",
+    "image": "https://www.arweave.net/afKEPAYjmXxMokxsWMHtxzcrYRM5vJcjCBLPdMdgDGo?ext=jpg",
+    "mint": "B8dxvEVcAU29DZB8BffZXiEvFjpMASoCHr2Nj2QzAoNB",
+    "collection": ""
+  },
+  {
+    "name": "Echenle Aire",
+    "image": "https://arweave.net/7EFrFZXOYhwzGvHZm15VXoAhGMSDtRJ2iJBBvykvZxA?ext=jpg",
+    "mint": "9uh55Rhw4iu9CTpJzh6AFwjjiocU7HtTV4mJWxsmPXKW",
+    "collection": ""
+  },
+  {
+    "name": "El anciano",
+    "image": "https://arweave.net/Tx2gJTXnyzbq0evvmYJmnCFtvEsmLR5nCZqfn8jTt7k?ext=jpg",
+    "mint": "5VBsWsqiKewtUUWQzQsdGwSDKcViQcqGdrhEtiuQUAP1",
+    "collection": ""
+  },
+  {
+    "name": "El Catrín",
+    "image": "https://arweave.net/R_jpJdRHzxlkQQLXzFEcUYrFNGH9ZRHlhv5rOeO2x4w?ext=jpg",
+    "mint": "E8x84jpTev36UNVurmCm2iq8AqVaBNEQb3axmHwVUnoc",
+    "collection": ""
+  },
+  {
+    "name": "El Clavadista",
+    "image": "https://arweave.net/XtN04XerjGwfQ4RMnevTDdoJQVwpT33Bkh89RD_ojMM?ext=jpg",
+    "mint": "GfeLWxWHAfze6Aikm2QoDQhQkseNfTi9WouznJnsoRed",
+    "collection": ""
+  },
+  {
+    "name": "El Columpio",
+    "image": "https://arweave.net/LKoFm0aqctMVCYiz34qxoscsF2vSeRegf96QBUL8Ftg?ext=jpg",
+    "mint": "HztxFDAQqqfD46MCrMhV8zvNbTzzQGeXoidT6KrbJZ2W",
+    "collection": ""
+  },
+  {
+    "name": "El diablillo",
+    "image": "https://arweave.net/vqfpzkDGMk4uMy5cAtLsaOEyzCrMr8s9VhLw5YhNgTU?ext=jpg",
+    "mint": "EHRd2o7hA17oPVvouJN1SBK5mtpHM76tsMWzqkZ8v154",
+    "collection": ""
+  },
+  {
+    "name": "El mundo",
+    "image": "https://arweave.net/Im0_ipgGb1mf7Q_zAOgrdfjoOh9WrKarPkMSabfSQJE?ext=jpg",
+    "mint": "EsSZjLf5iREyUauDzdWW3Bt2TXmAsSUfyik7Cu2yYvts",
+    "collection": ""
+  },
+  {
+    "name": "El negrito",
+    "image": "https://arweave.net/W3SkV6hPslOhefGoi8psPVoMH6MJTRaI98FSz9TVOas?ext=jpg",
+    "mint": "7kyTB2UQXwYPSchHyTeAm1HWqBCwLQv4mX45RzE2Jq3e",
+    "collection": ""
+  },
+  {
+    "name": "El Pirata",
+    "image": "https://arweave.net/D4ROM73eS0_dk1ZQ47LJv0_6UZeyd0NU_0oFrX47LZ4?ext=jpg",
+    "mint": "GHgQroBxc2HQ9oB24KuAw4EADLsxRA3iiNxSXFBuFK5v",
+    "collection": ""
+  },
+  {
+    "name": "El valiente",
+    "image": "https://arweave.net/UbCa7RmOdLaEGcUHB6c6baCNfK90lpu2Xx5QqVI3b-M?ext=jpg",
+    "mint": "2C2kqfVjF8J7RS5BSrjRB3Z5tExtxC1x6VU7hwfNKJJW",
+    "collection": ""
+  },
+  {
+    "name": "Electricidad, cuando tu me miras",
+    "image": "https://arweave.net/fzuOXvwU-Nqmotp0rukSXzIIS2tWSj1S-w5YnSIaguo?ext=jpg",
+    "mint": "B49esMkXWUnLwXhhVZpoqtCWmuctsEh6uokjdqYkSBRA",
+    "collection": ""
+  },
+  {
+    "name": "Electrocutado",
+    "image": "https://arweave.net/4NhSeuFGQxlTqwBJDgttCdZozTksacxVjZzF5m0any4?ext=jpg",
+    "mint": "3opQRFgmn3HmeQGYpbdVhRitjPYMnEATXf8DhJxUu1u3",
+    "collection": ""
+  },
+  {
+    "name": "Engañando al Buitre 1",
+    "image": "https://arweave.net/w-Rpj3HYCatuM6Jws0tUXYzG0KrBG1rhjk1LTNwX_rY?ext=jpg",
+    "mint": "GgMLmE4qDykN99tKu4ffpNqMBnacQJaKQGY9rrQqVnjV",
+    "collection": ""
+  },
+  {
+    "name": "Engañando al buitre 2",
+    "image": "https://arweave.net/1Rmgy88EPPvoMXBG2lGyzy1xamZd8sz7gwiFMvLSX0s?ext=jpg",
+    "mint": "3HCBQvZVqj2YAoeDTMRkvfiVCFnwkzgw2psyJcAjqfLs",
+    "collection": ""
+  },
+  {
+    "name": "Escultura de Christo",
+    "image": "https://www.arweave.net/rVrGFE1MeXX-I6x_k7SKaCFAsFJkUo69BaSwTb5dRGg?ext=jpg",
+    "mint": "H17XSr9pbxv1MfZPmHARxZXca56SPDyqEhctYX74BLak",
+    "collection": ""
+  },
+  {
+    "name": "Espejito espejito",
+    "image": "https://www.arweave.net/E2vqQcJ_1TLfDZHjcgYw9pkygBnc2QYIx_luJzqT84I?ext=jpg",
+    "mint": "D91B9rSthdxC5wL9wz2bUf7q255JEU8wkWoWGCZ7hciv",
+    "collection": ""
+  },
+  {
+    "name": "Fortachón",
+    "image": "https://arweave.net/zcZWor_XNcDBKPItF7gh9dZQDYPIxG0n27UT9ADjjIg?ext=jpg",
+    "mint": "A2hMNzmppefGxNCX8xDqB6aCjmBVNVm2FjMdunx5a49q",
+    "collection": ""
+  },
+  {
+    "name": "Fragmentos",
+    "image": "https://www.arweave.net/BcFPkwintiCnYismV9VYOJOJ70wfmRny2wNWP1--L5M?ext=jpg",
+    "mint": "6g33bnKosbgxmzRqE6S8DxsPBGyPVKyQhfr6JJ4TsXYz",
+    "collection": ""
+  },
+  {
+    "name": "Frankenmono",
+    "image": "https://www.arweave.net/gWZ8MPMf4-B93hD6VX9PKNeW7LlZgMmySGy_wl1oBvk?ext=jpg",
+    "mint": "9pt5ect6Y4nxXM7KKKyCtcsGE4eXgSjvcxJ5nKC6gTMr",
+    "collection": ""
+  },
+  {
+    "name": "Gimnasta",
+    "image": "https://arweave.net/Fe6rj6qgB2Br8lB60kTwLIcGdPJdmEzp-TcPIpxkdCY?ext=jpg",
+    "mint": "3xfV84m3EGu2tStdrAPiwp28UtGUGryN3YEmWDwZAjfM",
+    "collection": ""
+  },
+  {
+    "name": "Jack",
+    "image": "https://arweave.net/9VrxdzAXaXlSnenz3-2jzGXo9xkNrP7wrylUqhYz9vA?ext=jpg",
+    "mint": "FykGR6qLjNxaokcWzQba32aVBW8sesCBS9EEA2dbMcmw",
+    "collection": ""
+  },
+  {
+    "name": "La botarga",
+    "image": "https://arweave.net/RJr_ydFOjZzo0nJiNVLpQZmRyr9XuL8k8V6xW_ypAhs?ext=jpg",
+    "mint": "HeWBtEumWeWMpphTsyCepyZ8a99kDeihwztYnYtJgnCu",
+    "collection": ""
+  },
+  {
+    "name": "La sirena",
+    "image": "https://www.arweave.net/iIqGkdd3yz2lRkqV3wApiKN4UIbJGgnwQv6ATke15j0?ext=jpg",
+    "mint": "ANgorWanbtBKfbdmrQYqocY9AGpt1DMJqqUTTrRLWcBt",
+    "collection": ""
+  },
+  {
+    "name": "La Vacuna",
+    "image": "https://arweave.net/Ej1CJ6rJ3PId3KKzsmv_4v1_f0bQilgjXoon2b-TTkE?ext=jpg",
+    "mint": "J6hYmvoxcvrQMMykkegAvJQAifLMnYfxtsUDir98hRoZ",
+    "collection": ""
+  },
+  {
+    "name": "Lazarillo",
+    "image": "https://www.arweave.net/0chHhllw_uMEMCw85rtcKmjMAINVdGEUHFh0vc-ohHE?ext=jpg",
+    "mint": "HW2Zs4VHdM5ZrfdKvKekUqrevWKQVevn3Kqw6LfKiij3",
+    "collection": ""
+  },
+  {
+    "name": "Lo que hiciste con tu desayuno",
+    "image": "https://www.arweave.net/EggeAlhjiQ3yUyeUcEQ0nFjEYUQ6IQcC70pvI-TzRO0?ext=jpg",
+    "mint": "924nBj5vhcWNsDpTGYjTk8rqzqrXV94AWTjwdbymcWZK",
+    "collection": ""
+  },
+  {
+    "name": "Mamá",
+    "image": "https://www.arweave.net/nX1gCa1DUDQ9S_bLwe5ogB-dDuWxTaHyTvukF896Nlo?ext=jpg",
+    "mint": "GcecHovUd1UVggCNT8wZU119CRH6h2mAvugJaeEqnWFE",
+    "collection": ""
+  },
+  {
+    "name": "Momentos de buena literatura",
+    "image": "https://arweave.net/fRzesZsmgNIHiQren1W7gZMSeJ_LrxasHbr9OCzbW5k?ext=jpg",
+    "mint": "DwLEb26tcpnhLPkue72YjsnrfxxwGf9qkk8C5WeyrK1L",
+    "collection": ""
+  },
+  {
+    "name": "Mona Josefa Ortiz de Domínguez",
+    "image": "https://www.arweave.net/PCGfGtfvY6ouna3MvoiEMKXgnU9nwtKoXHZ90NMEpgw?ext=jpg",
+    "mint": "7aNWs2SZz8cFTw8DxdsQmLdLXjrnKsFLrL7JkJmftD1f",
+    "collection": ""
+  },
+  {
+    "name": "Monero Simpson",
+    "image": "https://arweave.net/B1Os-g_bsWGAHgD8pMmfqwT4XcrVZVSeorAvMG0Sbo4?ext=jpg",
+    "mint": "CXRHXbspmoGFM27noq7rQWjyeHw3LyN35ZZTYou8mSv7",
+    "collection": ""
+  },
+  {
+    "name": "Mono alien",
+    "image": "https://www.arweave.net/qCyUJ7Vg9ybDM1luu3QEEWvpHnC8w8ywp36CpScl6QQ?ext=jpg",
+    "mint": "Br52VDNTWePBE5aG1EQJZtMTK2KoJWztB88Tei1VYZZB",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "UHyqY8kE57spqWURLK1ceJXzKYM4AoFin9ZxE9XFUdj",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "HKbHmnHrUPgjD52iFirdFLeSHfVfzNwLt59rV1c1Uw9V",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "G7RoDjqs4MLWj7epUBFGW5nEtHihcNj1c6N9D1BxNiGH",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "Fy8ZudQ93Hrn5tXgZ3GTEby7uyMLiyu3UwVjPjuyRpxR",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "EYBUH25hn2Cb9wGGSUc6W1DWNKSv3DpagYBDdtgsCrxB",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "EvCHxeEbu85yhBGpg1JgrCQTtqkQpK35XePVScNibfu4",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "EBofCWSnDEsPadWriJjfXHJz188MYYG4gPFjZtbxHkcu",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "C6rAbQigtSoeAymVXhanoJWXZAd6NGAAaFDMuKCCEdMD",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "BcyXL1BP2YYSU1RA9RobULXViYvVZWWPj8xPjD96Ju7c",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "B6CwkL1jwaycVjjhCmbnwtjXgH9jeE2mkaFP6UPm9Dmc",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "AuQajCZV23gitYF3MHfTkKVJajEUxmLuD82CuZWNU1Ku",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "8T3vMvsocT31cmgLK35BLyFbf3FSfdDpwRRTJVMpYaZe",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "7f42R5eVTny7YQawTVPREYHLiamKznz7J2wgHfgCzghY",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "7ch21RrZt7PEBiPpc9qy3hDiHVTXJqyk32RDMgTiqYWC",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "5qizbgMgMKFLwhwop9DD5jg286wmTRmcrvoSPqL9Qgfp",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "4CgHqzn8ZoVUsmyo2rjrALog4J5RBhdWea2VkgrtzX6J",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "39AgPaVf1uyqtMsXfKA2QzpvXgymwwAdr2eyfKPPo176",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "2v3LBYR1UVARXTgXuZqzNunyAZn3JzyP28bLK9JaNH5A",
+    "collection": ""
+  },
+  {
+    "name": "Mono Bitcoin",
+    "image": "https://bafybeier4rbhjo2syp7qga33a3pyryfjwskgooaiknosjxgnjjfenemzuq.ipfs.dweb.link?ext=png",
+    "mint": "2J2RXK1pXLxbDeStL6irEAtyR7V5yHP4EpvZsvEExn3U",
+    "collection": ""
+  },
+  {
+    "name": "Mono de hojalata",
+    "image": "https://www.arweave.net/QWkIAzvoLj3SWnoOEims3N3ppIBxvSC_t6riV-6ITyQ?ext=jpg",
+    "mint": "HQ4285DSLX8Dda1JzH2SsX2t32gA3YKP8TwWirbC4rYE",
+    "collection": ""
+  },
+  {
+    "name": "Mono de las cavernas",
+    "image": "https://www.arweave.net/E-XIG7Ir6Px-2rN_5btQElWzrdkK-s7lOnVENX9RBuE?ext=jpg",
+    "mint": "GNRbHd93mwBstUiLFMwoVYMQ4RWHUKV4AX48A2W3Zrpg",
+    "collection": ""
+  },
+  {
+    "name": "Mono en fondo negro",
+    "image": "https://arweave.net/xWCQ1MQHyYPZk1nOBP6wJrV1UTE9HCYoqIs2oRjV67g?ext=jpg",
+    "mint": "4MVL319aP9zmK9ciNjwuCBH3TzFw2CenHUmiJqNUfHTH",
+    "collection": ""
+  },
+  {
+    "name": "Mono Kruger",
+    "image": "https://www.arweave.net/Vm5zynmzsUyC5p8wYGkk7CcDpSpAtmjquufA5Globr0?ext=jpg",
+    "mint": "HgAA8zF6JG5QmptA5beCatEPavwUgcMXFy1V2gHQ7oDk",
+    "collection": ""
+  },
+  {
+    "name": "Mono lobo",
+    "image": "https://www.arweave.net/t6hBlZtA9D6EHNaIRp02enm1V-NsuATcuiEr_g2so3Y?ext=jpg",
+    "mint": "H4QSfTrdiDJkUK1aPuD7ytwpxGTPumgCHFwFmBjerNHj",
+    "collection": ""
+  },
+  {
+    "name": "Monomia",
+    "image": "https://www.arweave.net/tJkLf-Rt9FJJKTggElRklIwtWuaKHSJIjoMIaHhFpX4?ext=jpg",
+    "mint": "LUae21iwUtSgxDArNFdNhc7ULLUvvrTRbB6zvFJMuzC",
+    "collection": ""
+  },
+  {
+    "name": "Monos by Daniel Serna Garza",
+    "image": "https://arweave.net/eh_271Y77XSNXE8ZG3fPe7IF5bD_ki0ytPf7oO0FE80",
+    "mint": "BvxeW5JuFaV5UhzDTGNVzCWG5jn2di3ois6sBR75ZeTw",
+    "collection": ""
+  },
+  {
+    "name": "Músico",
+    "image": "https://www.arweave.net/itlPA6osPh0I-jP5ln8uqNoUT1XvzJA31n3OWTVoQYI?ext=jpg",
+    "mint": "Fx7cQ39ghCJUf1kgEzrSjukezia8KpnPPcJJdTHTCRxu",
+    "collection": ""
+  },
+  {
+    "name": "Nadador 3",
+    "image": "https://www.arweave.net/8Sanf-xO3xk19fsQX03GDzVINdDblCvXgO68-bCvY0U?ext=jpg",
+    "mint": "FbJUhoZY4VXh536jmGGhKX43pGWUhnMEL7wCWCjovpch",
+    "collection": ""
+  },
+  {
+    "name": "Nadador 4",
+    "image": "https://www.arweave.net/vmaHBSZ3byrtP5SRFYdNcJiHHmqILULBc-0cZ2iDUp8?ext=jpg",
+    "mint": "B9DPokUNUjd2xVSTguKMe97cpg6GeZyrddWkLTpcVBmw",
+    "collection": ""
+  },
+  {
+    "name": "Nadador 6",
+    "image": "https://www.arweave.net/Sz_ld-XK95v_BIlvpP9EmJG0N8tWkc_WjVqvoWzrobA?ext=jpg",
+    "mint": "8WoQVMLxgj9hWgMJFwYsbqwj618dSjZ6YLg1mfgsWcmM",
+    "collection": ""
+  },
+  {
+    "name": "Niña",
+    "image": "https://www.arweave.net/On6Lbs2hkzQYqKxbbAtfiOjMrxqLuBuTPtah8gtbqRM?ext=jpg",
+    "mint": "9Z6xRW18zWVpVMjb1pn21aMWFSk7BmHtxoiMZA6uK1nx",
+    "collection": ""
+  },
+  {
+    "name": "Patinador",
+    "image": "https://arweave.net/P7oTHRNIB36Ak7YNiC7UOld5Rk0c1JAo_8dNfDPZmI8?ext=jpg",
+    "mint": "CJuRDR7iB3UpeBfo4Q6XY5mVt96TcTMpnoqd8ZwGowKX",
+    "collection": ""
+  },
+  {
+    "name": "Pega de locura",
+    "image": "https://arweave.net/fONohvSvBH54XKmE10LCu9Gb_kcs5wegszb07z0cXbE?ext=jpg",
+    "mint": "82zw517jXU3SPsSPppNEdq9imK2gQvVDLc3B3HwzUxQ2",
+    "collection": ""
+  },
+  {
+    "name": "Perdí la cabeza",
+    "image": "https://arweave.net/uFMJLmBlFK43_nRibyuqTkc_oGsRdEPxY22DKM-o-Zk?ext=jpg",
+    "mint": "21ygCKJEUVbmFxkBAoBQkuuXLYgYKnopYKeLC4yoTh2n",
+    "collection": ""
+  },
+  {
+    "name": "Perro",
+    "image": "https://www.arweave.net/0erYWFpPHA-ml47ct7b4ULdcmC-cPIUS0R23DUMIopA?ext=jpg",
+    "mint": "BUoDk4TtNNo6aon4SmgDGKiX2YyrNdzKYiBvxnZyaTus",
+    "collection": ""
+  },
+  {
+    "name": "Pinta caritas",
+    "image": "https://www.arweave.net/SCKfLcyjh_LNtOlYMdiczV3fuQGikOt0udizLWnwnio?ext=jpg",
+    "mint": "FXxC65mgbfD9ih9K9Mohp7cL8MNq3TgMj3LyjowDSx58",
+    "collection": ""
+  },
+  {
+    "name": "Pintor",
+    "image": "https://www.arweave.net/LVluWsQ06FFcshuNgStZMN7trXNe3lN0N5AJGbXZAwk?ext=jpg",
+    "mint": "J1FM5N1t2KUUUEg31UyBWNXMPiptUjHPW53kYoZ99aME",
+    "collection": ""
+  },
+  {
+    "name": "Playa Nudista",
+    "image": "https://arweave.net/g5EoriJwNC88eG_Z1gEdPdR_sORwIsu2qmHGsr3WqTI?ext=jpg",
+    "mint": "3TmnqDirWr1EBA99CAoqCmdK86EKkGQQZcJfhMKrBuF5",
+    "collection": ""
+  },
+  {
+    "name": "Poniendo el pino",
+    "image": "https://www.arweave.net/5K9bnBszt3hSxCOgyQ_GwgC-IzW4bLaGF2XBf7O2niI?ext=jpg",
+    "mint": "YjgPqTYS8xXrLjoRSqH5Ei7bz3wWFYKopXrY1UqtTNT",
+    "collection": ""
+  },
+  {
+    "name": "Prende la luz",
+    "image": "https://arweave.net/a1rOeu9gwr03piQuetBhkcrzQbPH_xGoPeC8CfO_SDU?ext=jpg",
+    "mint": "4VGagopkRWSWMP5xYREkff13EvzPV8Pj45zazU3vwZMJ",
+    "collection": ""
+  },
+  {
+    "name": "Rasurándose",
+    "image": "https://arweave.net/h1O3cP74ov35Y8LhlX2bjGmZXGFnblPi32tbN-1Hx90?ext=jpg",
+    "mint": "FqoowsbqJ18ifM9JHdN6KXPicNYAJ9WoaUK2BSGDEQt6",
+    "collection": ""
+  },
+  {
+    "name": "Resbalón",
+    "image": "https://arweave.net/xb6JewD-YVEtp05EIxfej9ONnZTC_MCwqwmMJxW-ZXY?ext=jpg",
+    "mint": "EvyY36vtjwtfC8pLtsZQrdgdNkpZGjcb5VWUa786CZ9k",
+    "collection": ""
+  },
+  {
+    "name": "Retro digital",
+    "image": "https://arweave.net/ei1FPtixDvwk6qi1ftE65IE5SMjJYw3zRoaBWOaBk9k?ext=jpg",
+    "mint": "BzB8nfvWs1GEsrCRqAU4mXf6wpUucb7zKFmmxZoorbHL",
+    "collection": ""
+  },
+  {
+    "name": "Rueda de choche",
+    "image": "https://arweave.net/Jdhyufwz5CXuW0X3cAQgJzrJ6kAUdGCHzY_XiM0B2Ew?ext=jpg",
+    "mint": "9JQDt6L4AoZofSYYpzcubNjqZYzK2b4zBt7CVGzQgt8f",
+    "collection": ""
+  },
+  {
+    "name": "Salto de altura",
+    "image": "https://www.arweave.net/SreKUu-BtsIRGfI2iKsG1U79FnkFsBwbyaCtpTxrNGI?ext=jpg",
+    "mint": "Cs1EC1NZ3skWetwjZiYn6DVao11VbEH6YBdMhxVda15A",
+    "collection": ""
+  },
+  {
+    "name": "Sigo cayendo",
+    "image": "https://www.arweave.net/ykNj-1Q4TygUmjAIfbTP9awMICCYzyXcIalVs4gPB5I?ext=jpg",
+    "mint": "9NtsBKp5vqAQnjAKZxp9tCQsnyenwZX5osvDSZAukeKX",
+    "collection": ""
+  },
+  {
+    "name": "Solo falta que un perro...",
+    "image": "https://arweave.net/bsu27C76UwWi2YNhJsChMxTRqN90nvcDzgMChp4wz1U?ext=jpg",
+    "mint": "HMSJ9YwYDNxsZVLLGPCRWxY32dyypN8E9rqjAMY5Uout",
+    "collection": ""
+  },
+  {
+    "name": "Sorpresa!!!",
+    "image": "https://arweave.net/dqDapzpAfkyB0Mj1lSvIkzHOJCuJEThuDj8mT_yZiGs?ext=jpg",
+    "mint": "2SgAHGjPsvE64q2RFA61LgaFJQHsZ1fPZi6VtoWFbWaR",
+    "collection": ""
+  },
+  {
+    "name": "Super Mono 2",
+    "image": "https://www.arweave.net/CeBf-AkjND4sOIoGWLkrqljsRAEzQlJbSweFApqvFX4?ext=jpg",
+    "mint": "2i1tJeKQm9qDgokTuthnunTEWdgCvH1mbnu6B1mSyYE9",
+    "collection": ""
+  },
+  {
+    "name": "The shining",
+    "image": "https://arweave.net/hpSuwHKuN6o7OzCN34vw8XjqED5XoxjRQrRMkzcdxXM?ext=jpg",
+    "mint": "FkNxVqH11uBdAT81jp4azC3vQyxyZRPSAJvk2JcwMZEm",
+    "collection": ""
+  },
+  {
+    "name": "Tiburón",
+    "image": "https://arweave.net/dAXgXbOpY0Ux5AdRVLHZ-_Bd2FLtb0Nn14oFw-cY5Do?ext=jpg",
+    "mint": "C4MgvtVQaUpbzaFgsuTj4dQ3A6brD1j5Q8mfswoPRFsH",
+    "collection": ""
+  },
+  {
+    "name": "Títere",
+    "image": "https://arweave.net/dn813bI7yCU28-gJGNv9vneb-UFbxXbP4mx3cOjHd_4?ext=jpg",
+    "mint": "4MAqDnfCxKgpiyjGy281ZHHRT6CfH4RS446VfykL1bfy",
+    "collection": ""
+  },
+  {
+    "name": "Tomando el sol",
+    "image": "https://arweave.net/hgLhzlhwUl28BpirZNhFUFOFETeGDIAKcIL9k_DKsCA?ext=jpg",
+    "mint": "Akh48UUGivvJ9qgvYJqMfwNavbrUG3yf5YiUmMnTJqq3",
+    "collection": ""
+  },
+  {
+    "name": "Tomando el sol 2",
+    "image": "https://arweave.net/oHZRdIekEm7m9uIr1ChZwmd5Rj2oLU9yohN_lhWurVo?ext=jpg",
+    "mint": "FYCP6ffC2NQ5wjNjQNUwGiQNaakZsJTTBCdv5B2nWcrW",
+    "collection": ""
+  },
+  {
+    "name": "Turista",
+    "image": "https://arweave.net/c48dduXOnwehhWll0xQO4OgWAYJGrcuEmlsnCBxmroU?ext=jpg",
+    "mint": "GWtWc1YTfc3ba5Sk8mB9kAMaExUZpV346kw4PSPGZPZ1",
+    "collection": ""
+  },
+  {
+    "name": "Un buen baño",
+    "image": "https://arweave.net/yJt05j3pWWaS8wFnfMOG3DSj5lLxHiVxpElEHppYc0E?ext=jpg",
+    "mint": "GUKNRNFaRJAsnXL75yK1rZJBQarUP7KTWP2J73GCCvV1",
+    "collection": ""
+  },
+  {
+    "name": "Vagabundo",
+    "image": "https://www.arweave.net/7D_oqAB90Av__Sr_ZRYc_OufJ6ZyMi5aEQdhyZCEtJ0?ext=jpg",
+    "mint": "637gBUQLYf4kvSkm84q4wp5XmHTknj5emCZL7FZ6FKrc",
+    "collection": ""
+  },
+  {
+    "name": "Viendo TV",
+    "image": "https://www.arweave.net/6BBfyMebMyyVBbfRYcCrD_BFpwjEADgn72zHO2y7PkQ?ext=jpg",
+    "mint": "7JvZLPGhw2MeEdvgqGZjpiwrGoJhpQVVqE2DC4NDmrEK",
+    "collection": ""
+  },
+  {
+    "name": "¿Qué ropa me pongo hoy?",
+    "image": "https://www.arweave.net/Rusaxa5CckgBGxXWuJcA0AeW0j6oAuSCSlnaXic__jk?ext=jpg",
+    "mint": "7Tnk7uPkwHnPnT5S9FY8MwgHyNQbNyfbAtpTy69qzHUw",
+    "collection": ""
+  }
+]

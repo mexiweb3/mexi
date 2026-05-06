@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+dist/monos-sol-catalogo.html
+build/image_map.json
+build/bw/

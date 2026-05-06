@@ -1,0 +1,21 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "public": true,
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/monos-sol-catalogo.pdf",
+      "headers": [
+        { "key": "Content-Type", "value": "application/pdf" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" },
+        { "key": "Content-Disposition", "value": "inline; filename=\"monos-sol-catalogo.pdf\"" }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=2592000, immutable" }
+      ]
+    }
+  ]
+}

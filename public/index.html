@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monos · Daniel Serna Garza</title>
+<meta name="description" content="Catálogo de la serie Monos de Daniel Serna Garza sobre Solana. 244 piezas minteadas. 109 disponibles en monos.sol.">
+<meta property="og:title" content="Monos · Daniel Serna Garza">
+<meta property="og:description" content="Boceto de monos diario por un año. 244 piezas minteadas, 109 disponibles en monos.sol.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff;color:#000}
+  body{
+    font-family:'Cormorant Garamond','EB Garamond',Georgia,serif;
+    -webkit-font-smoothing:antialiased;line-height:1.5;
+    min-height:100vh;display:flex;flex-direction:column;
+  }
+  .sans{font-family:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif}
+  a{color:#000}
+
+  header.nav{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:24px 28px;border-bottom:1px solid #000;
+    font-family:'Inter',sans-serif;font-size:11px;
+    letter-spacing:.32em;text-transform:uppercase;
+  }
+  .nav .brand{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;letter-spacing:0;text-transform:none}
+  .nav .links{display:flex;gap:28px}
+  .nav a{text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px}
+  .nav a:hover{border-bottom-color:#000}
+
+  main{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:80px 28px 40px;max-width:1080px;margin:0 auto;width:100%}
+  main .top-rule{width:32px;height:1px;background:#000;margin-bottom:32px}
+  .artist{font-size:18px;font-style:italic;margin:0 0 12px}
+  h1{
+    font-family:'Cormorant Garamond',serif;font-weight:500;
+    font-size:clamp(80px,14vw,200px);line-height:.9;
+    letter-spacing:-0.012em;margin:0 0 24px;
+  }
+  .lede{
+    font-size:clamp(18px,2vw,22px);max-width:640px;color:#000;margin:0 0 24px;
+  }
+  .lede em{font-style:italic}
+  .meta-line{
+    font-family:'Inter',sans-serif;font-size:10px;
+    letter-spacing:.32em;text-transform:uppercase;margin:0 0 48px;
+  }
+  .meta-line .sep{display:inline-block;width:18px}
+
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:32px;
+    width:100%;max-width:680px;margin:0 0 56px;
+    padding-top:32px;border-top:1px solid #000;
+  }
+  .stats > div{text-align:center}
+  .stats dt{font-family:'Inter',sans-serif;font-size:9px;letter-spacing:.25em;text-transform:uppercase;margin:0 0 6px}
+  .stats dd{margin:0;font-family:'Cormorant Garamond',serif;font-size:42px;line-height:1}
+  .stats dd small{font-family:'Inter',sans-serif;font-size:9px;letter-spacing:.18em;color:#666;display:block;margin-top:6px;text-transform:uppercase}
+
+  .cta-row{
+    display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:48px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.28em;
+    text-transform:uppercase;font-weight:500;
+    padding:16px 24px;text-decoration:none;
+    transition:transform .15s ease,background .15s ease,color .15s ease;
+  }
+  .btn-primary{background:#000;color:#fff}
+  .btn-primary:hover{background:#333;transform:translateY(-1px)}
+  .btn-ghost{color:#000;border:1px solid #000}
+  .btn-ghost:hover{background:#000;color:#fff}
+  .btn .arrow{display:inline-block;transition:transform .15s}
+  .btn:hover .arrow{transform:translate(2px,-2px)}
+
+  .links-row{
+    font-family:'Inter',sans-serif;font-size:10px;
+    letter-spacing:.25em;text-transform:uppercase;
+    display:flex;gap:24px;flex-wrap:wrap;justify-content:center;
+  }
+  .links-row a{border-bottom:1px solid #000;padding-bottom:1px;text-decoration:none}
+
+  footer{
+    margin-top:auto;padding:24px 28px;border-top:1px solid #000;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-family:'Inter',sans-serif;font-size:9px;letter-spacing:.25em;
+    text-transform:uppercase;
+  }
+  footer a{text-decoration:none;border-bottom:1px solid #000}
+
+  @media(max-width:640px){
+    .nav{padding:18px}
+    .nav .links{display:none}
+    .stats{grid-template-columns:repeat(2,1fr);gap:20px}
+    main{padding:48px 18px 28px}
+  }
+</style>
+</head>
+<body>
+  <header class="nav">
+    <span class="brand">monos.sol</span>
+    <nav class="links">
+      <a href="/catalogo.html">Catálogo</a>
+      <a href="/monos-sol-catalogo.pdf" target="_blank">PDF</a>
+      <a href="https://www.danielserna.com" target="_blank" rel="noopener">danielserna.com</a>
+    </nav>
+  </header>
+
+  <main>
+    <span class="top-rule"></span>
+    <p class="artist">Daniel Serna Garza</p>
+    <h1>Monos.</h1>
+    <p class="lede">Boceto de monos diario por <em>un año</em>, iniciado el <em>11 de junio de 2021</em> — los hermanos digitales de los monos de bronce que habitan la Calzada San Pedro.</p>
+    <p class="meta-line">Solana<span class="sep"></span>·<span class="sep"></span>monos.sol<span class="sep"></span>·<span class="sep"></span>Hasta 400 piezas</p>
+
+    <dl class="stats">
+      <div><dt>Minteadas</dt><dd>183<small>de 400 máx.</small></dd></div>
+      <div><dt>Por mintear</dt><dd>217<small>restantes</small></dd></div>
+      <div><dt>Disponibles</dt><dd>90<small>en monos.sol</small></dd></div>
+      <div><dt>No disponibles</dt><dd>93<small>otras carteras</small></dd></div>
+    </dl>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/catalogo.html">
+        Ver catálogo completo <span class="arrow">↗</span>
+      </a>
+      <a class="btn btn-ghost" href="/monos-sol-catalogo.pdf" download>
+        Descargar PDF
+      </a>
+    </div>
+
+    <p class="links-row">
+      <a href="https://www.danielserna.com" target="_blank" rel="noopener">danielserna.com</a>
+      <a href="https://www.instagram.com/dsgescultor" target="_blank" rel="noopener">@dsgescultor</a>
+      <a href="https://www.instagram.com/monosmonosymasmonos" target="_blank" rel="noopener">@monosmonosymasmonos</a>
+    </p>
+  </main>
+
+  <footer>
+    <span>Solana · monos.sol</span>
+    <span><a href="https://github.com/mexiweb3/mexi/tree/claude/solana-nft-catalog-rtdUt" target="_blank" rel="noopener">Repositorio</a></span>
+  </footer>
+</body>
+</html>
