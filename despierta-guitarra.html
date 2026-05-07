@@ -218,7 +218,7 @@
     }
 
     frets.forEach((f, i) => {
-      const x = left + (i + 0.5) * cellW;
+      const x = left + i * cellW;
       const y = top + gridH + 14 * scale;
       if (f === -1) {
         svg += `<text x="${x}" y="${y}" text-anchor="middle" font-size="${fontMark}" fill="#1d1d1d">×</text>`;
@@ -238,7 +238,7 @@
 
     frets.forEach((f, i) => {
       if (f > 0) {
-        const x = left + (i + 0.5) * cellW;
+        const x = left + i * cellW;
         const y = top + (f - baseFret + 0.5) * cellH;
         const finger = fingers[i];
         const onBarre = barre && barre.fret === f && finger === 1;
