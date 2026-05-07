@@ -17,7 +17,7 @@
     font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
     background: var(--bg);
     color: var(--ink);
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 2rem 1.25rem 4rem;
     line-height: 1.55;
@@ -25,7 +25,6 @@
   h1 {
     font-size: 2.25rem;
     margin: 0 0 .35rem;
-    color: var(--ink);
     letter-spacing: -.01em;
   }
   .subtitle {
@@ -34,17 +33,43 @@
     font-size: 1rem;
   }
   h2 {
-    font-size: 1rem;
+    font-size: .85rem;
     text-transform: uppercase;
     letter-spacing: .15em;
     color: var(--muted);
-    margin: 2.25rem 0 1rem;
+    margin: 2.5rem 0 1rem;
     font-weight: 600;
   }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
 
-  /* Chord diagrams row */
+  /* Notation toggle */
+  .notation {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    overflow: hidden;
+    margin: .5rem 0 1rem;
+    user-select: none;
+  }
+  .notation button {
+    background: transparent;
+    border: 0;
+    padding: .45rem 1rem;
+    font: inherit;
+    font-size: .9rem;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .notation button.active {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+  }
+  .notation button:not(.active):hover { background: #f7f7f7; }
+
+  /* Chord legend at top */
   .chord-row {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -52,45 +77,54 @@
     align-items: end;
     margin: 1rem 0 2rem;
   }
-  .chord {
-    text-align: center;
-  }
+  .chord { text-align: center; }
   .chord .name {
     color: var(--accent);
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: .35rem;
-    letter-spacing: .02em;
-  }
-  .chord svg { display: block; margin: 0 auto; }
-  .chord .frets {
-    margin-top: .35rem;
-    font-family: ui-monospace, monospace;
-    color: var(--muted);
-    font-size: .75rem;
-    letter-spacing: .15em;
   }
 
-  /* Song body */
+  /* Song body — chord above each segment of lyric */
   .song { margin-top: 1rem; }
-  .stanza { margin: 1.5rem 0; }
-  .pair {
-    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-    white-space: pre;
-    font-size: 1.1rem;
-    line-height: 1.25;
+  .line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin: 1.75rem 0;
+    gap: 0;
   }
-  .pair .chords {
+  .seg {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 130px;
+    justify-content: flex-end;
+  }
+  .seg .diagram {
+    margin-bottom: 4px;
+    height: 110px;
+    display: flex;
+    align-items: flex-end;
+  }
+  .seg .diagram .name {
     color: var(--accent);
     font-weight: 800;
-    letter-spacing: .02em;
+    font-size: 1rem;
+    margin-bottom: 2px;
+    text-align: center;
+    width: 100%;
   }
-  .pair .lyric {
+  .seg .text {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 1.1rem;
+    white-space: pre;
     color: var(--ink);
-    margin-bottom: .35rem;
+    line-height: 1.3;
   }
+  .seg.empty .diagram { visibility: hidden; }
 
-  /* Footer */
+  /* Sources footer */
   .sources {
     margin-top: 3rem;
     padding-top: 1rem;
@@ -102,76 +136,36 @@
 
   @media print {
     body { max-width: none; padding: .75rem; }
-    h2 { margin-top: 1rem; }
-    .chord-row { gap: .5rem; }
+    .seg { min-height: 110px; }
+    .seg .diagram { height: 90px; }
   }
-
   @media (max-width: 720px) {
-    .chord-row {
-      grid-template-columns: repeat(4, 1fr);
-      gap: .75rem;
-    }
-    .chord .name { font-size: 1.2rem; }
-    .pair { font-size: .95rem; }
+    .chord-row { grid-template-columns: repeat(4, 1fr); }
+    .seg .text { font-size: .9rem; }
+    .seg { min-height: 105px; }
+    .seg .diagram { height: 85px; }
   }
   @media (max-width: 480px) {
     .chord-row { grid-template-columns: repeat(3, 1fr); }
-    .pair { font-size: .85rem; }
+    .seg .text { font-size: .8rem; }
   }
 </style>
 </head>
 <body>
 
 <h1>Despierta</h1>
-<p class="subtitle">
-  Bolero de Gabriel Ruíz · Pedro Infante · tono Do mayor
-</p>
+<p class="subtitle">Bolero de Gabriel Ruíz · Pedro Infante · tono Do mayor</p>
 
-<div class="chord-row" id="chord-grid"></div>
-
-<h2>Letra y acordes</h2>
-
-<div class="song">
-
-  <div class="stanza">
-    <div class="pair"><span class="chords">   C                          G7  </span></div>
-    <div class="pair"><span class="lyric" >Despierta, dulce amor de mi vida</span></div>
-  </div>
-
-  <div class="stanza">
-    <div class="pair"><span class="chords">   Dm     G7                  C   </span></div>
-    <div class="pair"><span class="lyric" >despierta, si te encuentras dormida</span></div>
-  </div>
-
-  <div class="stanza">
-    <div class="pair"><span class="chords">                                G7</span></div>
-    <div class="pair"><span class="lyric" >escucha mi voz vibrar bajo tu ventana</span></div>
-  </div>
-
-  <div class="stanza">
-    <div class="pair"><span class="chords">              Dm                  G7</span></div>
-    <div class="pair"><span class="lyric" >en esta cancion te vengo a entregar el</span></div>
-    <div class="pair"><span class="chords">C </span></div>
-    <div class="pair"><span class="lyric" >alma</span></div>
-  </div>
-
-  <div class="stanza">
-    <div class="pair"><span class="chords">   C7                    F      </span></div>
-    <div class="pair"><span class="lyric" >Perdona que interrumpa tu sueño</span></div>
-  </div>
-
-  <div class="stanza">
-    <div class="pair"><span class="chords">    Fm        C                 G7  </span></div>
-    <div class="pair"><span class="lyric" >pero no pude mas y esta noche te vine a</span></div>
-    <div class="pair"><span class="lyric" >decir</span></div>
-  </div>
-
-  <div class="stanza">
-    <div class="pair"><span class="chords">      C            G#       C    </span></div>
-    <div class="pair"><span class="lyric" >te quiero, te quiero, te adoro</span></div>
-  </div>
-
+<div class="notation" role="tablist" aria-label="Notación de acordes">
+  <button id="btn-anglo"  class="active" type="button">C D E</button>
+  <button id="btn-doremi" type="button">Do Re Mi</button>
 </div>
+
+<h2>Acordes que usa la canción</h2>
+<div class="chord-row" id="chord-row"></div>
+
+<h2>Letra con acordes</h2>
+<div class="song" id="song"></div>
 
 <div class="sources">
   <strong>Fuentes y referencia</strong>
@@ -182,70 +176,68 @@
 </div>
 
 <script>
-  const CHORDS = [
-    { name: "C",   frets: [-1,3,2,0,1,0],  fingers: [0,3,2,0,1,0] },
-    { name: "C7",  frets: [-1,3,2,3,1,0],  fingers: [0,3,2,4,1,0] },
-    { name: "Dm",  frets: [-1,-1,0,2,3,1], fingers: [0,0,0,2,3,1] },
-    { name: "F",   frets: [1,3,3,2,1,1],   fingers: [1,3,4,2,1,1], barre: { fret: 1, from: 6, to: 1 } },
-    { name: "Fm",  frets: [1,3,3,1,1,1],   fingers: [1,3,4,1,1,1], barre: { fret: 1, from: 6, to: 1 } },
-    { name: "G#",  frets: [4,6,6,5,4,4],   fingers: [1,3,4,2,1,1], barre: { fret: 4, from: 6, to: 1 } },
-    { name: "G7",  frets: [3,2,0,0,0,1],   fingers: [3,2,0,0,0,1] },
-  ];
+  const CHORDS = {
+    C:   { frets: [-1,3,2,0,1,0],   fingers: [0,3,2,0,1,0] },
+    C7:  { frets: [-1,3,2,3,1,0],   fingers: [0,3,2,4,1,0] },
+    Dm:  { frets: [-1,-1,0,2,3,1],  fingers: [0,0,0,2,3,1] },
+    F:   { frets: [1,3,3,2,1,1],    fingers: [1,3,4,2,1,1], barre: { fret: 1, from: 6, to: 1 } },
+    Fm:  { frets: [1,3,3,1,1,1],    fingers: [1,3,4,1,1,1], barre: { fret: 1, from: 6, to: 1 } },
+    "G#":{ frets: [4,6,6,5,4,4],    fingers: [1,3,4,2,1,1], barre: { fret: 4, from: 6, to: 1 } },
+    G7:  { frets: [3,2,0,0,0,1],    fingers: [3,2,0,0,0,1] },
+  };
 
-  function drawChord({ name, frets, fingers, barre }) {
-    const W = 110, H = 140;
-    const left = 18, top = 30, gridW = 74, gridH = 88;
-    const cols = 5;
-    const rows = 4;
-    const cellW = gridW / cols;
-    const cellH = gridH / rows;
+  function drawChord(name, size = "large") {
+    const c = CHORDS[name];
+    if (!c) return "";
+    const { frets, fingers, barre } = c;
+    const scale = size === "small" ? 0.65 : 1;
+    const W = 110 * scale, H = 140 * scale;
+    const left = 18 * scale, top = 30 * scale;
+    const gridW = 74 * scale, gridH = 88 * scale;
+    const cols = 5, rows = 4;
+    const cellW = gridW / cols, cellH = gridH / rows;
 
     const playedFrets = frets.filter(f => f > 0);
     const minFret = playedFrets.length ? Math.min(...playedFrets) : 1;
     const maxFret = playedFrets.length ? Math.max(...playedFrets) : 1;
-    let baseFret = 1;
-    if (maxFret > 4) baseFret = minFret;
+    const baseFret = (maxFret > 4) ? minFret : 1;
 
-    let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="105" height="134" aria-label="${name}">`;
+    const fontFret = 10 * scale, fontDot = 10 * scale, fontMark = 11 * scale;
+    let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" aria-label="${name}">`;
 
-    // nut (thicker top line) when starting at fret 1
     for (let i = 0; i <= rows; i++) {
       const y = top + i * cellH;
-      const sw = (baseFret === 1 && i === 0) ? 4 : 1.4;
+      const sw = (baseFret === 1 && i === 0) ? 4 * scale : 1.4 * scale;
       svg += `<line x1="${left}" y1="${y}" x2="${left+gridW}" y2="${y}" stroke="#1d1d1d" stroke-width="${sw}"/>`;
     }
     for (let i = 0; i <= cols; i++) {
       const x = left + i * cellW;
-      svg += `<line x1="${x}" y1="${top}" x2="${x}" y2="${top+gridH}" stroke="#1d1d1d" stroke-width="1.2"/>`;
+      svg += `<line x1="${x}" y1="${top}" x2="${x}" y2="${top+gridH}" stroke="#1d1d1d" stroke-width="${1.2 * scale}"/>`;
     }
 
-    // base fret label (e.g. "4ª")
     if (baseFret > 1) {
-      svg += `<text x="${left + gridW + 6}" y="${top + cellH/2 + 4}" text-anchor="start" font-size="10" fill="#9a9a9a">${baseFret}ª</text>`;
+      svg += `<text x="${left + gridW + 6 * scale}" y="${top + cellH/2 + 4 * scale}" font-size="${fontFret}" fill="#9a9a9a">${baseFret}ª</text>`;
     }
 
-    // open / muted markers below
     frets.forEach((f, i) => {
       const x = left + (5 - i) * cellW;
-      const y = top + gridH + 14;
+      const y = top + gridH + 14 * scale;
       if (f === -1) {
-        svg += `<text x="${x}" y="${y}" text-anchor="middle" font-size="11" fill="#1d1d1d">×</text>`;
+        svg += `<text x="${x}" y="${y}" text-anchor="middle" font-size="${fontMark}" fill="#1d1d1d">×</text>`;
       } else {
-        svg += `<circle cx="${x}" cy="${y - 3}" r="3.2" fill="none" stroke="#1d1d1d" stroke-width="1.3"/>`;
+        svg += `<circle cx="${x}" cy="${y - 3 * scale}" r="${3.2 * scale}" fill="none" stroke="#1d1d1d" stroke-width="${1.3 * scale}"/>`;
       }
     });
 
-    // barre
     if (barre) {
       const y = top + (barre.fret - baseFret + 0.5) * cellH;
       const xFrom = left + (6 - barre.from) * cellW;
       const xTo   = left + (6 - barre.to) * cellW;
-      const xL = Math.min(xFrom, xTo) - 9;
-      const xR = Math.max(xFrom, xTo) + 9;
-      svg += `<rect x="${xL}" y="${y - 8}" width="${xR - xL}" height="16" rx="8" fill="#1d1d1d"/>`;
+      const xL = Math.min(xFrom, xTo) - 9 * scale;
+      const xR = Math.max(xFrom, xTo) + 9 * scale;
+      svg += `<rect x="${xL}" y="${y - 8 * scale}" width="${xR - xL}" height="${16 * scale}" rx="${8 * scale}" fill="#1d1d1d"/>`;
     }
 
-    // dots + finger numbers
     frets.forEach((f, i) => {
       if (f > 0) {
         const x = left + (5 - i) * cellW;
@@ -253,9 +245,9 @@
         const finger = fingers[i];
         const onBarre = barre && barre.fret === f && finger === 1;
         if (!onBarre) {
-          svg += `<circle cx="${x}" cy="${y}" r="9" fill="#1d1d1d"/>`;
+          svg += `<circle cx="${x}" cy="${y}" r="${9 * scale}" fill="#1d1d1d"/>`;
           if (finger > 0) {
-            svg += `<text x="${x}" y="${y + 3.5}" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">${finger}</text>`;
+            svg += `<text x="${x}" y="${y + 3.5 * scale}" text-anchor="middle" font-size="${fontDot}" font-weight="700" fill="#ffffff">${finger}</text>`;
           }
         }
       }
@@ -265,12 +257,104 @@
     return svg;
   }
 
-  document.getElementById("chord-grid").innerHTML = CHORDS.map(c => `
-    <div class="chord">
-      <div class="name">${c.name}</div>
-      ${drawChord(c)}
-    </div>
-  `).join("");
+  // Notation translation: anglo ↔ Do Re Mi
+  const TO_DOREMI = {
+    C: "Do", D: "Re", E: "Mi", F: "Fa", G: "Sol", A: "La", B: "Si",
+  };
+  function translateChord(name) {
+    if (state.notation === "anglo") return name;
+    // Match leading note (one letter, optional # or b) + suffix
+    const m = name.match(/^([A-G])([#b]?)(.*)$/);
+    if (!m) return name;
+    const root = TO_DOREMI[m[1]] || m[1];
+    const accidental = m[2];
+    let rest = m[3];
+    if (rest === "m") rest = "m";
+    return root + accidental + rest;
+  }
+
+  let state = { notation: "anglo" };
+
+  function render() {
+    // Top legend
+    const order = ["C", "C7", "Dm", "F", "Fm", "G#", "G7"];
+    document.getElementById("chord-row").innerHTML = order.map(n => `
+      <div class="chord">
+        <div class="name">${translateChord(n)}</div>
+        ${drawChord(n, "large")}
+      </div>
+    `).join("");
+
+    // Song
+    document.getElementById("song").innerHTML = SONG.map(line => `
+      <div class="line">
+        ${line.map(seg => `
+          <div class="seg ${seg.chord ? "" : "empty"}">
+            <div class="diagram">
+              <div>
+                ${seg.chord ? `<div class="name">${translateChord(seg.chord)}</div>` : ""}
+                ${seg.chord ? drawChord(seg.chord, "small") : ""}
+              </div>
+            </div>
+            <div class="text">${seg.text}</div>
+          </div>
+        `).join("")}
+      </div>
+    `).join("");
+  }
+
+  document.getElementById("btn-anglo").addEventListener("click", () => {
+    state.notation = "anglo";
+    document.getElementById("btn-anglo").classList.add("active");
+    document.getElementById("btn-doremi").classList.remove("active");
+    render();
+  });
+  document.getElementById("btn-doremi").addEventListener("click", () => {
+    state.notation = "doremi";
+    document.getElementById("btn-doremi").classList.add("active");
+    document.getElementById("btn-anglo").classList.remove("active");
+    render();
+  });
+
+  // Song lines: each segment = { chord (or null), text }
+  // Lyric content as supplied by the user (Despierta, Pedro Infante).
+  const SONG = [
+    [
+      { chord: "C",  text: "Despierta, dulce amor de mi " },
+      { chord: "G7", text: "vida" },
+    ],
+    [
+      { chord: "Dm", text: "despierta, " },
+      { chord: "G7", text: "si te encuentras " },
+      { chord: "C",  text: "dormida" },
+    ],
+    [
+      { chord: null, text: "escucha mi voz vibrar bajo tu " },
+      { chord: "G7", text: "ventana" },
+    ],
+    [
+      { chord: null, text: "en esta " },
+      { chord: "Dm", text: "cancion te vengo a entregar " },
+      { chord: "G7", text: "el " },
+      { chord: "C",  text: "alma" },
+    ],
+    [
+      { chord: "C7", text: "Perdona que interrumpa " },
+      { chord: "F",  text: "tu sueño" },
+    ],
+    [
+      { chord: "Fm", text: "pero no " },
+      { chord: "C",  text: "pude mas y esta noche te " },
+      { chord: "G7", text: "vine a decir" },
+    ],
+    [
+      { chord: "C",   text: "te quiero, " },
+      { chord: "G#",  text: "te quiero, " },
+      { chord: "C",   text: "te adoro" },
+    ],
+  ];
+
+  render();
 </script>
 
 </body>
