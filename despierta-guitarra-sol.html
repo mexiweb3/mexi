@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Despierta — guitarra en Sol</title>
+<style>
+  :root {
+    --bg: #fdfaf3;
+    --ink: #2b2118;
+    --accent: #b94e2c;
+    --muted: #7a6a58;
+    --line: #e1d5c0;
+    --chord-bg: #fff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: ui-serif, "Iowan Old Style", Georgia, serif;
+    background: var(--bg);
+    color: var(--ink);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+    line-height: 1.55;
+  }
+  h1 { font-size: 2rem; margin: 0 0 .25rem; color: var(--accent); }
+  h2 { font-size: 1.25rem; margin: 2rem 0 .5rem;
+       border-bottom: 1px solid var(--line); padding-bottom: .25rem; }
+  h3 { font-size: 1rem; margin: 1.25rem 0 .35rem; color: var(--accent); }
+  .subtitle { color: var(--muted); margin: 0 0 1.5rem; font-style: italic; }
+  a { color: var(--accent); }
+  table { border-collapse: collapse; width: 100%; margin: .5rem 0; }
+  th, td { padding: .35rem .55rem; border-bottom: 1px solid var(--line);
+           text-align: left; font-size: .95rem; }
+  th { background: #f3ead8; }
+  code, .mono { font-family: ui-monospace, "SF Mono", Menlo, monospace;
+                font-size: .92em; }
+  pre { background: var(--chord-bg); border: 1px solid var(--line);
+        border-radius: 6px; padding: .75rem .9rem; overflow-x: auto;
+        font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        font-size: .92rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin: .15rem 0; }
+  .chords { display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+            gap: .9rem; margin: 1rem 0; }
+  .chord { background: var(--chord-bg); border: 1px solid var(--line);
+           border-radius: 8px; padding: .65rem; text-align: center; }
+  .chord .name { font-weight: 700; font-size: 1.15rem;
+                 color: var(--accent); margin-bottom: .25rem; }
+  .chord svg { display: block; margin: 0 auto; }
+  .chord .frets { font-family: ui-monospace, monospace; color: var(--muted);
+                  font-size: .8rem; margin-top: .2rem; }
+  .section { margin: 1rem 0 1.5rem; }
+  .lyric-cue { color: var(--muted); font-style: italic; font-size: .9rem;
+               margin: .15rem 0 .35rem; }
+  blockquote { border-left: 3px solid var(--accent); padding-left: .9rem;
+               color: var(--muted); margin: 1rem 0; }
+  .pill { display: inline-block; padding: .1rem .55rem; border-radius: 999px;
+          background: #f3ead8; font-size: .8rem; color: var(--muted);
+          margin-right: .35rem; }
+  ol li { margin: .35rem 0; }
+  @media print {
+    body { background: white; max-width: none; padding: 0; }
+    h1 { color: black; }
+    h2, h3 { color: black; }
+    .chord { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Despierta</h1>
+<p class="subtitle">
+  Bolero de <strong>Gabriel Ruíz</strong>, popularizado por
+  <strong>Pedro Infante</strong> (1947) — arreglo para guitarra en
+  <strong>Sol mayor</strong>.
+</p>
+
+<blockquote>
+  Tutorial de referencia: <em>J M Cruz Tutoriales —
+  Despierta, Armonía en Guitarra</em><br>
+  <a href="https://youtu.be/rjN7LLkAZlI">https://youtu.be/rjN7LLkAZlI</a>
+</blockquote>
+
+<h2>Tono</h2>
+<ul>
+  <li>Original (Pedro Infante): <strong>Do mayor (C)</strong>.</li>
+  <li>Aquí transpuesto a <strong>Sol mayor (G)</strong> — buena
+      tesitura y acordes abiertos.</li>
+  <li>Otros tonos: subir un tono = <strong>La (A)</strong>;
+      bajar = <strong>Mi (E)</strong>.</li>
+</ul>
+
+<h2>Acordes que usa la canción</h2>
+<table>
+  <tr><th>Función</th><th>Acorde</th><th>E A D G B e</th></tr>
+  <tr><td>I</td><td>G</td><td class="mono">3 2 0 0 0 3</td></tr>
+  <tr><td>V7</td><td>D7</td><td class="mono">x x 0 2 1 2</td></tr>
+  <tr><td>ii</td><td>Am</td><td class="mono">x 0 2 2 1 0</td></tr>
+  <tr><td>I7</td><td>G7</td><td class="mono">3 2 0 0 0 1</td></tr>
+  <tr><td>IV</td><td>C</td><td class="mono">x 3 2 0 1 0</td></tr>
+  <tr><td>iv</td><td>Cm</td><td class="mono">x 3 5 5 4 3 (cejilla 3)</td></tr>
+  <tr><td>♭VI</td><td>E♭</td><td class="mono">x 6 8 8 8 6 (cejilla 6)</td></tr>
+</table>
+
+<h2>Diagramas</h2>
+<div class="chords" id="chord-grid"></div>
+
+<h2>Digitación detallada (mano izquierda)</h2>
+<p class="subtitle">
+  <code>1</code>=índice · <code>2</code>=medio · <code>3</code>=anular ·
+  <code>4</code>=meñique. Cuerdas 6→1 (de la más grave a la más aguda).
+</p>
+
+<h3>G (Sol)</h3>
+<ul>
+  <li>Dedo 2 → 6ª cuerda traste 3</li>
+  <li>Dedo 1 → 5ª cuerda traste 2</li>
+  <li>Dedo 3 (o 4) → 1ª cuerda traste 3</li>
+  <li>4ª, 3ª y 2ª cuerda al aire</li>
+</ul>
+
+<h3>D7 (Re séptima)</h3>
+<ul>
+  <li>Dedo 2 → 3ª cuerda traste 2</li>
+  <li>Dedo 1 → 2ª cuerda traste 1</li>
+  <li>Dedo 3 → 1ª cuerda traste 2</li>
+  <li>4ª al aire · no toques 5ª ni 6ª</li>
+</ul>
+
+<h3>Am (La menor)</h3>
+<ul>
+  <li>Dedo 2 → 4ª cuerda traste 2</li>
+  <li>Dedo 3 → 3ª cuerda traste 2</li>
+  <li>Dedo 1 → 2ª cuerda traste 1</li>
+  <li>5ª y 1ª al aire · no toques 6ª</li>
+</ul>
+
+<h3>G7 (Sol séptima)</h3>
+<ul>
+  <li>Dedo 3 → 6ª cuerda traste 3</li>
+  <li>Dedo 2 → 5ª cuerda traste 2</li>
+  <li>Dedo 1 → 1ª cuerda traste 1</li>
+  <li>4ª, 3ª, 2ª al aire</li>
+</ul>
+
+<h3>C (Do)</h3>
+<ul>
+  <li>Dedo 3 → 5ª cuerda traste 3</li>
+  <li>Dedo 2 → 4ª cuerda traste 2</li>
+  <li>Dedo 1 → 2ª cuerda traste 1</li>
+  <li>3ª y 1ª al aire · no toques 6ª</li>
+</ul>
+
+<h3>Cm (Do menor) — cejilla en traste 3</h3>
+<ul>
+  <li>Dedo 1 → cejilla en traste 3 (cuerdas 5 a 1)</li>
+  <li>Dedo 3 → 4ª cuerda traste 5</li>
+  <li>Dedo 4 → 3ª cuerda traste 5</li>
+  <li>Dedo 2 → 2ª cuerda traste 4</li>
+  <li>No toques 6ª</li>
+</ul>
+
+<h3>E♭ (Mi bemol) — cejilla en traste 6, forma A</h3>
+<ul>
+  <li>Dedo 1 → cejilla en traste 6 (cuerdas 5 a 1)</li>
+  <li>Dedo 3 → 4ª cuerda traste 8</li>
+  <li>Dedo 4 → 3ª cuerda traste 8</li>
+  <li>Dedo 2 → 2ª cuerda traste 8</li>
+  <li>No toques 6ª</li>
+</ul>
+<p class="subtitle">
+  Si la cejilla aún no te sale, sustituye por <code>x 6 5 3 4 3</code>:
+  dedo 3 cuerda 5 traste 6, dedo 1 cuerda 4 traste 3, dedo 2 cuerda 3
+  traste 4, dedo 4 cuerda 1 traste 3.
+</p>
+
+<h2>Estructura y progresión</h2>
+<p class="subtitle">
+  Compás 4/4 · tempo de bolero (~80 BPM). Cada <code>|</code> = un compás.
+</p>
+
+<div class="section">
+  <h3><span class="pill">Intro</span> Instrumental — 4 compases</h3>
+<pre>| G   D7 | Am   D7   G | D7 | G |</pre>
+</div>
+
+<div class="section">
+  <h3><span class="pill">Estrofa A</span></h3>
+<pre>| G              | D7                           |
+| Am   D7   G    |                              |
+| D7                                            |
+| Am   D7   G    |                              |</pre>
+  <p class="lyric-cue">
+    Aquí entra la primera estrofa (la voz canta sobre estos compases —
+    "Despierta, dulce amor…").
+  </p>
+</div>
+
+<div class="section">
+  <h3><span class="pill">Estrofa B / Puente</span></h3>
+<pre>| G7             | C                            |
+| Cm             | G        D7                  |
+| G       E♭     | G                            |</pre>
+  <p class="lyric-cue">
+    Parte armónicamente más densa (G7 → C → Cm → G → E♭ → G). El
+    cromatismo G → E♭ → G es la firma del bolero.
+  </p>
+</div>
+
+<div class="section">
+  <h3><span class="pill">Repetición + final</span></h3>
+  <ul>
+    <li>Se repite <strong>Estrofa A</strong> y <strong>Estrofa B</strong>
+        con la letra de la 2ª estrofa.</li>
+    <li>Final: cierre largo en <strong>G</strong>, o resolución
+        <code>D7 → G</code> apagando.</li>
+  </ul>
+</div>
+
+<h2>Mano derecha — patrón de bolero</h2>
+<p>Apoyado o con púa, patrón clásico:</p>
+<pre>1   2 +   3   4 +
+B   -  P   -  P   -      (B = bajo · P = pulgar/púa hacia arriba)</pre>
+
+<p>Variante para principiante (rasgueo simple, hacia abajo):</p>
+<pre>↓   ↓   ↓   ↓
+1   2   3   4</pre>
+
+<p>Variante con arpegio (típica de bolero romántico):
+   pulgar (P) en la nota baja del acorde y i-m-a (índice-medio-anular)
+   en cuerdas 3-2-1 con patrón <code>P i m a m i</code>.</p>
+
+<h2>Cómo practicarlo</h2>
+<ol>
+  <li>Pasa los 7 acordes hasta que cambies entre ellos sin pensar
+      (G ↔ D7, G ↔ C, G ↔ G7 son los más comunes).</li>
+  <li>Practica el patrón de bolero solo en <strong>G</strong>
+      durante 2 minutos.</li>
+  <li>Encadena la <strong>intro</strong> sin letra hasta que suene
+      fluida.</li>
+  <li>Agrega la voz de la <strong>estrofa A</strong>.</li>
+  <li>Agrega la <strong>estrofa B</strong>, que es la parte
+      armónicamente más densa.</li>
+</ol>
+
+<h2>Letra completa (fuentes)</h2>
+<ul>
+  <li><a href="https://chords.lacuerda.net/pedro_infante/despierta">LaCuerda</a></li>
+  <li><a href="https://www.cifraclub.com/pedro-infante/despierta/">Cifra Club</a></li>
+  <li><a href="https://acordesweb.com/cancion/pedro-infante/despierta">Acordes Web</a></li>
+</ul>
+
+<script>
+  // Render chord diagrams as SVG
+  const CHORDS = [
+    { name: "G",   frets: [3,2,0,0,0,3], fingers: [2,1,0,0,0,3] },
+    { name: "D7",  frets: [-1,-1,0,2,1,2], fingers: [0,0,0,2,1,3] },
+    { name: "Am",  frets: [-1,0,2,2,1,0], fingers: [0,0,2,3,1,0] },
+    { name: "G7",  frets: [3,2,0,0,0,1], fingers: [3,2,0,0,0,1] },
+    { name: "C",   frets: [-1,3,2,0,1,0], fingers: [0,3,2,0,1,0] },
+    { name: "Cm",  frets: [-1,3,5,5,4,3], fingers: [0,1,3,4,2,1], barre: { fret: 3, from: 5, to: 1 } },
+    { name: "Eb",  frets: [-1,6,8,8,8,6], fingers: [0,1,3,4,2,1], barre: { fret: 6, from: 5, to: 1 } },
+  ];
+
+  function drawChord({ name, frets, fingers, barre }) {
+    const W = 110, H = 130;
+    const left = 20, top = 28, gridW = 70, gridH = 80;
+    const cols = 5; // 6 strings → 5 spaces
+    const rows = 4; // 4 frets shown
+    const cellW = gridW / cols;
+    const cellH = gridH / rows;
+
+    const minFret = Math.min(...frets.filter(f => f > 0)) || 1;
+    const baseFret = minFret > 1 ? minFret : 1;
+
+    let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100" height="118">`;
+
+    // grid
+    for (let i = 0; i <= rows; i++) {
+      const y = top + i * cellH;
+      const sw = (baseFret === 1 && i === 0) ? 3 : 1;
+      svg += `<line x1="${left}" y1="${y}" x2="${left+gridW}" y2="${y}" stroke="#2b2118" stroke-width="${sw}"/>`;
+    }
+    for (let i = 0; i <= cols; i++) {
+      const x = left + i * cellW;
+      svg += `<line x1="${x}" y1="${top}" x2="${x}" y2="${top+gridH}" stroke="#2b2118" stroke-width="1"/>`;
+    }
+
+    // base fret label
+    if (baseFret > 1) {
+      svg += `<text x="${left - 6}" y="${top + cellH/2 + 4}" text-anchor="end" font-size="9" fill="#7a6a58">${baseFret}fr</text>`;
+    }
+
+    // open / muted markers
+    frets.forEach((f, i) => {
+      const x = left + (5 - i) * cellW; // string 6 (low E) on left
+      if (f === -1) {
+        svg += `<text x="${x}" y="${top - 8}" text-anchor="middle" font-size="11" fill="#7a6a58">×</text>`;
+      } else if (f === 0) {
+        svg += `<circle cx="${x}" cy="${top - 10}" r="4" fill="none" stroke="#2b2118" stroke-width="1.2"/>`;
+      }
+    });
+
+    // barre
+    if (barre) {
+      const y = top + (barre.fret - baseFret + 0.5) * cellH;
+      const xFrom = left + (6 - barre.from) * cellW;
+      const xTo   = left + (6 - barre.to) * cellW;
+      svg += `<rect x="${Math.min(xFrom,xTo) - 6}" y="${y - 7}" width="${Math.abs(xTo - xFrom) + 12}" height="14" rx="7" fill="#b94e2c" opacity="0.85"/>`;
+    }
+
+    // dots + finger numbers
+    frets.forEach((f, i) => {
+      if (f > 0) {
+        const x = left + (5 - i) * cellW;
+        const y = top + (f - baseFret + 0.5) * cellH;
+        const finger = fingers[i];
+        // skip dot if covered by barre at same fret AND finger 1
+        const onBarre = barre && barre.fret === f && finger === 1 &&
+                        (5 - i) <= (6 - barre.to) && (5 - i) >= (6 - barre.from);
+        if (!onBarre) {
+          svg += `<circle cx="${x}" cy="${y}" r="7.5" fill="#b94e2c"/>`;
+          if (finger > 0) {
+            svg += `<text x="${x}" y="${y + 3.5}" text-anchor="middle" font-size="9" font-weight="700" fill="white">${finger}</text>`;
+          }
+        }
+      }
+    });
+
+    svg += `</svg>`;
+    return svg;
+  }
+
+  const grid = document.getElementById("chord-grid");
+  grid.innerHTML = CHORDS.map(c => `
+    <div class="chord">
+      <div class="name">${c.name === "Eb" ? "E♭" : c.name}</div>
+      ${drawChord(c)}
+      <div class="frets">${c.frets.map(f => f === -1 ? "×" : f).join(" ")}</div>
+    </div>
+  `).join("");
+</script>
+
+</body>
+</html>
