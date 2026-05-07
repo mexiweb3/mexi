@@ -92,28 +92,23 @@
     flex-wrap: wrap;
     align-items: flex-end;
     margin: 1.75rem 0;
-    gap: 0;
   }
   .seg {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    min-height: 130px;
-    justify-content: flex-end;
+    align-items: center;
   }
-  .seg .diagram {
-    margin-bottom: 4px;
-    height: 110px;
-    display: flex;
-    align-items: flex-end;
-  }
-  .seg .diagram .name {
+  .seg .name {
     color: var(--accent);
     font-weight: 800;
     font-size: 1rem;
-    margin-bottom: 2px;
-    text-align: center;
-    width: 100%;
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+  .seg svg {
+    display: block;
+    margin-bottom: 4px;
+    transform: scaleX(-1);  /* mirror horizontally */
   }
   .seg .text {
     font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -121,8 +116,11 @@
     white-space: pre;
     color: var(--ink);
     line-height: 1.3;
+    align-self: flex-start;
   }
-  .seg.empty .diagram { visibility: hidden; }
+  .seg.empty .name,
+  .seg.empty svg { visibility: hidden; }
+  .chord svg { transform: scaleX(-1); }
 
   /* Sources footer */
   .sources {
@@ -290,12 +288,8 @@
       <div class="line">
         ${line.map(seg => `
           <div class="seg ${seg.chord ? "" : "empty"}">
-            <div class="diagram">
-              <div>
-                ${seg.chord ? `<div class="name">${translateChord(seg.chord)}</div>` : ""}
-                ${seg.chord ? drawChord(seg.chord, "small") : ""}
-              </div>
-            </div>
+            <div class="name">${seg.chord ? translateChord(seg.chord) : "·"}</div>
+            ${seg.chord ? drawChord(seg.chord, "small") : `<svg width="71" height="91" aria-hidden="true"></svg>`}
             <div class="text">${seg.text}</div>
           </div>
         `).join("")}
