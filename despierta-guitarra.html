@@ -91,8 +91,9 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
-    margin: 1.75rem 0;
+    margin: 0 0 3rem;
   }
+  .line + .line { margin-top: .5rem; }
   .seg {
     display: flex;
     flex-direction: column;
@@ -108,7 +109,7 @@
   .seg svg {
     display: block;
     margin-bottom: 4px;
-    transform: scaleY(-1);  /* mirror horizontally */
+    /* drawn natively in standard chord-diagram orientation */
   }
   .seg .text {
     font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -120,7 +121,6 @@
   }
   .seg.empty .name,
   .seg.empty svg { visibility: hidden; }
-  .chord svg { transform: scaleY(-1); }
 
   /* Sources footer */
   .sources {
@@ -218,7 +218,7 @@
     }
 
     frets.forEach((f, i) => {
-      const x = left + (5 - i) * cellW;
+      const x = left + i * cellW;
       const y = top + gridH + 14 * scale;
       if (f === -1) {
         svg += `<text x="${x}" y="${y}" text-anchor="middle" font-size="${fontMark}" fill="#1d1d1d">×</text>`;
@@ -238,7 +238,7 @@
 
     frets.forEach((f, i) => {
       if (f > 0) {
-        const x = left + (5 - i) * cellW;
+        const x = left + i * cellW;
         const y = top + (f - baseFret + 0.5) * cellH;
         const finger = fingers[i];
         const onBarre = barre && barre.fret === f && finger === 1;
